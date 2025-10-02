@@ -15,9 +15,9 @@ import Footer from '../components/Footer';
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
       <Navbar />
-      <main className="flex-grow">
+      <main>
         <Hero />
         <ImpactStats />
         <About />
