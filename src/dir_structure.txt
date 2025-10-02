@@ -1,0 +1,11 @@
+components/common/
+components/layout/
+components/pages/
+components/features/
+pages/
+services/
+hooks/
+utils/
+styles/
+assets/
+types/
