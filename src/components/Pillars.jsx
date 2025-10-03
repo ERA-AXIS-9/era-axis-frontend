@@ -1,53 +1,87 @@
 import React from 'react';
+import { Monitor, Cpu, Code, Computer, ChevronRight } from 'lucide-react';
 
 const Pillars = () => {
   const pillars = [
     {
       title: 'Education',
-      description: 'Bootcamps, certifications, and workshops for all ages.',
-      icon: '🎓'
+      description: 'Programs, certifications, and workshops for all ages.',
+      icon: Monitor,
+      color: '#39366F',
+      link: '/education'
     },
     {
       title: 'Manufacturing',
-      description: 'Circular fabrication and e-waste upcycling for social good.',
-      icon: '🏭'
+      description: 'Circular and e-waste upcycling for social good.',
+      icon: Cpu,
+      color: '#5B9BD5',
+      link: '/manufacturing'
     },
     {
       title: 'Software',
       description: 'Open-source tools that power local innovation.',
-      icon: '💻'
+      icon: Code,
+      color: '#2a2850',
+      link: '/software'
     },
     {
       title: 'Open Labs',
       description: 'Community makerspaces and research hubs.',
-      icon: '🔬'
+      icon: Computer,
+      color: '#4a8bc2',
+      link: '/open-labs'
     }
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Pillars</h2>
+    <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-black mb-6 tracking-tight">Our Pillars</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pillars.map((pillar, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-4">
-                {pillar.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{pillar.title}</h3>
-              <p className="text-gray-600 mb-4">{pillar.description}</p>
-              <a 
-                href="#" 
-                className="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center text-sm"
+          {pillars.map((pillar, index) => {
+            const IconComponent = pillar.icon;
+            return (
+              <div 
+                key={index} 
+                className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 hover:border-gray-300 hover:from-gray-50 hover:to-gray-100"
               >
-                Explore
-                <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          ))}
+                {/* Icon */}
+                <div className="flex items-center mb-4">
+                  <div 
+                    className="w-10 h-10 rounded-lg flex items-center justify-center mr-3 group-hover:scale-105 transition-transform duration-300"
+                    style={{ 
+                      backgroundColor: `${pillar.color}10`,
+                      border: `1px solid ${pillar.color}20`
+                    }}
+                  >
+                    <IconComponent 
+                      size={20} 
+                      style={{ color: pillar.color }}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-black group-hover:text-gray-700 transition-colors duration-300">{pillar.title}</h3>
+                </div>
+                
+                {/* Description */}
+                <p className="text-gray-800 text-base font-medium leading-relaxed mb-5">
+                  {pillar.description}
+                </p>
+                
+                {/* Explore Button */}
+                <a 
+                  href={pillar.link}
+                  className="group/btn inline-flex items-center gap-1 font-bold text-base transition-all duration-300 hover:gap-2 text-[#39366F] hover:text-[#2a2850]"
+                >
+                  Explore
+                  <ChevronRight 
+                    size={14} 
+                    className="group-hover/btn:translate-x-0.5 transition-transform duration-300"
+                  />
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

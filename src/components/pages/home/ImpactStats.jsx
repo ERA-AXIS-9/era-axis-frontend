@@ -130,7 +130,7 @@ const ImpactStats = () => {
                         </span>
                       )}
                     </div>
-                    <div className="text-base font-semibold text-gray-800 mt-1">
+                    <div className="text-base font-semibold text-black mt-1">
                       {stat.label}
                     </div>
                   </div>
