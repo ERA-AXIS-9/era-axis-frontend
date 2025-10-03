@@ -1,31 +1,31 @@
 import React from 'react';
-import HeroSection from '../../../components/pages/home/HeroSection';
+import Hero from '../../../components/Hero';
 import ImpactStats from '../../../components/pages/home/ImpactStats';
-import AboutPreview from '../../../components/pages/home/AboutPreview';
-import PillarsSection from '../../../components/pages/home/PillarsSection';
-import FeaturedProjects from '../../../components/pages/home/FeaturedProjects';
-import ImpactSection from '../../../components/pages/home/ImpactSection';
-import Testimonials from '../../../components/pages/home/Testimonials';
-import Partners from '../../../components/pages/home/Partners';
-import NewsAndInsights from '../../../components/pages/home/NewsAndInsights';
-import MediaGallery from '../../../components/pages/home/MediaGallery';
-import CtaSection from '../../../components/pages/home/CtaSection';
-import Footer from '../../../components/layout/Footer';
+import About from '../../../components/About';
+import Pillars from '../../../components/Pillars';
+import Projects from '../../../components/Projects';
+import Impact from '../../../components/Impact';
+import Testimonials from '../../../components/Testimonials';
+import Partners from '../../../components/Partners';
+import NewsInsights from '../../../components/NewsInsights';
+import Gallery from '../../../components/Gallery';
+import Newsletter from '../../../components/Newsletter';
+import Footer from '../../../components/Footer';
 
 const HomePage = () => {
   return (
     <div>
-      <HeroSection />
+      <Hero />
       <ImpactStats />
-      <AboutPreview />
-      <PillarsSection />
-      <FeaturedProjects />
-      <ImpactSection />
+      <About />
+      <Pillars />
+      <Projects />
+      <Impact />
       <Testimonials />
       <Partners />
-      <NewsAndInsights />
-      <MediaGallery />
-      <CtaSection />
+      <NewsInsights />
+      <Gallery />
+      <Newsletter />
       <Footer />
     </div>
   );
