@@ -1,41 +1,81 @@
 import React from 'react';
+import { User } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "ERA AXIS transformed my career with their hands-on tech education. The skills I learned helped me land my dream job in software development.",
-      author: "Alex Johnson",
-      role: "Alumni, Software Developer",
-      avatar: "👨‍💻"
+      quote: "Placeholder for student story about career transformation through ERA AXIS.",
+      author: "Student Name",
+      role: "Cohort 2024",
+      type: "student"
     },
     {
-      quote: "Partnering with ERA AXIS has been instrumental in bringing our community projects to life. Their innovative approach to problem-solving is unmatched.",
-      author: "Maria Garcia",
-      role: "Community Partner",
-      avatar: "👩‍💼"
+      quote: "Placeholder for partner quote about community impact and collaboration.",
+      author: "Partner Org",
+      role: "Program Lead",
+      type: "partner"
     },
     {
-      quote: "As a mentor, I've seen firsthand how ERA AXIS empowers students to become changemakers. Their curriculum bridges the gap between education and real-world impact.",
-      author: "Dr. James Wilson",
-      role: "Mentor & Educator",
-      avatar: "👨‍🏫"
+      quote: "Placeholder for mentor feedback on open labs and projects.",
+      author: "Mentor",
+      role: "Volunteer",
+      type: "mentor"
     }
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">What People Say</h2>
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-black tracking-tight mb-6">Testimonials</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-50 p-6 rounded-xl">
-              <div className="text-4xl mb-4">{testimonial.avatar}</div>
-              <blockquote className="text-gray-600 italic mb-6">
-                "{testimonial.quote}"
-              </blockquote>
-              <div className="font-medium text-gray-900">{testimonial.author}</div>
-              <div className="text-sm text-gray-500">{testimonial.role}</div>
+            <div 
+              key={index} 
+              className="group relative bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+            >
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#39366F]/5 to-[#5B9BD5]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              
+              {/* Quote mark decoration */}
+              <div className="absolute top-4 right-4 text-6xl text-[#39366F]/10 font-serif leading-none">"</div>
+              
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Quote */}
+                <blockquote className="text-base font-medium text-gray-800 leading-relaxed mb-8 relative">
+                  "{testimonial.quote}"
+                </blockquote>
+                
+                {/* Author Info */}
+                <div className="flex items-center space-x-4">
+                  {/* Modern Avatar with Image */}
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:scale-110 transition-transform duration-300 border-2 border-white">
+                      <img 
+                        src="/images/workingspace.png"
+                        alt={testimonial.author}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Pulse ring */}
+                    <div className="absolute inset-0 rounded-full bg-[#39366F] opacity-0 group-hover:opacity-20 group-hover:scale-150 transition-all duration-500"></div>
+                  </div>
+                  
+                  {/* Name and Role */}
+                  <div className="flex-1">
+                    <div className="text-base font-bold text-black group-hover:text-[#39366F] transition-colors duration-300">
+                      {testimonial.author}
+                    </div>
+                    <div className="text-sm font-semibold text-gray-600 tracking-wide">
+                      {testimonial.role}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#39366F] to-[#5B9BD5] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           ))}
         </div>
