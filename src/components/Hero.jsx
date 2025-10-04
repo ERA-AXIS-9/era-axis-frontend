@@ -107,10 +107,10 @@ const Hero = () => {
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="flex flex-row gap-3 md:gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <a 
               href={slides[currentSlide].cta1.link}
-              className="group bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
+              className="group bg-[#39366F] hover:bg-[#2a2850] text-white px-4 md:px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-1 md:gap-2 text-sm md:text-base flex-1 md:flex-none"
             >
               {slides[currentSlide].cta1.text}
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@ const Hero = () => {
             </a>
             <a 
               href={slides[currentSlide].cta2.link}
-              className="group bg-white/20 backdrop-blur-sm border-2 border-[#39366F] hover:bg-white hover:text-[#39366F] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
+              className="group bg-white/20 backdrop-blur-sm border-2 border-[#39366F] hover:bg-white hover:text-[#39366F] text-white px-4 md:px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-1 md:gap-2 text-sm md:text-base flex-1 md:flex-none"
             >
               {slides[currentSlide].cta2.text}
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -36,12 +36,12 @@ const Impact = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-9 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-black tracking-tight mb-6">Impact</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-6">Impact</h2>
         
-        {/* Stats Grid with Donate Button */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
           {/* Stats Cards */}
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
@@ -65,16 +65,16 @@ const Impact = () => {
               </div>
             );
           })}
-          
-          {/* Donate Button Card */}
-          <div className="group relative bg-gradient-to-br from-[#39366F] to-[#2a2850] p-3 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center">
-            <a 
-              href="/donate"
-              className="text-white font-bold text-base hover:scale-105 transition-transform duration-300"
-            >
-              Donate
-            </a>
-          </div>
+        </div>
+        
+        {/* Donate Button - Full Width on Mobile */}
+        <div className="flex justify-center md:justify-end">
+          <a 
+            href="/donate"
+            className="w-full md:w-auto bg-gradient-to-br from-[#39366F] to-[#2a2850] hover:from-[#2a2850] hover:to-[#39366F] text-white font-bold text-base px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-center"
+          >
+            Donate
+          </a>
         </div>
       </div>
     </section>

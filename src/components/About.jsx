@@ -7,10 +7,10 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with title and Read More link */}
         <div className="flex justify-between items-center mb-2">
-          <h2 className="text-4xl font-bold text-black tracking-tight">About Era Axis</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight">About Era Axis</h2>
           <a 
             href="/about" 
-            className="text-[#39366F] hover:text-[#2a2850] font-semibold inline-flex items-center gap-1 transition-colors text-base underline hover:no-underline whitespace-nowrap"
+            className="hidden sm:inline-flex text-[#39366F] hover:text-[#2a2850] font-semibold items-center gap-1 transition-colors text-base underline hover:no-underline whitespace-nowrap"
           >
             Read More
             <ChevronRight size={18} />
@@ -25,14 +25,23 @@ const About = () => {
               We build pathways for learners and communities to co-create solutions through education, 
               ethical manufacturing, open-source software, and shared lab spaces.
             </p>
+            
+            {/* Mobile Read More Button */}
+            <a 
+              href="/about" 
+              className="sm:hidden mt-4 inline-flex items-center gap-1 text-[#39366F] hover:text-[#2a2850] font-semibold text-base transition-colors"
+            >
+              Read More
+              <ChevronRight size={18} />
+            </a>
           </div>
           
           {/* Image */}
-          <div className="relative flex justify-center">
+          <div className="relative">
             <img 
               src="/images/manufacturing.png" 
               alt="ERA AXIS manufacturing and circular fabrication" 
-              className="w-4/5 h-48 object-cover rounded-lg shadow-md"
+              className="w-full h-48 md:h-64 object-cover rounded-lg shadow-md"
             />
           </div>
         </div>

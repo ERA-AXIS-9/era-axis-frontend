@@ -1,120 +1,124 @@
-import React from 'react';
-import { Twitter, Linkedin, Github, Instagram, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
-  const footerSections = {
-    about: ['Our Story', 'Impact & Vision', 'Team'],
-    getInvolved: ['Donate', 'Partner', 'Join Us'],
-    resources: ['Blog', 'Gallery', 'FAQ'],
-    programs: ['Education', 'Manufacturing', 'Software', 'Open Labs']
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Newsletter subscription:', email);
+    setEmail('');
   };
 
-  const socialLinks = [
-    { name: 'Twitter', icon: Twitter, href: '#' },
-    { name: 'Instagram', icon: Instagram, href: '#' },
-    { name: 'Youtube', icon: Youtube, href: '#' }
-  ];
-
   return (
-    <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-7 gap-6">
+    <footer className="bg-black text-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-6 mb-6">
           {/* ERA AXIS Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center mb-4">
-              <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">EA</span>
+              <div className="w-10 h-10 border-2 border-white rounded flex items-center justify-center mr-3">
+                <span className="text-white font-bold text-lg">○</span>
               </div>
-              <h3 className="text-lg font-bold text-black">ERA AXIS</h3>
+              <h3 className="text-base font-bold text-white">ERA AXIS</h3>
             </div>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Empowering Innovators, Transforming Communities
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Empowering Innovators, Transforming Communities.
             </p>
           </div>
           
-          {/* About */}
+          {/* About & Programs */}
           <div>
-            <h4 className="text-sm font-semibold text-black mb-4">About</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Our Story</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Mission & Vision</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Team</a></li>
+            <h4 className="text-sm font-semibold text-white mb-3">About</h4>
+            <ul className="space-y-1.5 mb-4">
+              <li><a href="/about" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Our Story</a></li>
+              <li><a href="/impact" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Mission & Vision</a></li>
+              <li><a href="/about#team" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Team</a></li>
+            </ul>
+            
+            <h4 className="text-sm font-semibold text-white mb-3">Programs</h4>
+            <ul className="space-y-1.5">
+              <li><a href="/education" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Education</a></li>
+              <li><a href="/manufacturing" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Manufacturing</a></li>
+              <li><a href="/software" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Software</a></li>
+              <li><a href="/open-labs" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Open Labs</a></li>
             </ul>
           </div>
           
-          {/* Get Involved */}
+          {/* Get Involved & Resources */}
           <div>
-            <h4 className="text-sm font-semibold text-black mb-4">Get Involved</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Donate</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Partner</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Join Us</a></li>
+            <h4 className="text-sm font-semibold text-white mb-3">Get Involved</h4>
+            <ul className="space-y-1.5 mb-4">
+              <li><a href="/donate" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Donate</a></li>
+              <li><a href="/partner" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Partner</a></li>
+              <li><a href="/contact" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Join Us</a></li>
+            </ul>
+            
+            <h4 className="text-sm font-semibold text-white mb-3">Resources</h4>
+            <ul className="space-y-1.5">
+              <li><a href="/blog" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Blog</a></li>
+              <li><a href="/gallery" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Gallery</a></li>
+              <li><a href="/faq" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">FAQ</a></li>
             </ul>
           </div>
           
-          {/* Contact Us */}
-          <div>
-            <h4 className="text-sm font-semibold text-black mb-4">Contact Us</h4>
-            <div className="space-y-2">
-              <p className="text-sm text-gray-600">Address: ERA AXIS HQ – Essikado, Ghana</p>
-              <p className="text-sm text-gray-600">Email: info@eraaxis.com</p>
-              <p className="text-sm text-gray-600">Phone: +233 [insert]</p>
-              <div className="flex items-center space-x-3 mt-3">
-                <a href="#" className="w-6 h-6 bg-gray-100 rounded flex items-center justify-center hover:bg-black hover:text-white transition-colors">
-                  <Twitter size={14} />
-                </a>
-                <a href="#" className="w-6 h-6 bg-gray-100 rounded flex items-center justify-center hover:bg-black hover:text-white transition-colors">
-                  <Instagram size={14} />
-                </a>
-                <a href="#" className="w-6 h-6 bg-gray-100 rounded flex items-center justify-center hover:bg-black hover:text-white transition-colors">
-                  <Linkedin size={14} />
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          {/* Resources */}
-          <div>
-            <h4 className="text-sm font-semibold text-black mb-4">Resources</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Blog</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Gallery</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">FAQ</a></li>
-            </ul>
-          </div>
-          
-          {/* Programs */}
-          <div>
-            <h4 className="text-sm font-semibold text-black mb-4">Programs</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Education</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Manufacturing</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Software</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-black transition-colors">Open Labs</a></li>
-            </ul>
-          </div>
-          
-          {/* Newsletter Signup - As 7th Column */}
+          {/* Contact Us & Newsletter */}
           <div className="col-span-2 md:col-span-1">
-            <h4 className="text-sm font-semibold text-black mb-4">Newsletter Signup</h4>
-            <div className="space-y-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-              />
-              <button className="w-full bg-black hover:bg-gray-800 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
-                Subscribe
-              </button>
+            <h4 className="text-sm font-semibold text-white mb-3">Contact Us</h4>
+            <div className="space-y-1.5 mb-3">
+              <p className="text-sm text-gray-300">
+                <span className="font-semibold text-white">Address:</span> ERA AXIS HQ – Essikado, Ghana
+              </p>
+              <p className="text-sm text-gray-300">
+                <span className="font-semibold text-white">Email:</span> <a href="mailto:info@eraaxis.com" className="hover:text-[#39366F] transition-colors">info@eraaxis.com</a>
+              </p>
+              <p className="text-sm text-gray-300">
+                <span className="font-semibold text-white">Phone:</span> +233 [insert]
+              </p>
+            </div>
+            
+            {/* Social Media */}
+            <div className="flex items-center space-x-3 mb-4">
+              <a href="https://x.com/eraaxis" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="X (formerly Twitter)">
+                <X size={16} />
+              </a>
+              <a href="https://instagram.com/eraaxis" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="Instagram">
+                <Instagram size={16} />
+              </a>
+              <a href="https://linkedin.com/company/eraaxis" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="LinkedIn">
+                <Linkedin size={16} />
+              </a>
+            </div>
+            
+            {/* Newsletter Signup */}
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-3">Newsletter Signup</h4>
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="flex-1 px-3 py-2 bg-white border border-gray-600 rounded text-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#39366F] focus:border-transparent"
+                />
+                <button 
+                  type="submit"
+                  className="bg-[#39366F] hover:bg-white hover:text-[#39366F] text-white px-4 py-2 rounded text-sm font-medium transition-colors w-full sm:w-auto"
+                >
+                  Subscribe
+                </button>
+              </form>
             </div>
           </div>
         </div>
         
         {/* Copyright */}
-        <div className="mt-8 pt-6 border-t border-gray-200">
+        <div className="pt-6 border-t border-gray-800">
           <div className="text-center">
-            <p className="text-sm text-gray-500">
-              © 2025 ERA AXIS. All rights reserved. | Privacy Policy | Terms of Service
+            <p className="text-sm text-gray-400">
+              © 2025 ERA AXIS. All rights reserved. | <a href="/privacy" className="hover:text-[#39366F] transition-colors">Privacy Policy</a> | <a href="/terms" className="hover:text-[#39366F] transition-colors">Terms of Service</a>
             </p>
           </div>
         </div>

@@ -10,7 +10,6 @@ import Partners from '../../../components/Partners';
 import NewsInsights from '../../../components/NewsInsights';
 import Gallery from '../../../components/Gallery';
 import Newsletter from '../../../components/Newsletter';
-import Footer from '../../../components/Footer';
 
 const HomePage = () => {
   return (
@@ -26,7 +25,6 @@ const HomePage = () => {
       <NewsInsights />
       <Gallery />
       <Newsletter />
-      <Footer />
     </div>
   );
 };

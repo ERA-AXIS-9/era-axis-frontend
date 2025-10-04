@@ -12,10 +12,10 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-9 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-8">
-          <h2 className="text-4xl font-bold text-black tracking-tight mb-2">Stay connected with ERA AXIS</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-2">Stay connected with ERA AXIS</h2>
           <p className="text-base font-medium text-gray-600">
             Subscribe for updates and impact stories
           </p>
@@ -34,7 +34,7 @@ const Newsletter = () => {
           </div>
           <button 
             type="submit"
-            className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
+            className="bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
           >
             Subscribe
           </button>

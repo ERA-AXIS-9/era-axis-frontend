@@ -27,13 +27,13 @@ const NewsInsights = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-9 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-6">
-          <h2 className="text-4xl font-bold text-black tracking-tight">News & Insights</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight">News & Insights</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
           {articles.map((article, index) => (
             <article 
               key={index} 
@@ -81,7 +81,7 @@ const NewsInsights = () => {
         </div>
         
         {/* See More Button */}
-        <div className="flex justify-end mb-8">
+        <div className="flex justify-end">
           <a 
             href="/news"
             className="bg-[#39366F] hover:bg-[#2a2850] text-white px-5 py-2 rounded-md font-semibold inline-flex items-center gap-1 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm"

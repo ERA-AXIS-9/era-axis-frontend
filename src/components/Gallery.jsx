@@ -31,10 +31,10 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-9 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-4xl font-bold text-black tracking-tight">Media Gallery</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight">Media Gallery</h2>
           <a 
             href="/gallery"
             className="bg-[#39366F] hover:bg-[#2a2850] text-white px-5 py-2 rounded-md font-semibold inline-flex items-center gap-1 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm"
