@@ -42,6 +42,7 @@ const About = () => {
               src="/images/manufacturing.png" 
               alt="ERA AXIS manufacturing and circular fabrication" 
               className="w-full h-48 md:h-64 object-cover rounded-lg shadow-md"
+              loading="lazy"
             />
           </div>
         </div>

@@ -56,6 +56,7 @@ const Testimonials = () => {
                         src="/images/workingspace.png"
                         alt={testimonial.author}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                     </div>
                     {/* Pulse ring */}

@@ -58,6 +58,7 @@ const Gallery = () => {
                   src={item.src}
                   alt={item.alt}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 relative z-10"
+                  loading="lazy"
                 />
               ) : (
                 <>
@@ -65,6 +66,7 @@ const Gallery = () => {
                     src={item.thumbnail}
                     alt={item.alt}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                   {/* Modern Video Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors duration-300 z-20">

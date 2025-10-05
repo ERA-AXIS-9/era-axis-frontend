@@ -45,7 +45,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-22">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-[#39366F]">ERA AXIS</span>
+            <NavLink to="/" className="text-2xl font-bold text-[#39366F] hover:text-[#2a2850] transition-colors">
+              ERA AXIS
+            </NavLink>
           </div>
           
           {/* Desktop Navigation */}
