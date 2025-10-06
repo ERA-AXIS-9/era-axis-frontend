@@ -1,15 +1,14 @@
 import React from 'react';
-import Hero from '../../../components/Hero';
+import Hero from '../../../components/pages/home/Hero';
 import ImpactStats from '../../../components/pages/home/ImpactStats';
-import About from '../../../components/About';
-import Pillars from '../../../components/Pillars';
-import Projects from '../../../components/Projects';
-import Impact from '../../../components/Impact';
-import Testimonials from '../../../components/Testimonials';
-import Partners from '../../../components/Partners';
-import NewsInsights from '../../../components/NewsInsights';
-import Gallery from '../../../components/Gallery';
-import Newsletter from '../../../components/Newsletter';
+import About from '../../../components/pages/home/About';
+import Pillars from '../../../components/pages/home/Pillars';
+import Projects from '../../../components/pages/home/Projects';
+import Testimonials from '../../../components/pages/home/Testimonials';
+import Partners from '../../../components/pages/home/Partners';
+import NewsInsights from '../../../components/pages/home/NewsInsights';
+import Gallery from '../../../components/pages/home/Gallery';
+import Newsletter from '../../../components/pages/home/Newsletter';
 
 const HomePage = () => {
   return (
@@ -19,7 +18,6 @@ const HomePage = () => {
       <About />
       <Pillars />
       <Projects />
-      <Impact />
       <Testimonials />
       <Partners />
       <NewsInsights />

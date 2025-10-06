@@ -89,6 +89,16 @@ const ImpactStats = () => {
       className="py-12 bg-gradient-to-r from-gray-100 to-white"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Title */}
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-4">
+            Our Impact
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Transforming communities through innovation, education, and sustainable solutions across West Africa.
+          </p>
+        </div>
+
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
@@ -138,6 +148,19 @@ const ImpactStats = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Donate CTA */}
+        <div className="flex justify-center mt-8">
+          <a 
+            href="/donate"
+            className="bg-gradient-to-r from-[#39366F] to-[#2a2850] hover:from-[#2a2850] hover:to-[#1a1a3a] text-white font-bold text-base px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 inline-flex items-center gap-2"
+          >
+            Support Our Mission
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
