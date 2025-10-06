@@ -19,6 +19,7 @@ import BlogPage from './pages/public/blog';
 import GalleryPage from './pages/public/gallery';
 import NewsletterPage from './pages/public/newsletter';
 
+
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
