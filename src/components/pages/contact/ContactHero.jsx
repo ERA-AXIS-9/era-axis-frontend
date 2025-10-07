@@ -47,7 +47,7 @@ const ContactHero = () => {
           <div className={`p-6 sm:bg-white sm:rounded-2xl sm:border sm:border-gray-200 sm:shadow-lg hover:shadow-2xl sm:p-8 transition-all duration-700 hover:scale-[1.02] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             
             <div className="mb-8">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#39366F] leading-tight mb-4">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight mb-4">
                 Contact ERA AXIS
               </h1>
               <p className="text-base text-gray-600 leading-relaxed">
