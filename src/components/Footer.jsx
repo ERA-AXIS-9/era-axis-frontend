@@ -94,7 +94,7 @@ const Footer = () => {
             {/* Newsletter Signup */}
             <div>
               <h4 className="text-sm font-semibold text-white mb-3">Newsletter Signup</h4>
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+              <form onSubmit={handleSubmit} className="flex flex-col md:flex-col lg:flex-row items-stretch lg:items-center gap-2">
                 <input
                   type="email"
                   value={email}
@@ -105,7 +105,7 @@ const Footer = () => {
                 />
                 <button 
                   type="submit"
-                  className="bg-[#39366F] hover:bg-white hover:text-[#39366F] text-white px-4 py-2 rounded text-sm font-medium transition-colors w-full sm:w-auto"
+                  className="bg-[#39366F] hover:bg-white hover:text-[#39366F] text-white px-4 py-2 rounded text-sm font-medium transition-colors w-full lg:w-auto"
                 >
                   Subscribe
                 </button>
