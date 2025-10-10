@@ -9,21 +9,16 @@ const ImpactHero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           
           {/* Left Content */}
-          <div>
+          <div className="text-left">
             
             {/* Main Heading */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-              Real People.{' '}
-              <span className="text-[#39366F]">
-                Real Solutions.
-              </span>{' '}
-              Real Change.
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-left">
+              Our <span className="text-[#39366F]">Impact</span>
             </h1>
 
             {/* Description */}
-            <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl">
-              Discover the transformative power of technology education through the eyes of our learners, 
-              partners, and communities across Ghana and beyond.
+            <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl text-left">
+              Transforming communities through innovation, education, and sustainable solutions across West Africa.
             </p>
 
             {/* CTA Buttons */}

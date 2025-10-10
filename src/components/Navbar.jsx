@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
 
   const dropdownMenus = {
     services: [
@@ -135,20 +136,62 @@ const Navbar = () => {
         <div className="lg:hidden bg-white border-t shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  `block px-3 py-2 text-base font-medium transition-colors ${
-                    isActive
-                      ? 'text-[#39366F] bg-purple-50 font-semibold'
-                      : 'text-gray-700 hover:text-[#39366F] hover:bg-gray-50'
-                  }`
-                }
-              >
-                {item.name}
-              </NavLink>
+              item.dropdown ? (
+                <div key={item.name}>
+                  <button
+                    onClick={() => setMobileDropdown(mobileDropdown === item.dropdown ? null : item.dropdown)}
+                    className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-700 hover:text-[#39366F] hover:bg-gray-50 transition-colors"
+                  >
+                    <span>{item.name}</span>
+                    <svg 
+                      className={`w-4 h-4 transition-transform ${mobileDropdown === item.dropdown ? 'rotate-180' : ''}`}
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {mobileDropdown === item.dropdown && (
+                    <div className="pl-6 space-y-1">
+                      {dropdownMenus[item.dropdown].map((subItem) => (
+                        <NavLink
+                          key={subItem.name}
+                          to={subItem.path}
+                          onClick={() => {
+                            setIsOpen(false);
+                            setMobileDropdown(null);
+                          }}
+                          className={({ isActive }) =>
+                            `block px-3 py-2 text-sm font-medium transition-colors ${
+                              isActive
+                                ? 'text-[#39366F] bg-purple-50 font-semibold'
+                                : 'text-gray-600 hover:text-[#39366F] hover:bg-gray-50'
+                            }`
+                          }
+                        >
+                          {subItem.name}
+                        </NavLink>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <NavLink
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    `block px-3 py-2 text-base font-medium transition-colors ${
+                      isActive
+                        ? 'text-[#39366F] bg-purple-50 font-semibold'
+                        : 'text-gray-700 hover:text-[#39366F] hover:bg-gray-50'
+                    }`
+                  }
+                >
+                  {item.name}
+                </NavLink>
+              )
             ))}
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="flex flex-col space-y-3 px-3">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronRight, Users, Award, Target } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const AboutHero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,13 +18,6 @@ const AboutHero = () => {
           
           {/* Left Content */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {/* Breadcrumb */}
-            <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-4">
-              <a href="/" className="hover:text-[#39366F] transition-colors">Home</a>
-              <ChevronRight size={14} />
-              <span className="text-[#39366F] font-medium">About</span>
-            </nav>
-
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
               Transforming Communities Through 
               <span className="text-[#39366F]"> Innovation</span>

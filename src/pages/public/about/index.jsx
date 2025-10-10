@@ -1,4 +1,5 @@
 import React from 'react';
+import Breadcrumb from '../../../components/pages/about/Breadcrumb';
 import AboutHero from '../../../components/pages/about/AboutHero';
 import OurStory from '../../../components/pages/about/OurStory';
 import MissionVision from '../../../components/pages/about/MissionVision';
@@ -10,6 +11,7 @@ import PartnerCTA from '../../../components/pages/about/PartnerCTA';
 const AboutPage = () => {
   return (
     <div>
+      <Breadcrumb />
       <AboutHero />
       <OurStory />
       <MissionVision />
