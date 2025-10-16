@@ -42,40 +42,38 @@ const VideoSection = () => {
         </div>
 
         {/* Video Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {videos.map((video) => (
             <div 
               key={video.id} 
-              className="group cursor-pointer"
+              className="group cursor-pointer relative rounded-xl overflow-hidden"
               onClick={() => console.log('Play video:', video.title)}
             >
-              <div className="bg-white rounded-xl overflow-hidden border-2 border-gray-200 hover:border-[#39366F] transition-all duration-300 hover:shadow-lg">
+              {/* Video Thumbnail */}
+              <div className="relative aspect-video bg-gray-100">
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
                 
-                {/* Video Thumbnail */}
-                <div className="relative aspect-video bg-gray-100">
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-full object-cover"
-                  />
-                  
-                  {/* Play Button Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
-                    <div className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-white flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg">
-                      <Play className="text-[#39366F] fill-[#39366F]" size={28} />
-                    </div>
+                {/* Play Button - Always Visible */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-white flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg">
+                    <Play className="text-[#39366F] fill-[#39366F]" size={28} />
                   </div>
                 </div>
 
-                {/* Video Info */}
-                <div className="p-6">
-                  <h3 className="text-base font-bold text-black mb-2 group-hover:text-[#39366F] transition-colors leading-tight">
-                    {video.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {video.description}
-                  </p>
+                {/* Title Overlay on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white font-bold text-base leading-tight mb-1">
+                      {video.title}
+                    </h3>
+                    <p className="text-white/80 text-xs">
+                      {video.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

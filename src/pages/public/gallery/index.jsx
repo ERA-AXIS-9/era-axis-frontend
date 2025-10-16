@@ -5,7 +5,6 @@ import FeaturedStory from '../../../components/pages/gallery/FeaturedStory';
 import FilterNavigation from '../../../components/pages/gallery/FilterNavigation';
 import OrganizedContentGrid from '../../../components/pages/gallery/OrganizedContentGrid';
 import FeaturedJourney from '../../../components/pages/gallery/FeaturedJourney';
-import MultiCategoryDisplay from '../../../components/pages/gallery/MultiCategoryDisplay';
 import VideoSection from '../../../components/pages/gallery/VideoSection';
 import NewsletterCTA from '../../../components/pages/gallery/NewsletterCTA';
 
@@ -29,9 +28,6 @@ const GalleryPage = () => {
       
       {/* Featured Journey Section */}
       <FeaturedJourney />
-      
-      {/* Multi-Category Display */}
-      <MultiCategoryDisplay />
       
       {/* Video Section */}
       <VideoSection />

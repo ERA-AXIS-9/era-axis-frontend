@@ -51,28 +51,30 @@ const MultiCategoryDisplay = () => {
                 {section.items.map((item) => (
                   <div 
                     key={item.id} 
-                    className="group cursor-pointer"
+                    className="group cursor-pointer relative rounded-xl overflow-hidden"
                   >
-                    <div className="bg-white rounded-xl overflow-hidden border-2 border-gray-200 hover:border-[#39366F] transition-all duration-300 hover:shadow-lg">
+                    {/* Image with Overlay */}
+                    <div className="aspect-video relative overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
                       
-                      {/* Image */}
-                      <div className="aspect-video relative">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
+                      {/* Category Tag */}
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-white/90 backdrop-blur-sm text-[#39366F] px-3 py-1 rounded-full text-xs font-semibold">
+                          {section.category}
+                        </span>
                       </div>
-
-                      {/* Content */}
-                      <div className="p-6">
-                        <h3 className="text-base font-bold text-black mb-2 group-hover:text-[#39366F] transition-colors leading-tight">
-                          {item.title}
-                        </h3>
-                        
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {item.description}
-                        </p>
+                      
+                      {/* Title Overlay on Hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                          <h3 className="text-white font-bold text-lg leading-tight">
+                            {item.title}
+                          </h3>
+                        </div>
                       </div>
                     </div>
                   </div>

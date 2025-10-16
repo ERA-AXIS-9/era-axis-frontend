@@ -167,41 +167,32 @@ const OrganizedContentGrid = ({ activeFilter, searchTerm }) => {
             <p className="text-gray-600">Try adjusting your search or filter selection.</p>
           </div>
         ) : (
-          /* Unified Grid - All Cards Together */
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          /* Photo Gallery Grid - Image Focused */
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             {filteredContent.map((item, index) => (
               <div 
                 key={item.id} 
-                className="group cursor-pointer animate-fadeIn"
+                className="group cursor-pointer animate-fadeIn relative overflow-hidden rounded-lg"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                
-                {/* Content Card */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200">
+                {/* Image */}
+                <div className="relative aspect-square overflow-hidden bg-gray-100">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                   
-                  {/* Image */}
-                  <div className="relative aspect-video">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-black mb-2 group-hover:text-[#39366F] transition-colors leading-tight">
-                      {item.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                      {item.description}
-                    </p>
-                    
-                    {/* Date */}
-                    <p className="text-xs text-gray-500">
-                      {item.date}
-                    </p>
+                  {/* Hover Overlay with Title */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <h3 className="text-white font-semibold text-sm sm:text-base leading-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-white/80 text-xs mt-1">
+                        {item.date}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -43,27 +43,33 @@ const FeaturedJourney = () => {
         {/* Horizontal Scrolling Gallery */}
         <div className="overflow-x-auto scrollbar-hide pb-4">
           <div className="flex gap-4 min-w-max">
-            {journeyItems.map((item) => (
+            {journeyItems.map((item, index) => (
               <div 
                 key={item.id} 
-                className="flex-shrink-0 w-64 sm:w-80 group cursor-pointer"
+                className="flex-shrink-0 w-64 sm:w-80 group cursor-pointer relative rounded-xl overflow-hidden"
               >
-                <div className="bg-white rounded-xl overflow-hidden border-2 border-gray-200 hover:border-[#39366F] transition-all duration-300 hover:shadow-lg">
-                  <div className="aspect-video relative">
-                    <img
-                      src={item.image}
-                      alt={item.caption}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.caption}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  
+                  {/* Step Number Badge */}
+                  <div className="absolute top-4 left-4">
+                    <div className="w-8 h-8 rounded-full bg-[#39366F] text-white flex items-center justify-center font-bold text-sm shadow-lg">
+                      {index + 1}
+                    </div>
                   </div>
                   
-                  {item.caption && (
-                    <div className="p-4 text-center">
-                      <p className="text-sm font-medium text-gray-700 group-hover:text-[#39366F] transition-colors">
+                  {/* Caption Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                    <div className="p-4 w-full">
+                      <p className="text-white font-semibold text-base">
                         {item.caption}
                       </p>
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
             ))}
