@@ -4,22 +4,22 @@ import { ChevronRight } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      name: 'AgriPlanner',
-      description: 'Smart agriculture solutions for small-scale farmers using IoT sensors and data analytics.',
-      link: '/projects/agriplanner',
-      image: '/images/workingspace.png'
-    },
-    {
       name: 'EcoWatch',
-      description: 'Environmental monitoring system for sustainable community development and climate tracking.',
+      description: 'Real-time air quality monitoring system tracking pollution levels across multiple locations.',
       link: '/projects/ecowatch',
-      image: '/images/software.png'
+      image: '/images/Homepage/ECOWATCH.png'
     },
     {
-      name: 'RecyBin',
-      description: 'AI-powered waste sorting and recycling management system for smart cities.',
-      link: '/projects/recybin',
-      image: '/images/manufacturing.png'
+      name: 'Smart Farm IoT',
+      description: 'Agricultural monitoring system with IoT sensors for monitoring soil moisture and optimizing irrigation.',
+      link: '#',
+      image: '/images/Homepage/agriz planter.png'
+    },
+    {
+      name: 'Custom Software Development',
+      description: 'Tailored software solutions designed to meet your specific needs and challenges.',
+      link: '/services/software/custom',
+      image: '/images/Homepage/PXL_20250913_140827397.MP.jpg'
     }
   ];
 

@@ -1,18 +1,20 @@
 import React from 'react';
-import Breadcrumb from '../../../components/pages/projects/Breadcrumb';
+import SoftwareNavbar from '../../../components/SoftwareNavbar';
 import ProjectsHero from '../../../components/pages/projects/ProjectsHero';
-import FeaturedProjects from '../../../components/pages/projects/FeaturedProjects';
-import PlannedProjects from '../../../components/pages/projects/PlannedProjects';
-import ProjectsGallery from '../../../components/pages/projects/ProjectsGallery';
+import ProjectsGrid from '../../../components/pages/projects/ProjectsGrid';
+import FeaturedCaseStudy from '../../../components/pages/projects/FeaturedCaseStudy';
+import PartnersSay from '../../../components/pages/projects/PartnersSay';
+import ProjectsCTA from '../../../components/pages/projects/ProjectsCTA';
 
 const ProjectsPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Breadcrumb />
+      <SoftwareNavbar />
       <ProjectsHero />
-      <FeaturedProjects />
-      <PlannedProjects />
-      <ProjectsGallery />
+      <ProjectsGrid />
+      <FeaturedCaseStudy />
+      <PartnersSay />
+      <ProjectsCTA />
     </div>
   );
 };

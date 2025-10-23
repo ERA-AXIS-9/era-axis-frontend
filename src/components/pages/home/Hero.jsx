@@ -5,17 +5,17 @@ const Hero = () => {
 
   const slides = [
     {
-      title: "Empowering Innovators.\nTransforming Communities.",
-      description: "An innovation ecosystem advancing technology education, circular manufacturing, and open software to solve real community challenges.",
+      title: "EMPOWERING INNOVATORS. TRANSFORMING COMMUNITIES.",
+      description: "An innovation ecosystem advancing technology education, circular manufacturing, and open software to solve real community challenges across Africa.",
       pillar: "Education",
       icon: "🎓",
-      backgroundImage: "/images/workingspace.png",
+      backgroundImage: "/images/Homepage/about eraaxis.jpg",
       cta1: { text: "Explore Programs", link: "/programs" },
       cta2: { text: "Enroll Now", link: "/enroll" }
     },
     {
-      title: "Circular Manufacturing.\nSustainable Future.",
-      description: "Transforming e-waste into opportunity through circular fabrication and upcycling for social good.",
+      title: "CIRCULAR MANUFACTURING. SUSTAINABLE FUTURE.",
+      description: "Transforming e-waste into opportunity through circular fabrication and upcycling for social good. Building sustainable manufacturing solutions.",
       pillar: "Manufacturing",
       icon: "🏭",
       backgroundImage: "/images/manufacturing.png",
@@ -23,8 +23,8 @@ const Hero = () => {
       cta2: { text: "Partner With Us", link: "/partner" }
     },
     {
-      title: "Open Source Software.\nLocal Innovation.",
-      description: "Building open-source tools that empower communities to create their own technological solutions.",
+      title: "OPEN SOURCE SOFTWARE. LOCAL INNOVATION.",
+      description: "Building open-source tools that empower communities to create their own technological solutions. Driving digital transformation through innovation.",
       pillar: "Software",
       icon: "💻",
       backgroundImage: "/images/software.png",
@@ -32,8 +32,8 @@ const Hero = () => {
       cta2: { text: "Contribute", link: "/contribute" }
     },
     {
-      title: "Community Makerspaces.\nCollaborative Learning.",
-      description: "Creating accessible spaces where innovators gather to research, experiment, and build together.",
+      title: "COMMUNITY MAKERSPACES. COLLABORATIVE LEARNING.",
+      description: "Creating accessible spaces where innovators gather to research, experiment, and build together. Fostering collaborative innovation and learning.",
       pillar: "Open Labs",
       icon: "🔬",
       backgroundImage: "/images/workingspace.png",
@@ -51,20 +51,25 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
+
   return (
     <section className="relative w-full text-white overflow-hidden" style={{ height: 'calc(100vh - 88px)' }}>
-      {/* Background Image with transition */}
-      <div 
-        key={currentSlide}
-        className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out"
-        style={{
-          backgroundImage: `url(${slides[currentSlide].backgroundImage})`,
-          backgroundColor: '#39366F'
-        }}
-      >
-        {/* Brand Color Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#39366F]/70 via-[#2a2850]/50 to-transparent"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Background Image with modern approach */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img 
+          key={currentSlide}
+          src={slides[currentSlide].backgroundImage}
+          alt={slides[currentSlide].pillar}
+          className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out"
+          style={{
+            objectPosition: 'center center',
+            filter: 'brightness(1.2) contrast(1.1)'
+          }}
+          loading="lazy"
+        />
+        {/* Professional overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#39366F]/40 via-[#39366F]/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent"></div>
       </div>
 
       {/* Content with animations */}
@@ -72,34 +77,17 @@ const Hero = () => {
         <div className="max-w-3xl" key={currentSlide}>
           {/* Main Headline */}
           <h1 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-5 animate-fade-in-up"
-            style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.3)' }}
+            className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 animate-fade-in-up tracking-tight text-white"
+            style={{ textShadow: '3px 3px 12px rgba(0,0,0,0.5)' }}
           >
-            {slides[currentSlide].title.split('\n').map((line, index) => (
-              <React.Fragment key={index}>
-                {index === 0 && line.includes('Innovation') ? (
-                  <>
-                    {line.split(' ').map((word, wordIndex) => 
-                      word === 'Innovation.' ? (
-                        <span key={wordIndex} className="text-[#5B9BD5]">{word}</span>
-                      ) : (
-                        <span key={wordIndex}>{word} </span>
-                      )
-                    )}
-                  </>
-                ) : (
-                  line
-                )}
-                {index < slides[currentSlide].title.split('\n').length - 1 && <br />}
-              </React.Fragment>
-            ))}
+            {slides[currentSlide].title}
           </h1>
           
           {/* Description */}
           <p 
-            className="text-base md:text-lg text-gray-100 mb-8 leading-relaxed max-w-2xl animate-fade-in-up"
+            className="text-lg md:text-xl font-medium text-white mb-10 leading-relaxed max-w-2xl animate-fade-in-up"
             style={{ 
-              textShadow: '1px 1px 4px rgba(0,0,0,0.4)',
+              textShadow: '2px 2px 8px rgba(0,0,0,0.6)',
               animationDelay: '0.1s' 
             }}
           >
@@ -107,23 +95,23 @@ const Hero = () => {
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-row gap-3 md:gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <a 
               href={slides[currentSlide].cta1.link}
-              className="group bg-[#39366F] hover:bg-[#2a2850] text-white px-4 md:px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-1 md:gap-2 text-sm md:text-base flex-1 md:flex-none"
+              className="group bg-[#39366F] hover:bg-[#2a2850] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
               {slides[currentSlide].cta1.text}
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
             <a 
               href={slides[currentSlide].cta2.link}
-              className="group bg-white/20 backdrop-blur-sm border-2 border-[#39366F] hover:bg-white hover:text-[#39366F] text-white px-4 md:px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-1 md:gap-2 text-sm md:text-base flex-1 md:flex-none"
+              className="group bg-transparent border-3 border-white hover:bg-white hover:text-[#39366F] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
               {slides[currentSlide].cta2.text}
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
           </div>
