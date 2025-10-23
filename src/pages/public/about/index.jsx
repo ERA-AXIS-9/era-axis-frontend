@@ -16,7 +16,7 @@ const AboutPage = () => {
       <OurStory />
       <MissionVision />
       <OurDifference />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <AwardsRecognition />
       <PartnerCTA />
     </div>

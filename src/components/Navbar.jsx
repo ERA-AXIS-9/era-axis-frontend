@@ -19,9 +19,8 @@ const Navbar = () => {
     ],
     getInvolved: [
       { name: 'Donations', path: '/donate' },
-      { name: 'E-Waste', path: '/e-waste' },
-      { name: 'Partnerships', path: '/partner' },
-      { name: 'Payments', path: '/payments' }
+      { name: 'E-Waste', path: '/donate/ewaste' },
+      { name: 'Partnerships', path: '/partner' }
     ],
     blogMedia: [
       { name: 'Blog', path: '/blog' },
@@ -73,6 +72,8 @@ const Navbar = () => {
                           <NavLink
                             key={subItem.name}
                             to={subItem.path}
+                            target={subItem.name === 'Software' ? '_blank' : undefined}
+                            rel={subItem.name === 'Software' ? 'noopener noreferrer' : undefined}
                             onClick={() => setOpenDropdown(null)}
                             className="block px-4 py-2 text-base text-gray-700 hover:bg-purple-50 hover:text-[#39366F] transition-colors"
                           >
@@ -158,6 +159,8 @@ const Navbar = () => {
                         <NavLink
                           key={subItem.name}
                           to={subItem.path}
+                          target={subItem.name === 'Software' ? '_blank' : undefined}
+                          rel={subItem.name === 'Software' ? 'noopener noreferrer' : undefined}
                           onClick={() => {
                             setIsOpen(false);
                             setMobileDropdown(null);
