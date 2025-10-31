@@ -1,75 +1,67 @@
 import React from 'react';
-import { Quote } from 'lucide-react';
+import { Image } from 'lucide-react';
 
 const stories = [
   {
     name: 'Kwame',
     age: 18,
-    story: 'ERA AXIS made me believe I could build something, even without formal education.',
-    achievement: 'Built a solar-powered lamp from e-waste',
-    image: '/images/student-placeholder.jpg'
+    story: '"I built community radios and learned to troubleshoot devices."',
+    image: '/images/manufacturing.png'
   },
   {
     name: 'Aisha',
     age: 22,
-    story: 'I used to see waste. Now I see opportunity.',
-    achievement: 'Created recycling bins for her community',
-    image: '/images/student-placeholder.jpg'
+    story: '"Building a water sensor with my team changed how I see technology."',
+    image: '/images/software.png'
   },
   {
     name: 'Joseph',
     age: 19,
-    story: 'After training, I was invited to join the Manufacturing team. Now I\'m paid to build and fix devices for clients.',
-    achievement: 'Now works in ERA AXIS Manufacturing division',
-    image: '/images/student-placeholder.jpg'
+    story: '"Learning in my language made coding feel accessible."',
+    image: '/images/workingspace.png'
   }
 ];
 
 const StudentStories = () => {
   return (
-    <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-6 sm:py-8 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
-            Student Success Stories
-          </h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+          Student Success Stories
+        </h2>
 
         {/* Stories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stories.map((student, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+              className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-[#39366F]/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
             >
-              {/* Quote Icon */}
-              <div className="mb-4">
-                <Quote size={32} className="text-[#39366F]/20" />
-              </div>
+              {/* Gradient background on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#39366F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Image */}
+                <div className="mb-4 bg-gray-100 rounded-lg h-40 overflow-hidden border border-gray-200 group-hover:border-[#39366F]/20 transition-colors duration-300">
+                  <img 
+                    src={student.image} 
+                    alt={`${student.name}'s story`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
 
-              {/* Story */}
-              <p className="text-gray-700 text-base leading-relaxed mb-4 italic">
-                "{student.story}"
-              </p>
-
-              {/* Achievement Badge */}
-              <div className="mb-4 p-3 bg-[#39366F]/5 rounded-lg border border-[#39366F]/10">
-                <p className="text-sm text-[#39366F] font-medium">
-                  {student.achievement}
+                {/* Story Text */}
+                <p className="text-gray-700 text-sm leading-relaxed mb-3">
+                  {student.story}
                 </p>
-              </div>
 
-              {/* Student Info */}
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#39366F] to-[#5B9BD5] flex items-center justify-center text-white font-bold text-lg">
-                  {student.name.charAt(0)}
-                </div>
-                <div>
-                  <p className="font-semibold text-black">{student.name}</p>
-                  <p className="text-sm text-gray-500">{student.age} years old</p>
-                </div>
+                {/* Student Name */}
+                <p className="text-xs text-gray-500 font-medium group-hover:text-[#39366F] transition-colors duration-300">
+                  — {student.name}, {student.age}
+                </p>
               </div>
             </div>
           ))}

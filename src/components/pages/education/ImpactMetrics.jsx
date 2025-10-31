@@ -1,67 +1,77 @@
 import React from 'react';
-import { Users, Award, Lightbulb } from 'lucide-react';
+import { Users, Lightbulb, Award } from 'lucide-react';
 
 const metrics = [
   {
     icon: Users,
-    value: '1,500+',
+    value: '1,200+',
     label: 'Learners trained',
     color: '#39366F'
   },
   {
-    icon: Award,
+    icon: Lightbulb,
     value: '85',
-    label: 'Completion rate',
+    label: 'Community solutions',
     color: '#5B9BD5'
   },
   {
-    icon: Lightbulb,
-    value: '52',
-    label: 'Community solutions built',
+    icon: Award,
+    value: '12',
+    label: 'Awards & recognition',
     color: '#2a2850'
   }
 ];
 
 const ImpactMetrics = () => {
   return (
-    <section className="py-12 sm:py-16 bg-white">
+    <section className="py-6 sm:py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
-            Impact Metrics
-          </h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+          Impact Metrics
+        </h2>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {metrics.map((metric, index) => {
             const IconComponent = metric.icon;
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 hover:border-gray-300 group text-center"
+                className="group relative bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
-                {/* Icon */}
-                <div className="flex justify-center mb-4">
-                  <div
-                    className="w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: `${metric.color}15`, border: `2px solid ${metric.color}30` }}
+                {/* Gradient background on hover */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300"
+                  style={{ background: `linear-gradient(135deg, ${metric.color}20, ${metric.color}10)` }}
+                ></div>
+                
+                {/* Content - Horizontal Layout */}
+                <div className="flex items-center space-x-3 relative z-10">
+                  {/* Icon */}
+                  <div 
+                    className="w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300 bg-gray-50 group-hover:bg-gray-100 flex-shrink-0"
                   >
-                    <IconComponent size={32} style={{ color: metric.color }} />
+                    <IconComponent 
+                      size={24}
+                      style={{ color: metric.color }}
+                    />
+                  </div>
+                  
+                  {/* Number and Label */}
+                  <div className="flex-1 min-w-0">
+                    <div 
+                      className="text-2xl sm:text-3xl font-extrabold leading-tight"
+                      style={{ color: metric.color }}
+                    >
+                      {metric.value}
+                    </div>
+                    <div className="text-sm font-semibold text-gray-900 mt-0.5 leading-tight">
+                      {metric.label}
+                    </div>
                   </div>
                 </div>
-
-                {/* Value */}
-                <div className="text-4xl sm:text-5xl font-bold mb-2 group-hover:text-[#39366F] transition-colors" style={{ color: metric.color }}>
-                  {metric.value}
-                </div>
-
-                {/* Label */}
-                <p className="text-gray-600 font-medium">
-                  {metric.label}
-                </p>
               </div>
             );
           })}

@@ -27,52 +27,41 @@ const steps = [
 
 const HowEnrollmentWorks = () => {
   return (
-    <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-6 sm:py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
-            How Enrollment Works
-          </h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+          How Enrollment Works
+        </h2>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, index) => {
-            const IconComponent = step.icon;
-            return (
-              <div
-                key={index}
-                className="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
-              >
-                {/* Step Number Badge */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg" style={{ backgroundColor: step.color, color: 'white' }}>
+        {/* Steps Grid - Horizontal Compact Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="bg-gray-50 rounded-lg p-4 border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all duration-300"
+            >
+              {/* Step Number */}
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-700 text-sm flex-shrink-0">
                   {step.number}
                 </div>
+                
+                <div className="flex-1">
+                  {/* Title */}
+                  <h3 className="text-base font-bold text-gray-900 mb-1">
+                    {step.title}
+                  </h3>
 
-                {/* Icon */}
-                <div className="mb-4 mt-4">
-                  <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: `${step.color}15`, border: `2px solid ${step.color}30` }}
-                  >
-                    <IconComponent size={28} style={{ color: step.color }} />
-                  </div>
+                  {/* Description */}
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#39366F] transition-colors">
-                  {step.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {step.description}
-                </p>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
