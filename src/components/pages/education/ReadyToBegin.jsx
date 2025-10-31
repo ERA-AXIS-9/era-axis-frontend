@@ -3,39 +3,42 @@ import { ChevronRight } from 'lucide-react';
 
 const ReadyToBegin = () => {
   return (
-    <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-6 sm:py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* CTA Container */}
-        <div className="bg-gradient-to-r from-[#39366F] to-[#2a2850] rounded-2xl p-8 sm:p-12 text-center shadow-xl">
-          
-          {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Begin?
-          </h2>
-
-          {/* Subtext */}
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of learners transforming their futures through accessible STEM education.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#program-options"
-              className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-3.5 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
-            >
-              Enroll in a Program
-              <ChevronRight size={18} />
-            </a>
+        {/* CTA Container - White Card */}
+        <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             
-            <a
-              href="/partner"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#39366F] px-8 py-3.5 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 inline-flex items-center justify-center gap-2"
-            >
-              Partner With Us
-              <ChevronRight size={18} />
-            </a>
+            {/* Left Side - Text Content */}
+            <div className="text-left flex-1">
+              {/* Heading */}
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
+                Ready to Begin?
+              </h2>
+
+              {/* Subtext */}
+              <p className="text-sm sm:text-base text-gray-600">
+                Join thousands of learners transforming their futures through accessible STEM education.
+              </p>
+            </div>
+
+            {/* Right Side - CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <a
+                href="#program-options"
+                className="bg-[#39366F] hover:bg-[#2a2850] text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-sm hover:shadow-md inline-flex items-center justify-center gap-2 whitespace-nowrap"
+              >
+                Enroll in a Program
+              </a>
+              
+              <a
+                href="/partner"
+                className="border-2 border-gray-300 text-gray-700 hover:border-[#39366F] hover:text-[#39366F] hover:bg-gray-50 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-sm inline-flex items-center justify-center gap-2 whitespace-nowrap"
+              >
+                Partner With Us
+              </a>
+            </div>
           </div>
         </div>
       </div>

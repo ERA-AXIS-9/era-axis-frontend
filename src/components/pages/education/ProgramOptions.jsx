@@ -42,7 +42,7 @@ const programs = [
 
 const ProgramOptions = () => {
   return (
-    <section id="program-options" className="py-12 sm:py-16 bg-white">
+    <section id="program-options" className="py-6 sm:py-8 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -59,10 +59,15 @@ const ProgramOptions = () => {
             return (
               <div
                 key={index}
-                className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 hover:border-gray-300 group flex flex-col"
+                className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-[#39366F]/30 flex flex-col overflow-hidden"
               >
-                {/* Icon & Title */}
-                <div className="mb-4">
+                {/* Gradient background on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#39366F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 flex flex-col flex-grow">
+                  {/* Icon & Title */}
+                  <div className="mb-4">
                   <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
                     style={{ backgroundColor: `${program.color}15`, border: `2px solid ${program.color}30` }}
@@ -79,26 +84,27 @@ const ProgramOptions = () => {
                     <Clock size={14} />
                     {program.duration}
                   </div>
+                  </div>
+
+                  {/* Features List */}
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {program.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#39366F] mt-1.5 flex-shrink-0"></div>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Enroll Button */}
+                  <a
+                    href={program.link}
+                    className="w-full bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2 group/btn"
+                  >
+                    Enroll Now
+                    <ChevronRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </a>
                 </div>
-
-                {/* Features List */}
-                <ul className="space-y-2 mb-6 flex-grow">
-                  {program.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#39366F] mt-1.5 flex-shrink-0"></div>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Enroll Button */}
-                <a
-                  href={program.link}
-                  className="w-full bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2 group/btn"
-                >
-                  Enroll Now
-                  <ChevronRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                </a>
               </div>
             );
           })}

@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 
 const EnrollmentHero = () => {
   return (
-    <section className="pt-12 sm:pt-16 pb-8 sm:pb-12 bg-gradient-to-b from-white to-gray-50">
+    <section className="pt-8 pb-6 sm:pt-12 sm:pb-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
           
