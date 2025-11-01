@@ -21,11 +21,11 @@ const beneficiaries = [
 
 const WhoBenefits = () => {
   return (
-    <section className="py-6 sm:py-8 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+        <h2 className="text-3xl font-bold text-gray-900 mb-10">
           Who Benefits
         </h2>
 
@@ -34,7 +34,7 @@ const WhoBenefits = () => {
           {beneficiaries.map((item, index) => (
             <div
               key={index}
-              className="group relative bg-white border border-gray-200 rounded-lg p-6 hover:border-[#39366F]/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              className="group relative bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-[#39366F] hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
               {/* Gradient background on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#39366F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -42,12 +42,12 @@ const WhoBenefits = () => {
               {/* Content */}
               <div className="relative z-10">
                 {/* Title */}
-                <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-[#39366F] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#39366F] transition-colors duration-300">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
               </div>
