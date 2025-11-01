@@ -6,9 +6,7 @@ const EducationNavbar = () => {
 
   const educationLinks = [
     { name: 'Home', path: '/services/education' },
-    { name: 'Programs', path: '/services/education/enroll' },
     { name: 'Learning Modes', path: '/services/education/learning-mode' },
-    { name: 'Enrollment', path: '/services/education/enroll' },
     { name: 'Contact', path: '/contact', state: { from: 'education' } }
   ];
 

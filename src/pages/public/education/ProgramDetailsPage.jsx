@@ -1,25 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { Clock, Users, Award, BookOpen, CheckCircle, ChevronRight, Star } from 'lucide-react';
+import { Clock, Users, Award, BookOpen, CheckCircle, ChevronRight, Star, Calendar, GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
 import EducationNavbar from '../../../components/EducationNavbar';
 import Breadcrumb from '../../../components/pages/education/Breadcrumb';
 
 const programsData = {
   'junior-stem': {
     title: 'Junior STEM Basics',
-    subtitle: 'Foundation in Science, Technology, Engineering & Math',
+    subtitle: 'STEM for All - Innovation Without Barriers',
     duration: '3 months',
     price: 150,
     level: 'Beginner',
     students: '500+ enrolled',
     rating: 4.8,
-    description: 'An introductory program designed for young learners to explore the exciting world of STEM through hands-on projects and interactive learning.',
+    description: 'Inclusive STEM education accessible to everyone - in school, out-of-school, literate or illiterate. Learn through hands-on projects using e-waste and local resources.',
     overview: [
-      'Perfect for students aged 10-15 with little to no prior experience',
-      'Learn fundamental concepts in science, technology, engineering, and mathematics',
-      'Build real projects and experiments',
-      'Develop critical thinking and problem-solving skills',
-      'Get certified upon completion'
+      'Hands-on projects using recycled materials and e-waste',
+      'Local language support - breaking literacy barriers',
+      'Beginner-friendly for all backgrounds',
+      'Project-based learning - every lesson = working solution',
+      'Access to ERA AXIS Open Labs and mentorship',
+      'Certificate upon completion'
     ],
     curriculum: [
       {
@@ -64,35 +65,29 @@ const programsData = {
     },
     testimonials: [
       {
-        name: 'Ama Osei',
-        role: 'Parent',
-        text: 'My daughter loved this program! She went from being scared of science to building her own projects.',
-        rating: 5
-      },
-      {
-        name: 'Kwame Asante',
-        role: 'Student',
-        text: 'I learned so much and made new friends. The projects were really fun!',
+        name: 'Ama',
+        role: 'Junior STEM Basics',
+        text: 'I built my first circuit with recycled parts and it actually worked!',
         rating: 5
       }
     ]
   },
   'maker-hardware': {
     title: 'Maker: Hardware & Repair',
-    subtitle: 'Master Electronics, Fabrication & Repair Skills',
+    subtitle: 'From Building to Maintaining What Matters',
     duration: '6 months',
     price: 450,
     level: 'Intermediate',
     students: '300+ enrolled',
     rating: 4.9,
-    description: 'Comprehensive training in electronics, hardware repair, and fabrication. Learn to build, fix, and innovate with hands-on lab access.',
+    description: 'Master electronics, fabrication, and repair skills. Build devices from e-waste, troubleshoot systems, and access professional tools in our Open Labs.',
     overview: [
-      'Designed for ages 16+ with basic technical interest',
-      'Hands-on training with real equipment and tools',
-      'Learn electronics, soldering, and repair techniques',
-      'Access to ERA AXIS Open Labs and equipment',
-      'Build a portfolio of projects',
-      'Industry-recognized certification'
+      'Electronics training - circuits, soldering, and repair',
+      'Fabrication skills - 3D printing, laser cutting, prototyping',
+      'Lab access included - full access to ERA AXIS Open Labs',
+      'E-waste transformation into functional devices',
+      'Troubleshooting and maintenance of electronic systems',
+      'Build portfolio of real-world projects'
     ],
     curriculum: [
       {
@@ -141,35 +136,29 @@ const programsData = {
     },
     testimonials: [
       {
-        name: 'Emmanuel Mensah',
-        role: 'Graduate',
-        text: 'I now run my own phone repair shop thanks to this program. The skills are invaluable!',
-        rating: 5
-      },
-      {
-        name: 'Sarah Johnson',
-        role: 'Current Student',
-        text: 'The hands-on lab access is amazing. I\'m learning so much every week!',
+        name: 'Kofi',
+        role: 'Maker: Hardware & Repair',
+        text: 'The mentors are patient and the tools are amazing. I\'m now repairing devices in my community.',
         rating: 5
       }
     ]
   },
   'coder-software': {
     title: 'Coder: Software Foundations',
-    subtitle: 'Build Apps, Websites & Digital Solutions',
+    subtitle: 'Digital Solutions for Work, Home, and Innovation',
     duration: '4 months',
     price: 300,
     level: 'Beginner to Intermediate',
     students: '400+ enrolled',
     rating: 4.7,
-    description: 'Learn to code from scratch and build real-world applications. Master web development, app creation, and software fundamentals.',
+    description: 'Learn to code from scratch and build practical applications. From mobile apps to smart home systems, create software that solves real problems.',
     overview: [
-      'Perfect for ages 14+ with no coding experience',
-      'Learn popular programming languages',
-      'Build real websites and applications',
-      'Work on real-world projects',
-      'Portfolio development included',
-      'Job-ready skills certification'
+      'App development - build mobile and web applications',
+      'Web design basics - HTML, CSS, JavaScript fundamentals',
+      'Real-world projects that solve community problems',
+      'IoT and smart home application development',
+      'Portfolio of working applications',
+      'Practical, affordable, and impactful solutions'
     ],
     curriculum: [
       {
@@ -218,15 +207,9 @@ const programsData = {
     },
     testimonials: [
       {
-        name: 'Kofi Mensah',
-        role: 'Graduate',
-        text: 'I built my first website in week 3! Now I\'m freelancing and making money from coding.',
-        rating: 5
-      },
-      {
-        name: 'Abena Osei',
-        role: 'Current Student',
-        text: 'The instructors are patient and explain everything clearly. I love this program!',
+        name: 'Fatima',
+        role: 'Coder: Software Foundations',
+        text: 'I never thought I could code, but now I\'m building apps to solve real problems.',
         rating: 5
       }
     ]
@@ -236,8 +219,13 @@ const programsData = {
 const ProgramDetailsPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const [expandedModule, setExpandedModule] = useState(null);
   const programId = searchParams.get('program') || 'junior-stem';
   const program = programsData[programId] || programsData['junior-stem'];
+
+  const toggleModule = (index) => {
+    setExpandedModule(expandedModule === index ? null : index);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -245,157 +233,174 @@ const ProgramDetailsPage = () => {
       <Breadcrumb />
       
       {/* Hero Section */}
-      <section className="pt-12 pb-8 bg-gradient-to-br from-[#39366F] to-[#2a2850] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-            <div className="lg:col-span-2">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                {program.title}
-              </h1>
-              <p className="text-xl text-white/90 mb-6">
-                {program.subtitle}
-              </p>
-              <p className="text-lg text-white/80 mb-6">
-                {program.description}
-              </p>
+      <section className="relative py-20 bg-[#39366F] text-white overflow-hidden">
+        {/* Background Image - Right Side */}
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-70">
+          <img 
+            src="/images/workingspace.png" 
+            alt="Learning environment"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay text on image */}
+          <div className="absolute bottom-8 right-8 bg-[#39366F]/70 backdrop-blur-md border border-white/20 px-4 py-2 rounded shadow-lg">
+            <p className="text-sm text-white font-semibold">Learn modern technologies and build real projects with hands-on training</p>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-lg pr-12">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+              {program.title}
+            </h1>
+            <p className="text-base text-white/90 mb-6 leading-relaxed">
+              {program.subtitle}. {program.description}
+            </p>
+            
+            {/* Stats Row */}
+            <div className="flex flex-wrap gap-4 mb-6">
+              <div className="flex items-center gap-2">
+                <Clock size={18} />
+                <span className="text-sm">{program.duration}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users size={18} />
+                <span className="text-sm">Online & Physical</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award size={18} />
+                <span className="text-sm">Certificate</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users size={18} />
+                <span className="text-sm">Expert Support</span>
+              </div>
+            </div>
+
+            {/* CTA Row with Badge and Button */}
+            <div className="flex items-center gap-4">
+              {/* Next Cohort Badge - Glassmorphism */}
+              <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded shadow-lg whitespace-nowrap">
+                <Calendar size={18} />
+                <span className="text-sm font-medium"><strong>Next Cohort:</strong> January 10, 2026</span>
+              </span>
               
-              {/* Quick Stats */}
-              <div className="flex flex-wrap gap-4 mb-6">
-                <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
-                  <Clock size={20} />
-                  <span>{program.duration}</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
-                  <Award size={20} />
-                  <span>{program.level}</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
-                  <Users size={20} />
-                  <span>{program.students}</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
-                  <Star size={20} className="fill-yellow-400 text-yellow-400" />
-                  <span>{program.rating}/5</span>
-                </div>
-              </div>
-
               <button
                 onClick={() => navigate(`/services/education/learning-mode?program=${programId}`)}
-                className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center gap-2"
+                className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-3 rounded font-semibold transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap"
               >
-                Enroll in This Program
-                <ChevronRight size={20} />
+                Enroll Now - GHS {program.price}
               </button>
-            </div>
-
-            {/* Price Card */}
-            <div className="bg-white text-black rounded-xl p-6 shadow-xl">
-              <div className="text-center mb-4">
-                <p className="text-gray-600 text-sm mb-2">Program Fee (Online)</p>
-                <p className="text-4xl font-bold text-[#39366F]">${program.price}</p>
-                <p className="text-sm text-gray-500 mt-1">One-time payment</p>
-              </div>
-              <div className="space-y-2 mb-4 text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span>Full course access</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span>Certificate included</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span>Lifetime materials access</span>
-                </div>
-              </div>
-              <button
-                onClick={() => navigate(`/services/education/learning-mode?program=${programId}`)}
-                className="w-full bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
-              >
-                Enroll Now
-              </button>
-              <p className="text-xs text-center text-gray-500 mt-3">
-                Physical classroom: Free registration
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Program Overview */}
+      {/* What You'll Learn */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-black mb-6">Program Overview</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">What You'll Learn</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {program.overview.map((item, index) => (
-              <div key={index} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-                <CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700">{item}</p>
+              <div key={index} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-[#39366F] transition-all">
+                <CheckCircle size={20} className="text-[#39366F] flex-shrink-0 mt-0.5" />
+                <p className="text-gray-700 text-sm">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Learning Outcomes */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-black mb-6">Learning Outcomes</h2>
-          <p className="text-gray-600 mb-6">By the end of this program, you will be able to:</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {program.outcomes.map((outcome, index) => (
-              <div key={index} className="flex items-start gap-3 p-4 bg-green-50 border border-green-200 rounded-lg">
-                <Award size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700 font-medium">{outcome}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
+      {/* Course Curriculum */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-black mb-6">Student Success Stories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {program.testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Course Curriculum</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {program.curriculum.map((module, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition-all">
+                <div className="flex items-start gap-3 mb-3">
+                  <BookOpen size={20} className="text-[#39366F] flex-shrink-0 mt-0.5" />
+                  <h3 className="text-base font-bold text-gray-900">{module.module}</h3>
+                </div>
+                <ul className="space-y-1.5 ml-8">
+                  {module.topics.map((topic, topicIndex) => (
+                    <li key={topicIndex} className="flex items-start gap-2 text-gray-700 text-sm">
+                      <span className="text-[#39366F]">•</span>
+                      <span>{topic}</span>
+                    </li>
                   ))}
-                </div>
-                <p className="text-gray-700 italic mb-4">"{testimonial.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#39366F] to-[#5B9BD5] rounded-full flex items-center justify-center text-white font-bold">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-black">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
-                  </div>
-                </div>
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Real-World Projects */}
+      <section 
+        className="relative py-20 overflow-hidden bg-fixed bg-center bg-cover"
+        style={{
+          backgroundImage: 'url(/images/workingspace.png)',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/75"></div>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-3xl font-bold text-white mb-12">Real-World Projects</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {program.outcomes.slice(0, 3).map((outcome, index) => {
+              const projectTitles = [
+                'E-Commerce Platform',
+                'Social Media Dashboard',
+                'Task Management System'
+              ];
+              
+              const techStacks = [
+                ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+                ['React', 'D3.js', 'Express', 'WebSocket'],
+                ['React', 'Redux', 'Node.js', 'MongoDB']
+              ];
+              
+              return (
+                <div key={index} className="bg-white/95 backdrop-blur-md rounded-2xl p-8 shadow-sm border border-white/20 hover:shadow-xl transition-all">
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{projectTitles[index]}</h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-700 text-base mb-6 leading-relaxed">{outcome}</p>
+                  
+                  {/* Tech Stack Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {techStacks[index].map((tech, techIndex) => (
+                      <span key={techIndex} className="px-3 py-1 bg-[#39366F] text-white text-xs rounded font-medium">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+
+
       {/* Final CTA */}
-      <section className="py-12 bg-gradient-to-r from-[#39366F] to-[#2a2850] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Learning?</h2>
-          <p className="text-xl text-white/90 mb-8">
-            Join {program.students.split('+')[0]}+ students already enrolled in this program
-          </p>
-          <button
-            onClick={() => navigate(`/services/education/learning-mode?program=${programId}`)}
-            className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center gap-2"
-          >
-            Enroll in {program.title}
-            <ChevronRight size={20} />
-          </button>
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex items-center justify-between">
+            <h2 className="text-2xl font-bold text-gray-900">Ready to Begin Your Journey?</h2>
+            <button
+              onClick={() => navigate(`/services/education/learning-mode?program=${programId}`)}
+              className="bg-[#39366F] hover:bg-[#2a2850] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 whitespace-nowrap"
+            >
+              Enroll Now
+            </button>
+          </div>
         </div>
       </section>
     </div>

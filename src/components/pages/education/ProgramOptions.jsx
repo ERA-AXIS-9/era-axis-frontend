@@ -1,55 +1,46 @@
 import React from 'react';
-import { BookOpen, Wrench, Code, ChevronRight, Clock, Users } from 'lucide-react';
+import { GraduationCap, Cpu, Terminal, ChevronRight } from 'lucide-react';
 
 const programs = [
   {
-    icon: BookOpen,
+    icon: GraduationCap,
     title: 'Junior STEM Basics',
-    duration: '3 months',
-    features: [
-      'Hands-on projects',
-      'Local language support',
-      'Beginner-friendly'
-    ],
-    color: '#39366F',
+    description: 'STEM for All - Innovation Without Barriers. Learn through hands-on projects using e-waste and local resources.',
+    image: '/images/workingspace.png',
+    price: 150,
     link: '/services/education/program-details?program=junior-stem'
   },
   {
-    icon: Wrench,
+    icon: Cpu,
     title: 'Maker: Hardware & Repair',
-    duration: '6 months',
-    features: [
-      'Electronics training',
-      'Fabrication skills',
-      'Lab access included'
-    ],
-    color: '#5B9BD5',
+    description: 'Master electronics, fabrication, and repair skills. Build devices from e-waste and access professional tools.',
+    image: '/images/workingspace.png',
+    price: 450,
     link: '/services/education/program-details?program=maker-hardware'
   },
   {
-    icon: Code,
+    icon: Terminal,
     title: 'Coder: Software Foundations',
-    duration: '4 months',
-    features: [
-      'App development',
-      'Web design basics',
-      'Real-world projects'
-    ],
-    color: '#2a2850',
+    description: 'Learn to code from scratch and build practical applications. From mobile apps to smart home systems.',
+    image: '/images/workingspace.png',
+    price: 300,
     link: '/services/education/program-details?program=coder-software'
   }
 ];
 
 const ProgramOptions = () => {
   return (
-    <section id="program-options" className="py-6 sm:py-8 bg-gray-50">
+    <section id="program-options" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
-            Program Options
+        {/* Section Header - Left Aligned */}
+        <div className="mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+            Our Professional Courses
           </h2>
+          <p className="text-base text-gray-600 max-w-2xl">
+            Start your tech journey with our specialized programs
+          </p>
         </div>
 
         {/* Programs Grid */}
@@ -59,51 +50,45 @@ const ProgramOptions = () => {
             return (
               <div
                 key={index}
-                className="group relative bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-[#39366F]/30 flex flex-col overflow-hidden"
+                className="group relative bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200"
               >
-                {/* Gradient background on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#39366F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={program.image} 
+                    alt={program.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+
                 {/* Content */}
-                <div className="relative z-10 flex flex-col flex-grow">
-                  {/* Icon & Title */}
-                  <div className="mb-4">
-                  <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: `${program.color}15`, border: `2px solid ${program.color}30` }}
-                  >
-                    <IconComponent size={28} style={{ color: program.color }} />
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#39366F] transition-colors">
-                    {program.title}
-                  </h3>
-
-                  {/* Duration Badge */}
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-xs font-medium mb-4">
-                    <Clock size={14} />
-                    {program.duration}
-                  </div>
+                <div className="p-6">
+                  {/* Icon and Title */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <IconComponent size={24} className="text-[#39366F]" />
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {program.title}
+                    </h3>
                   </div>
 
-                  {/* Features List */}
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    {program.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#39366F] mt-1.5 flex-shrink-0"></div>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                    {program.description}
+                  </p>
 
-                  {/* Enroll Button */}
-                  <a
-                    href={program.link}
-                    className="w-full bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2 group/btn"
-                  >
-                    Enroll Now
-                    <ChevronRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </a>
+                  {/* Price and Button */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-[#39366F]">
+                      GHS {program.price}
+                    </span>
+                    <a
+                      href={program.link}
+                      className="bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2 text-sm"
+                    >
+                      Learn More
+                    </a>
+                  </div>
                 </div>
               </div>
             );

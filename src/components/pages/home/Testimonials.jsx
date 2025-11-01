@@ -4,22 +4,25 @@ import { User } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Placeholder for student story about career transformation through ERA AXIS.",
-      author: "Student Name",
-      role: "Cohort 2024",
-      type: "student"
+      quote: "I built my first circuit with recycled parts and it actually worked!",
+      author: "Ama",
+      role: "Junior STEM Basics",
+      type: "student",
+      avatar: "A"
     },
     {
-      quote: "Placeholder for partner quote about community impact and collaboration.",
-      author: "Partner Org",
-      role: "Program Lead",
-      type: "partner"
+      quote: "The mentors are patient and the tools are amazing. I'm now repairing devices in my community.",
+      author: "Kofi",
+      role: "Maker: Hardware & Repair",
+      type: "student",
+      avatar: "K"
     },
     {
-      quote: "Placeholder for mentor feedback on open labs and projects.",
-      author: "Mentor",
-      role: "Volunteer",
-      type: "mentor"
+      quote: "I never thought I could code, but now I'm building apps to solve real problems.",
+      author: "Fatima",
+      role: "Coder: Software Foundations",
+      type: "student",
+      avatar: "F"
     }
   ];
 
@@ -49,15 +52,10 @@ const Testimonials = () => {
                 
                 {/* Author Info */}
                 <div className="flex items-center space-x-4">
-                  {/* Modern Avatar with Image */}
+                  {/* Avatar with Letter */}
                   <div className="relative">
-                    <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:scale-110 transition-transform duration-300 border-2 border-white">
-                      <img 
-                        src="/images/workingspace.png"
-                        alt={testimonial.author}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#39366F] to-[#5B9BD5] flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      {testimonial.avatar}
                     </div>
                     {/* Pulse ring */}
                     <div className="absolute inset-0 rounded-full bg-[#39366F] opacity-0 group-hover:opacity-20 group-hover:scale-150 transition-all duration-500"></div>

@@ -5,7 +5,6 @@ import EnrollmentHero from '../../../components/pages/education/EnrollmentHero';
 import ProgramOptions from '../../../components/pages/education/ProgramOptions';
 import HowEnrollmentWorks from '../../../components/pages/education/HowEnrollmentWorks';
 import WhatStudentsSay from '../../../components/pages/education/WhatStudentsSay';
-import ReadyToBegin from '../../../components/pages/education/ReadyToBegin';
 
 const EnrollmentPage = () => {
   return (
@@ -16,7 +15,6 @@ const EnrollmentPage = () => {
       <ProgramOptions />
       <HowEnrollmentWorks />
       <WhatStudentsSay />
-      <ReadyToBegin />
     </div>
   );
 };
