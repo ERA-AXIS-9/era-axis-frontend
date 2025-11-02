@@ -9,14 +9,14 @@ const programs = {
   'coder-software': { name: 'Coder: Software Foundations', duration: '4 months' }
 };
 
-const PhysicalConfirmationPage = () => {
+const InPersonConfirmationPage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const programId = searchParams.get('program') || 'junior-stem';
   const program = programs[programId] || programs['junior-stem'];
 
   const enrollmentDetails = {
-    referenceNumber: 'PHYS-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
+    referenceNumber: 'INP-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
     status: 'Pending Confirmation'
   };
 
@@ -25,13 +25,13 @@ const PhysicalConfirmationPage = () => {
       icon: Phone,
       title: 'Confirmation Call',
       description: 'We\'ll call you within 48 hours to verify your enrollment and discuss class schedules.',
-      color: '#39366F'
+      color: '#5B9BD5'
     },
     {
       icon: Mail,
       title: 'Email Confirmation',
       description: 'You\'ll receive an email with enrollment details and preparation instructions.',
-      color: '#5B9BD5'
+      color: '#39366F'
     },
     {
       icon: Calendar,
@@ -43,7 +43,7 @@ const PhysicalConfirmationPage = () => {
       icon: MapPin,
       title: 'Location Details',
       description: 'Receive directions and facility information for your first day.',
-      color: '#39366F'
+      color: '#5B9BD5'
     }
   ];
 
@@ -77,7 +77,7 @@ const PhysicalConfirmationPage = () => {
           </h1>
 
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Your enrollment for <span className="font-semibold text-[#39366F]">{program.name}</span> has been received.
+            Your enrollment for <span className="font-semibold text-[#5B9BD5]">{program.name}</span> has been received.
             We're excited to start this innovation journey with you.
           </p>
 
@@ -85,7 +85,7 @@ const PhysicalConfirmationPage = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
             <button
               onClick={() => navigate('/services/education')}
-              className="bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+              className="bg-[#5B9BD5] hover:bg-[#4a8bc2] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
             >
               Explore More Programs
               <ChevronRight size={18} />
@@ -93,7 +93,7 @@ const PhysicalConfirmationPage = () => {
             
             <button
               onClick={() => navigate('/contact')}
-              className="border-2 border-[#39366F] text-[#39366F] hover:bg-[#39366F] hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+              className="border-2 border-[#5B9BD5] text-[#5B9BD5] hover:bg-[#5B9BD5] hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 inline-flex items-center justify-center gap-2"
             >
               Contact Support
             </button>
@@ -197,7 +197,7 @@ const PhysicalConfirmationPage = () => {
                       <div key={index} className="flex gap-4">
                         {/* Step Number */}
                         <div className="flex-shrink-0">
-                          <div className="w-8 h-8 rounded-full bg-[#39366F] text-white flex items-center justify-center text-sm font-bold">
+                          <div className="w-8 h-8 rounded-full bg-[#5B9BD5] text-white flex items-center justify-center text-sm font-bold">
                             {index + 1}
                           </div>
                         </div>
@@ -233,7 +233,7 @@ const PhysicalConfirmationPage = () => {
                     </p>
                     <button
                       onClick={() => navigate('/contact')}
-                      className="w-full bg-[#39366F] hover:bg-[#2a2850] text-white px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg text-sm"
+                      className="w-full bg-[#5B9BD5] hover:bg-[#4a8bc2] text-white px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg text-sm"
                     >
                       Get Support
                     </button>
@@ -244,8 +244,21 @@ const PhysicalConfirmationPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Additional CSS for animation */}
+      <style jsx>{`
+        @keyframes ping {
+          75%, 100% {
+            transform: scale(1.5);
+            opacity: 0;
+          }
+        }
+        .animate-ping {
+          animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+      `}</style>
     </div>
   );
 };
 
-export default PhysicalConfirmationPage;
+export default InPersonConfirmationPage;

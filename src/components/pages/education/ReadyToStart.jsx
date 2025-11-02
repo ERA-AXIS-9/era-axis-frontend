@@ -26,7 +26,7 @@ const ReadyToStart = () => {
             {/* Right Side - CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <a
-                href="/services/education/enroll"
+                href="/services/education/learning-mode?program=junior-stem"
                 className="bg-[#39366F] hover:bg-[#2a2850] text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-sm hover:shadow-md inline-flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 Enroll Now

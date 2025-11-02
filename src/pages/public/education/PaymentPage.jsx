@@ -2,18 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { CreditCard, Shield, Lock, CheckCircle } from 'lucide-react';
 import Breadcrumb from '../../../components/pages/education/Breadcrumb';
-
-const programs = {
-  'junior-stem': { name: 'Junior STEM Basics', duration: '3 months', price: 250 },
-  'maker-hardware': { name: 'Maker: Hardware & Repair', duration: '6 months', price: 450 },
-  'coder-software': { name: 'Coder: Software Foundations', duration: '4 months', price: 350 }
-};
+import { EDUCATION_PROGRAMS } from '../../../config/educationPrograms';
 
 const PaymentPage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const programId = searchParams.get('program') || 'junior-stem';
-  const program = programs[programId] || programs['junior-stem'];
+  const program = EDUCATION_PROGRAMS[programId] || EDUCATION_PROGRAMS['junior-stem'];
 
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [formData, setFormData] = useState({
@@ -22,7 +17,10 @@ const PaymentPage = () => {
     phone: '',
     cardNumber: '',
     expiry: '',
-    cvv: ''
+    cvv: '',
+    mobileProvider: '',
+    mobileNumber: '',
+    transactionId: ''
   });
 
   const handleInputChange = (e) => {
@@ -122,7 +120,7 @@ const PaymentPage = () => {
                     <label className="block text-sm font-semibold text-gray-700 mb-3">
                       Payment Method
                     </label>
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-2 gap-3">
                       <button
                         type="button"
                         onClick={() => setPaymentMethod('card')}
@@ -133,24 +131,6 @@ const PaymentPage = () => {
                         }`}
                       >
                         Credit/Debit Card
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => navigate(`/services/education/mobile-money?program=${programId}`)}
-                        className="px-4 py-3 rounded-lg font-semibold text-sm transition-all bg-gray-100 text-gray-700 hover:bg-gray-200"
-                      >
-                        Mobile Money
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setPaymentMethod('paypal')}
-                        className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all ${
-                          paymentMethod === 'paypal'
-                            ? 'bg-[#39366F] text-white shadow-md'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                      >
-                        PayPal
                       </button>
                       <button
                         type="button"
@@ -216,6 +196,58 @@ const PaymentPage = () => {
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#39366F] focus:border-transparent outline-none transition-all"
                           />
                         </div>
+                      </div>
+                    </>
+                  )}
+
+                  {/* Mobile Money Details (shown only for mobile money payment) */}
+                  {paymentMethod === 'mobile' && (
+                    <>
+                      <div className="mb-4">
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Mobile Money Provider
+                        </label>
+                        <select
+                          name="mobileProvider"
+                          value={formData.mobileProvider}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#39366F] focus:border-transparent outline-none transition-all bg-white"
+                        >
+                          <option value="">Select Provider</option>
+                          <option value="mtn">MTN Mobile Money</option>
+                          <option value="vodafone">Vodafone Cash</option>
+                          <option value="airteltigo">AirtelTigo Money</option>
+                        </select>
+                      </div>
+
+                      <div className="mb-6">
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Mobile Money Number
+                        </label>
+                        <input
+                          type="tel"
+                          name="mobileNumber"
+                          value={formData.mobileNumber}
+                          onChange={handleInputChange}
+                          placeholder="+233 000 000 0000"
+                          maxLength="15"
+                          required
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#39366F] focus:border-transparent outline-none transition-all"
+                        />
+                        <p className="text-xs text-gray-500 mt-2">
+                          Make sure this number is registered for mobile money services
+                        </p>
+                      </div>
+
+                      <div className="mb-6 p-4 bg-blue-50 border border-blue-100 rounded-lg">
+                        <p className="text-sm text-blue-900">
+                          <span className="font-semibold">📱 How it works:</span><br />
+                          1. Click "Complete Payment" below<br />
+                          2. You'll receive a prompt on your phone<br />
+                          3. Enter your PIN to authorize the payment<br />
+                          4. You'll receive confirmation via SMS
+                        </p>
                       </div>
                     </>
                   )}
