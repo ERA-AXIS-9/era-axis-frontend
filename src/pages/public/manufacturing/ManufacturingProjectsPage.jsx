@@ -9,7 +9,7 @@ const projects = [
     category: 'Custom Fabrication',
     client: 'Green Energy Ghana',
     description: 'Designed and fabricated custom mounting systems for 500+ solar panels across rural communities.',
-    image: '/api/placeholder/600/400',
+    image: '/images/manufacturing.png',
     tags: ['Metal Fabrication', 'Solar', 'Custom Design'],
     results: '500+ panels installed, 30% cost reduction'
   },
@@ -19,7 +19,7 @@ const projects = [
     category: 'Repair & Maintenance',
     client: 'Accra Public Schools',
     description: 'Repaired and refurbished 200+ computers for 5 schools, extending device lifespan by 3+ years.',
-    image: '/api/placeholder/600/400',
+    image: '/images/manufacturing.png',
     tags: ['Electronics Repair', 'E-waste Recovery', 'Education'],
     results: '200+ devices restored, $50K saved'
   },
@@ -29,7 +29,7 @@ const projects = [
     category: 'Product Development',
     client: 'AgroTech Innovations',
     description: 'Developed prototype agricultural drone for crop monitoring and precision farming applications.',
-    image: '/api/placeholder/600/400',
+    image: '/images/manufacturing.png',
     tags: ['Prototyping', 'IoT', 'Agriculture'],
     results: 'Functional prototype, 3 patents pending'
   },
@@ -39,7 +39,7 @@ const projects = [
     category: 'Repair & Maintenance',
     client: 'Regional Hospital Network',
     description: 'Calibrated and repaired critical medical equipment, ensuring compliance with health standards.',
-    image: '/api/placeholder/600/400',
+    image: '/images/manufacturing.png',
     tags: ['Medical Devices', 'Calibration', 'Healthcare'],
     results: '50+ devices serviced, 100% uptime'
   },
@@ -49,7 +49,7 @@ const projects = [
     category: 'Custom Fabrication',
     client: 'Modern Office Solutions',
     description: 'Fabricated custom office furniture using sustainable materials and modern design principles.',
-    image: '/api/placeholder/600/400',
+    image: '/images/manufacturing.png',
     tags: ['Woodworking', 'Custom Design', 'Sustainable'],
     results: '100+ pieces delivered, 95% satisfaction'
   },
@@ -59,7 +59,7 @@ const projects = [
     category: 'Product Development',
     client: 'Clean Water Initiative',
     description: 'Designed affordable water filtration system for rural communities using locally-sourced materials.',
-    image: '/api/placeholder/600/400',
+    image: '/images/manufacturing.png',
     tags: ['Product Design', 'Social Impact', 'Engineering'],
     results: '1000+ units deployed, 5000+ beneficiaries'
   },
@@ -69,7 +69,7 @@ const projects = [
     category: 'Repair & Maintenance',
     client: 'Manufacturing Co.',
     description: 'Complete overhaul of industrial CNC machines, restoring to factory specifications.',
-    image: '/api/placeholder/600/400',
+    image: '/images/manufacturing.png',
     tags: ['Industrial Repair', 'CNC', 'Precision'],
     results: '3 machines restored, $200K saved'
   },
@@ -79,7 +79,7 @@ const projects = [
     category: 'Product Development',
     client: 'HomeTech Ghana',
     description: 'Developed affordable smart home automation kit with local manufacturing and support.',
-    image: '/api/placeholder/600/400',
+    image: '/images/manufacturing.png',
     tags: ['IoT', 'Smart Home', 'Electronics'],
     results: '500+ kits sold, 4.8★ rating'
   },
@@ -89,7 +89,7 @@ const projects = [
     category: 'Custom Fabrication',
     client: 'Retail Businesses',
     description: 'Fabricated custom signage, displays, and branding materials for local businesses.',
-    image: '/api/placeholder/600/400',
+    image: '/images/manufacturing.png',
     tags: ['Laser Cutting', 'Branding', 'Design'],
     results: '50+ businesses served'
   }
@@ -185,11 +185,11 @@ const ManufacturingProjectsPage = () => {
               >
                 {/* Project Image */}
                 <div className="relative h-48 bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-gray-400 text-6xl font-bold opacity-20">
-                      {project.id}
-                    </div>
-                  </div>
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#39366F] rounded-full text-xs font-semibold">
@@ -238,23 +238,65 @@ const ManufacturingProjectsPage = () => {
       {/* Featured Case Study */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-              Featured Case Study
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Deep dive into one of our most impactful manufacturing projects
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-gray-200 overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12">
-              {/* Left - Image */}
-              <div className="relative h-64 lg:h-full bg-gradient-to-br from-[#39366F] to-[#5B9BD5] rounded-xl flex items-center justify-center">
-                <div className="text-white text-8xl font-bold opacity-20">★</div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            
+            {/* Left - Title and Description */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
+                Featured Case Study
+              </h2>
+              <p className="text-gray-600 max-w-2xl mb-8">
+                Deep dive into one of our most impactful manufacturing projects
+              </p>
+              
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h4 className="font-semibold text-black mb-2">Challenge</h4>
+                  <p className="text-gray-600 text-sm">
+                    Communities lacked access to clean water, and imported filtration systems were too expensive.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-black mb-2">Solution</h4>
+                  <p className="text-gray-600 text-sm">
+                    Developed a low-cost filtration system using local materials, designed for easy maintenance and repair.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-black mb-2">Impact</h4>
+                  <p className="text-gray-600 text-sm">
+                    1000+ units deployed, providing clean water to over 5000 people. 90% reduction in waterborne illnesses.
+                  </p>
+                </div>
               </div>
 
-              {/* Right - Content */}
+              <div className="grid grid-cols-3 gap-4">
+                <div className="text-center p-4 bg-white rounded-lg border border-gray-200">
+                  <p className="text-2xl font-bold text-[#39366F] mb-1">1000+</p>
+                  <p className="text-xs text-gray-600">Units Deployed</p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg border border-gray-200">
+                  <p className="text-2xl font-bold text-[#39366F] mb-1">5000+</p>
+                  <p className="text-xs text-gray-600">Beneficiaries</p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg border border-gray-200">
+                  <p className="text-2xl font-bold text-[#39366F] mb-1">90%</p>
+                  <p className="text-xs text-gray-600">Illness Reduction</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right - Image and Project Info */}
+            <div>
+              <div className="relative h-64 lg:h-80 bg-gradient-to-br from-[#39366F] to-[#5B9BD5] rounded-xl overflow-hidden mb-6">
+                <img 
+                  src="/images/manufacturing.png" 
+                  alt="Water Filtration System"
+                  className="w-full h-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
+              
               <div>
                 <span className="inline-block px-3 py-1 bg-[#39366F] text-white rounded-full text-xs font-semibold mb-4">
                   Featured Project
@@ -265,42 +307,6 @@ const ManufacturingProjectsPage = () => {
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Partnering with Clean Water Initiative, we designed and manufactured an affordable water filtration system using locally-sourced materials. The system provides clean drinking water to rural communities across Ghana.
                 </p>
-
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <h4 className="font-semibold text-black mb-2">Challenge</h4>
-                    <p className="text-gray-600 text-sm">
-                      Communities lacked access to clean water, and imported filtration systems were too expensive.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-black mb-2">Solution</h4>
-                    <p className="text-gray-600 text-sm">
-                      Developed a low-cost filtration system using local materials, designed for easy maintenance and repair.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-black mb-2">Impact</h4>
-                    <p className="text-gray-600 text-sm">
-                      1000+ units deployed, providing clean water to over 5000 people. 90% reduction in waterborne illnesses.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="text-center p-4 bg-white rounded-lg">
-                    <p className="text-2xl font-bold text-[#39366F] mb-1">1000+</p>
-                    <p className="text-xs text-gray-600">Units Deployed</p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-lg">
-                    <p className="text-2xl font-bold text-[#39366F] mb-1">5000+</p>
-                    <p className="text-xs text-gray-600">Beneficiaries</p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-lg">
-                    <p className="text-2xl font-bold text-[#39366F] mb-1">90%</p>
-                    <p className="text-xs text-gray-600">Illness Reduction</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

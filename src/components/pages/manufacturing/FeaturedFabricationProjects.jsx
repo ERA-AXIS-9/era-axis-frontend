@@ -6,29 +6,29 @@ const projects = [
     title: 'Smart Recycling Bins',
     description: 'IoT-enabled waste sorting for communities.',
     category: 'Community Project',
-    image: '/images/project-placeholder.jpg'
+    image: '/images/manufacturing.png'
   },
   {
     title: 'School Lab Tools',
     description: 'Custom-built science equipment from e-waste.',
     category: 'Education',
-    image: '/images/project-placeholder.jpg'
+    image: '/images/workingspace.png'
   },
   {
     title: 'RecycleBin',
     description: 'Automated waste segregation system.',
     category: 'Innovation',
-    image: '/images/project-placeholder.jpg'
+    image: '/images/software.png'
   }
 ];
 
 const FeaturedFabricationProjects = () => {
   return (
-    <section className="py-12 sm:py-16 bg-white">
+    <section className="py-8 sm:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex justify-between items-end mb-8">
+        <div className="flex justify-between items-end mb-6">
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
               Featured Fabrication Projects
@@ -52,9 +52,11 @@ const FeaturedFabricationProjects = () => {
             >
               {/* Project Image */}
               <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  <span className="text-sm">Project Image</span>
-                </div>
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
 
               {/* Project Info */}

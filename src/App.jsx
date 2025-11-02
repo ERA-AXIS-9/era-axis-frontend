@@ -35,6 +35,8 @@ import BookingConfirmationPage from './pages/public/manufacturing/BookingConfirm
 import QuoteConfirmationPage from './pages/public/manufacturing/QuoteConfirmationPage';
 import ManufacturingProjectsPage from './pages/public/manufacturing/ManufacturingProjectsPage';
 import ManufacturingContactPage from './pages/public/manufacturing/ManufacturingContactPage';
+import SubscribePlanPage from './pages/public/manufacturing/SubscribePlanPage';
+import SubscriptionConfirmationPage from './pages/public/manufacturing/SubscriptionConfirmationPage';
 import SoftwarePage from './pages/public/software';
 import CustomSoftwarePage from './pages/public/software/custom';
 import IoTPage from './pages/public/software/iot';
@@ -112,6 +114,8 @@ function App() {
           <Route path="/services/manufacturing/product-development" element={<ProductDevelopmentPage />} />
           <Route path="/services/manufacturing/book-technician" element={<BookTechnicianPage />} />
           <Route path="/services/manufacturing/booking-confirmation" element={<BookingConfirmationPage />} />
+          <Route path="/services/manufacturing/subscribe-plan" element={<SubscribePlanPage />} />
+          <Route path="/services/manufacturing/subscription-confirmation" element={<SubscriptionConfirmationPage />} />
           <Route path="/services/manufacturing/quote-confirmation" element={<QuoteConfirmationPage />} />
           <Route path="/services/manufacturing/projects" element={<ManufacturingProjectsPage />} />
           <Route path="/services/manufacturing/contact" element={<ManufacturingContactPage />} />

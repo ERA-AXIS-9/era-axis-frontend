@@ -1,30 +1,33 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 
-const projects = [
-  {
-    title: 'Smart Recycling Bins',
-    description: 'IoT-enabled waste sorting for communities.',
-    image: '/images/project-placeholder.jpg',
-    link: '/projects'
-  },
-  {
-    title: 'School Lab Equipment',
-    description: 'Custom-built science tools from e-waste.',
-    image: '/images/project-placeholder.jpg',
-    link: '/projects'
-  },
-  {
-    title: 'Household Kits',
-    description: 'Energy-saving devices for homes.',
-    image: '/images/project-placeholder.jpg',
-    link: '/projects'
-  }
-];
-
 const FeaturedProjects = () => {
+  const featuredProjects = [
+    {
+      title: 'RecyBin Smart Sorter',
+      description: 'Automated waste sorting system using computer vision and machine learning.',
+      image: '/images/manufacturing.png',
+      link: '/services/manufacturing/projects',
+      featured: true
+    },
+    {
+      title: 'School Science Kits',
+      description: 'Affordable science experiment kits for rural schools using recycled materials.',
+      image: '/images/manufacturing.png',
+      link: '/services/manufacturing/projects',
+      featured: false
+    },
+    {
+      title: 'Energy-Saving Devices',
+      description: 'Affordable power management systems for households and small businesses.',
+      image: '/images/manufacturing.png',
+      link: '/services/manufacturing/projects',
+      featured: false
+    }
+  ];
+
   return (
-    <section className="py-12 sm:py-16 bg-white">
+    <section className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -33,6 +36,9 @@ const FeaturedProjects = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
               Featured Projects
             </h2>
+            <p className="text-gray-600 max-w-2xl">
+              Highlighting some of our most impactful manufacturing work across different sectors.
+            </p>
           </div>
           <a
             href="/services/manufacturing/projects"
@@ -45,17 +51,26 @@ const FeaturedProjects = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <a
               key={index}
               href={project.link}
               className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
             >
               {/* Project Image */}
-              <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  <span className="text-sm">Project Image</span>
-                </div>
+              <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden relative">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                {project.featured && (
+                  <div className="absolute top-3 left-3">
+                    <span className="inline-flex items-center px-2 py-1 text-xs bg-[#39366F] text-white rounded-full font-semibold">
+                      Featured
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Project Info */}
