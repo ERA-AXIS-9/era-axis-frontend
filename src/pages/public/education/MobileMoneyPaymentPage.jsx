@@ -2,18 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Smartphone, Lock, CheckCircle } from 'lucide-react';
 import Breadcrumb from '../../../components/pages/education/Breadcrumb';
-
-const programs = {
-  'junior-stem': { name: 'Junior STEM Basics', duration: '3 months', price: 150 },
-  'maker-hardware': { name: 'Maker: Hardware & Repair', duration: '6 months', price: 450 },
-  'coder-software': { name: 'Coder: Software Foundations', duration: '4 months', price: 300 }
-};
+import { EDUCATION_PROGRAMS } from '../../../config/educationPrograms';
 
 const MobileMoneyPaymentPage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const programId = searchParams.get('program') || 'junior-stem';
-  const program = programs[programId] || programs['junior-stem'];
+  const program = EDUCATION_PROGRAMS[programId] || EDUCATION_PROGRAMS['junior-stem'];
 
   const [formData, setFormData] = useState({
     mobileProvider: '',

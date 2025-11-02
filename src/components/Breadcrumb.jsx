@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
 
-const Breadcrumb = ({ items }) => {
+const Breadcrumb = ({ items, homePath = "/" }) => {
   return (
     <nav className="flex items-center gap-2 text-sm text-gray-600 mb-6">
       <Link 
-        to="/" 
+        to={homePath} 
         className="flex items-center gap-1 hover:text-[#39366F] transition-colors"
       >
         <Home className="w-4 h-4" />

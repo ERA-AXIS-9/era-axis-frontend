@@ -3,6 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Clock, Users, Award, BookOpen, CheckCircle, ChevronRight, Star, Calendar, GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
 import EducationNavbar from '../../../components/EducationNavbar';
 import Breadcrumb from '../../../components/pages/education/Breadcrumb';
+import { EDUCATION_PROGRAMS } from '../../../config/educationPrograms';
 
 const programsData = {
   'junior-stem': {
@@ -222,6 +223,7 @@ const ProgramDetailsPage = () => {
   const [expandedModule, setExpandedModule] = useState(null);
   const programId = searchParams.get('program') || 'junior-stem';
   const program = programsData[programId] || programsData['junior-stem'];
+  const programPricing = EDUCATION_PROGRAMS[programId] || EDUCATION_PROGRAMS['junior-stem'];
 
   const toggleModule = (index) => {
     setExpandedModule(expandedModule === index ? null : index);
@@ -233,62 +235,67 @@ const ProgramDetailsPage = () => {
       <Breadcrumb />
       
       {/* Hero Section */}
-      <section className="relative py-20 bg-[#39366F] text-white overflow-hidden">
+      <section className="relative py-12 sm:py-14 md:py-16 lg:py-20 bg-[#39366F] text-white overflow-hidden">
         {/* Background Image - Right Side */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-70">
+        <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[45%] md:w-2/5 lg:w-2/5 opacity-40 sm:opacity-70 md:opacity-70">
           <img 
             src="/images/workingspace.png" 
             alt="Learning environment"
             className="w-full h-full object-cover"
           />
-          {/* Overlay text on image */}
-          <div className="absolute bottom-8 right-8 bg-[#39366F]/70 backdrop-blur-md border border-white/20 px-4 py-2 rounded shadow-lg">
-            <p className="text-sm text-white font-semibold">Learn modern technologies and build real projects with hands-on training</p>
-          </div>
+          {/* Dark overlay for mobile visibility */}
+          <div className="absolute inset-0 bg-black/60 sm:bg-transparent md:bg-transparent"></div>
         </div>
 
+        {/* Additional mobile overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50 sm:bg-none md:bg-none"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-lg pr-12">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+          <div className="max-w-full sm:max-w-[55%] md:max-w-lg lg:max-w-xl sm:pr-6 md:pr-12 bg-[#39366F]/90 sm:bg-transparent md:bg-transparent backdrop-blur-md sm:backdrop-blur-none md:backdrop-blur-none p-5 pb-6 sm:p-0 md:p-0 rounded-xl sm:rounded-none md:rounded-none">
+            <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight drop-shadow-lg">
               {program.title}
             </h1>
-            <p className="text-base text-white/90 mb-6 leading-relaxed">
+            <p className="text-sm sm:text-sm md:text-base text-white mb-4 sm:mb-4 md:mb-6 leading-relaxed drop-shadow-md">
               {program.subtitle}. {program.description}
             </p>
             
             {/* Stats Row */}
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
               <div className="flex items-center gap-2">
-                <Clock size={18} />
-                <span className="text-sm">{program.duration}</span>
+                <Clock size={16} className="flex-shrink-0" />
+                <span className="text-xs sm:text-sm whitespace-nowrap">{program.duration}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users size={18} />
-                <span className="text-sm">Online & Physical</span>
+                <Users size={16} className="flex-shrink-0" />
+                <span className="text-xs sm:text-sm whitespace-nowrap">Online & In-Person</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award size={18} />
-                <span className="text-sm">Certificate</span>
+                <Award size={16} className="flex-shrink-0" />
+                <span className="text-xs sm:text-sm whitespace-nowrap">Certificate</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users size={18} />
-                <span className="text-sm">Expert Support</span>
+                <Users size={16} className="flex-shrink-0" />
+                <span className="text-xs sm:text-sm whitespace-nowrap">Expert Support</span>
               </div>
             </div>
 
             {/* CTA Row with Badge and Button */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               {/* Next Cohort Badge - Glassmorphism */}
-              <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded shadow-lg whitespace-nowrap">
-                <Calendar size={18} />
-                <span className="text-sm font-medium"><strong>Next Cohort:</strong> January 10, 2026</span>
+              <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 sm:px-4 py-2 sm:py-2.5 rounded shadow-lg">
+                <Calendar size={16} className="flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-medium whitespace-nowrap">
+                  <strong>Next Cohort:</strong> January 10, <br className="sm:hidden" />2026
+                </span>
               </span>
               
               <button
                 onClick={() => navigate(`/services/education/learning-mode?program=${programId}`)}
-                className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-3 rounded font-semibold transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap"
+                className="bg-white text-[#39366F] hover:bg-gray-100 px-6 sm:px-8 py-3 rounded font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 text-sm sm:text-base shadow-lg"
               >
-                Enroll Now - GHS {program.price}
+                <span className="whitespace-nowrap">
+                  Enroll Now - <br className="sm:hidden" />GHS {programPricing.price}
+                </span>
               </button>
             </div>
           </div>
@@ -296,14 +303,14 @@ const ProgramDetailsPage = () => {
       </section>
 
       {/* What You'll Learn */}
-      <section className="py-12 bg-white">
+      <section className="py-8 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">What You'll Learn</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">What You'll Learn</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {program.overview.map((item, index) => (
-              <div key={index} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-[#39366F] transition-all">
-                <CheckCircle size={20} className="text-[#39366F] flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700 text-sm">{item}</p>
+              <div key={index} className="flex items-start gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-[#39366F] transition-all">
+                <CheckCircle size={18} className="text-[#39366F] flex-shrink-0 mt-0.5" />
+                <p className="text-gray-700 text-xs sm:text-sm">{item}</p>
               </div>
             ))}
           </div>
@@ -311,24 +318,39 @@ const ProgramDetailsPage = () => {
       </section>
 
       {/* Course Curriculum */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-8 sm:py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Course Curriculum</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Course Curriculum</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
             {program.curriculum.map((module, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition-all">
-                <div className="flex items-start gap-3 mb-3">
-                  <BookOpen size={20} className="text-[#39366F] flex-shrink-0 mt-0.5" />
-                  <h3 className="text-base font-bold text-gray-900">{module.module}</h3>
-                </div>
-                <ul className="space-y-1.5 ml-8">
-                  {module.topics.map((topic, topicIndex) => (
-                    <li key={topicIndex} className="flex items-start gap-2 text-gray-700 text-sm">
-                      <span className="text-[#39366F]">•</span>
-                      <span>{topic}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all">
+                <button
+                  onClick={() => toggleModule(index)}
+                  className="w-full flex items-center justify-between gap-3 p-4 sm:p-5 text-left hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <BookOpen size={18} className="text-[#39366F] flex-shrink-0" />
+                    <h3 className="text-sm sm:text-base font-bold text-gray-900">{module.module}</h3>
+                  </div>
+                  {expandedModule === index ? (
+                    <ChevronUp size={18} className="text-[#39366F] flex-shrink-0" />
+                  ) : (
+                    <ChevronDown size={18} className="text-gray-400 flex-shrink-0" />
+                  )}
+                </button>
+                
+                {expandedModule === index && (
+                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 bg-gray-50 border-t border-gray-200">
+                    <ul className="space-y-1.5 ml-7 sm:ml-8 mt-3">
+                      {module.topics.map((topic, topicIndex) => (
+                        <li key={topicIndex} className="flex items-start gap-2 text-gray-700 text-xs sm:text-sm">
+                          <span className="text-[#39366F]">•</span>
+                          <span>{topic}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -336,21 +358,33 @@ const ProgramDetailsPage = () => {
       </section>
 
       {/* Real-World Projects */}
-      <section 
-        className="relative py-20 overflow-hidden bg-fixed bg-center bg-cover"
-        style={{
-          backgroundImage: 'url(/images/workingspace.png)',
-          backgroundAttachment: 'fixed'
-        }}
-      >
+      <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+        {/* Background Image - Mobile: absolute positioned, Desktop: fixed parallax */}
+        <div 
+          className="absolute inset-0 bg-center bg-cover"
+          style={{
+            backgroundImage: 'url(/images/workingspace.png)',
+            backgroundAttachment: 'scroll'
+          }}
+        ></div>
+        
+        {/* Desktop Parallax Layer - Only visible on larger screens */}
+        <div 
+          className="hidden sm:block absolute inset-0 bg-center bg-cover"
+          style={{
+            backgroundImage: 'url(/images/workingspace.png)',
+            backgroundAttachment: 'fixed'
+          }}
+        ></div>
+
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/75"></div>
+        <div className="absolute inset-0 bg-black/75 z-10"></div>
 
         {/* Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl font-bold text-white mb-12">Real-World Projects</h2>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12">Real-World Projects</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {program.outcomes.slice(0, 3).map((outcome, index) => {
               const projectTitles = [
                 'E-Commerce Platform',
@@ -358,28 +392,13 @@ const ProgramDetailsPage = () => {
                 'Task Management System'
               ];
               
-              const techStacks = [
-                ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-                ['React', 'D3.js', 'Express', 'WebSocket'],
-                ['React', 'Redux', 'Node.js', 'MongoDB']
-              ];
-              
               return (
-                <div key={index} className="bg-white/95 backdrop-blur-md rounded-2xl p-8 shadow-sm border border-white/20 hover:shadow-xl transition-all">
+                <div key={index} className="bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-sm border border-white/20 hover:shadow-xl transition-all">
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{projectTitles[index]}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">{projectTitles[index]}</h3>
                   
                   {/* Description */}
-                  <p className="text-gray-700 text-base mb-6 leading-relaxed">{outcome}</p>
-                  
-                  {/* Tech Stack Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {techStacks[index].map((tech, techIndex) => (
-                      <span key={techIndex} className="px-3 py-1 bg-[#39366F] text-white text-xs rounded font-medium">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">{outcome}</p>
                 </div>
               );
             })}
@@ -390,13 +409,13 @@ const ProgramDetailsPage = () => {
 
 
       {/* Final CTA */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-gray-900">Ready to Begin Your Journey?</h2>
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Ready to Begin Your Journey?</h2>
             <button
               onClick={() => navigate(`/services/education/learning-mode?program=${programId}`)}
-              className="bg-[#39366F] hover:bg-[#2a2850] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 whitespace-nowrap"
+              className="bg-[#39366F] hover:bg-[#2a2850] text-white px-6 sm:px-8 py-3 rounded-lg font-semibold transition-all duration-300 text-center"
             >
               Enroll Now
             </button>

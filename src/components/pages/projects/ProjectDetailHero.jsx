@@ -3,7 +3,7 @@ import Breadcrumb from '../../Breadcrumb';
 
 const ProjectDetailHero = ({ project }) => {
   const breadcrumbItems = [
-    { label: 'Services', link: '/services/software' },
+    { label: 'Services', link: '/services/projects' },
     { label: 'Projects', link: '/projects' },
     { label: project.title }
   ];
@@ -12,7 +12,7 @@ const ProjectDetailHero = ({ project }) => {
     <section className="py-16 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <Breadcrumb items={breadcrumbItems} />
+        <Breadcrumb items={breadcrumbItems} homePath="/services/projects" />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           

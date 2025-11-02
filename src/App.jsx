@@ -13,13 +13,16 @@ import AdminPage from './pages/admin/DashboardPage';
 
 // Service pages
 import EducationPage from './pages/public/education';
-import EnrollmentPage from './pages/public/education/EnrollmentPage';
 import EducationPaymentPage from './pages/public/education/PaymentPage';
 import EducationConfirmationPage from './pages/public/education/ConfirmationPage';
 import EducationPaymentFailedPage from './pages/public/education/PaymentFailedPage';
 import LearningModePage from './pages/public/education/LearningModePage';
 import PhysicalEnrollmentPage from './pages/public/education/PhysicalEnrollmentPage';
 import PhysicalConfirmationPage from './pages/public/education/PhysicalConfirmationPage';
+import OnlineEnrollmentPage from './pages/public/education/OnlineEnrollmentPage';
+import InPersonEnrollmentPage from './pages/public/education/InPersonEnrollmentPage';
+import InPersonConfirmationPage from './pages/public/education/InPersonConfirmationPage';
+import FAQPage from './pages/public/education/FAQPage';
 import EducationMobileMoneyPage from './pages/public/education/MobileMoneyPaymentPage';
 import ProgramDetailsPage from './pages/public/education/ProgramDetailsPage';
 import EducationContactPage from './pages/public/education/EducationContactPage';
@@ -90,14 +93,17 @@ function App() {
           
           {/* Service Pages */}
           <Route path="/services/education" element={<EducationPage />} />
-          <Route path="/services/education/enroll" element={<EnrollmentPage />} />
-          <Route path="/services/education/payment" element={<EducationPaymentPage />} />
+                    <Route path="/services/education/payment" element={<EducationPaymentPage />} />
           <Route path="/services/education/confirmation" element={<EducationConfirmationPage />} />
           <Route path="/services/education/payment-failed" element={<EducationPaymentFailedPage />} />
           <Route path="/services/education/learning-mode" element={<LearningModePage />} />
           <Route path="/services/education/physical-enrollment" element={<PhysicalEnrollmentPage />} />
           <Route path="/services/education/physical-confirmation" element={<PhysicalConfirmationPage />} />
+          <Route path="/services/education/online-enrollment" element={<OnlineEnrollmentPage />} />
+          <Route path="/services/education/in-person-enrollment" element={<InPersonEnrollmentPage />} />
+          <Route path="/services/education/in-person-confirmation" element={<InPersonConfirmationPage />} />
           <Route path="/services/education/mobile-money" element={<EducationMobileMoneyPage />} />
+          <Route path="/services/education/faq" element={<FAQPage />} />
           <Route path="/services/education/program-details" element={<ProgramDetailsPage />} />
           <Route path="/services/education/contact" element={<EducationContactPage />} />
           <Route path="/services/manufacturing" element={<ManufacturingPage />} />

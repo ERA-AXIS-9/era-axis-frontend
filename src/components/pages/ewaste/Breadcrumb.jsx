@@ -8,7 +8,7 @@ const Breadcrumb = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center space-x-2 text-sm">
           <Link 
-            to="/" 
+            to="/donate" 
             className="text-gray-500 hover:text-[#39366F] transition-colors duration-200"
           >
             Home

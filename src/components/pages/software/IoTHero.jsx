@@ -13,7 +13,7 @@ const IoTHero = () => {
     <section className="py-16 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <Breadcrumb items={breadcrumbItems} />
+        <Breadcrumb items={breadcrumbItems} homePath="/services/software" />
 
         {/* Title and Description */}
         <div className="mb-8">
