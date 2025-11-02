@@ -1,73 +1,76 @@
 import React from 'react';
-import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
   {
     quote: "ERA AXIS fixed our lab equipment in record time. Their team is professional and efficient.",
     author: "Dr. Kwame Asante",
     role: "Science Department Head",
-    rating: 5
+    avatar: "D"
   },
   {
     quote: "Their monthly maintenance plan has saved us from costly downtime. Highly recommended!",
     author: "Sarah Johnson",
     role: "IT Manager, TechCorp",
-    rating: 5
+    avatar: "S"
   },
   {
     quote: "Quick turnaround, fair pricing, and they actually care about getting it right.",
     author: "Emmanuel Mensah",
     role: "Small Business Owner",
-    rating: 5
+    avatar: "E"
   }
 ];
 
 const ClientTestimonials = () => {
   return (
-    <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-9 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-6">What Clients Say</h2>
         
-        {/* Section Header */}
-        <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
-            What Clients Say
-          </h2>
-        </div>
-
-        {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            <div 
+              key={index} 
+              className="group relative bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
             >
-              {/* Quote Icon */}
-              <div className="mb-4">
-                <Quote size={32} className="text-[#39366F]/20" />
-              </div>
-
-              {/* Quote Text */}
-              <p className="text-gray-700 text-base leading-relaxed mb-4 italic">
-                "{testimonial.quote}"
-              </p>
-
-              {/* Rating Stars */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-[#39366F] text-[#39366F]" />
-                ))}
-              </div>
-
-              {/* Author Info */}
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#39366F] to-[#5B9BD5] flex items-center justify-center text-white font-bold text-lg shadow-md">
-                  {testimonial.author.charAt(0)}
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#39366F]/5 to-[#5B9BD5]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              
+              {/* Quote mark decoration */}
+              <div className="absolute top-4 right-4 text-6xl text-[#39366F]/10 font-serif leading-none">"</div>
+              
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Quote */}
+                <blockquote className="text-base font-medium text-gray-800 leading-relaxed mb-8 relative">
+                  "{testimonial.quote}"
+                </blockquote>
+                
+                {/* Author Info */}
+                <div className="flex items-center space-x-4">
+                  {/* Avatar with Letter */}
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#39366F] to-[#5B9BD5] flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      {testimonial.avatar}
+                    </div>
+                    {/* Pulse ring */}
+                    <div className="absolute inset-0 rounded-full bg-[#39366F] opacity-0 group-hover:opacity-20 group-hover:scale-150 transition-all duration-500"></div>
+                  </div>
+                  
+                  {/* Name and Role */}
+                  <div className="flex-1">
+                    <div className="text-base font-bold text-black group-hover:text-[#39366F] transition-colors duration-300">
+                      {testimonial.author}
+                    </div>
+                    <div className="text-sm font-semibold text-gray-600 tracking-wide">
+                      {testimonial.role}
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-semibold text-black">{testimonial.author}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
-                </div>
               </div>
+              
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#39366F] to-[#5B9BD5] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           ))}
         </div>

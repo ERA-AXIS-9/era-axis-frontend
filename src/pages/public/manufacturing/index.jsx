@@ -2,6 +2,7 @@ import React from 'react';
 import ManufacturingNavbar from '../../../components/ManufacturingNavbar';
 import Breadcrumb from '../../../components/pages/manufacturing/Breadcrumb';
 import ManufacturingHero from '../../../components/pages/manufacturing/ManufacturingHero';
+import ManufacturingImpact from '../../../components/pages/manufacturing/ManufacturingImpact';
 import CoreServices from '../../../components/pages/manufacturing/CoreServices';
 import WhyChooseUs from '../../../components/pages/manufacturing/WhyChooseUs';
 import FeaturedProjects from '../../../components/pages/manufacturing/FeaturedProjects';
@@ -14,6 +15,7 @@ const ManufacturingPage = () => {
       <ManufacturingNavbar />
       <Breadcrumb />
       <ManufacturingHero />
+      <ManufacturingImpact />
       <CoreServices />
       <WhyChooseUs />
       <FeaturedProjects />
