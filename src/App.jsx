@@ -29,11 +29,11 @@ import EducationContactPage from './pages/public/education/EducationContactPage'
 import ManufacturingPage from './pages/public/manufacturing';
 import CustomFabricationPage from './pages/public/manufacturing/CustomFabricationPage';
 import MaintenancePage from './pages/public/manufacturing/MaintenancePage';
-import ProductDevelopmentPage from './pages/public/manufacturing/ProductDevelopmentPage';
 import BookTechnicianPage from './pages/public/manufacturing/BookTechnicianPage';
 import BookingConfirmationPage from './pages/public/manufacturing/BookingConfirmationPage';
 import QuoteConfirmationPage from './pages/public/manufacturing/QuoteConfirmationPage';
 import ManufacturingProjectsPage from './pages/public/manufacturing/ManufacturingProjectsPage';
+import ProductDevelopmentPage from './pages/public/manufacturing/ProductDevelopmentPage';
 import ManufacturingContactPage from './pages/public/manufacturing/ManufacturingContactPage';
 import SubscribePlanPage from './pages/public/manufacturing/SubscribePlanPage';
 import SubscriptionConfirmationPage from './pages/public/manufacturing/SubscriptionConfirmationPage';
