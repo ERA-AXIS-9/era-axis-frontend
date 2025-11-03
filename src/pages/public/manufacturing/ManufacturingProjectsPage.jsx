@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Filter, ChevronRight, ExternalLink } from 'lucide-react';
 
 const projects = [
@@ -99,7 +99,16 @@ const categories = ['All Projects', 'Custom Fabrication', 'Repair & Maintenance'
 
 const ManufacturingProjectsPage = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('All Projects');
+
+  // Handle URL parameter for category filtering
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam && categories.includes(categoryParam)) {
+      setSelectedCategory(categoryParam);
+    }
+  }, [searchParams]);
 
   const filteredProjects = selectedCategory === 'All Projects'
     ? projects

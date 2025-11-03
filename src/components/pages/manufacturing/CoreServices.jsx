@@ -5,7 +5,7 @@ const services = [
   {
     title: 'Product Development',
     description: 'Turn prototypes into real, durable products using sustainable materials.',
-    link: '/services/manufacturing/product-development',
+    link: '/services/manufacturing/projects',
     color: '#39366F'
   },
   {
@@ -19,12 +19,6 @@ const services = [
     description: 'Build specialized devices and equipment from e-waste and recycled materials.',
     link: '/services/manufacturing/custom-fabrication',
     color: '#2a2850'
-  },
-  {
-    title: 'Sustainable Production',
-    description: 'Eco-friendly manufacturing that reduces costs and environmental impact.',
-    link: '/contact',
-    color: '#4a8bc2'
   }
 ];
 
@@ -41,7 +35,7 @@ const CoreServices = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <a
               key={index}

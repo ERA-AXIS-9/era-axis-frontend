@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { CheckCircle, Mail, Phone, MapPin, ChevronRight, Calendar, Users } from 'lucide-react';
+import { CheckCircle, ChevronRight } from 'lucide-react';
 import Breadcrumb from '../../../components/pages/education/Breadcrumb';
 
 const programs = {
@@ -22,28 +22,20 @@ const InPersonConfirmationPage = () => {
 
   const nextSteps = [
     {
-      icon: Phone,
       title: 'Confirmation Call',
-      description: 'We\'ll call you within 48 hours to verify your enrollment and discuss class schedules.',
-      color: '#5B9BD5'
+      description: 'We\'ll call you within 48 hours to verify your enrollment and discuss class schedules.'
     },
     {
-      icon: Mail,
       title: 'Email Confirmation',
-      description: 'You\'ll receive an email with enrollment details and preparation instructions.',
-      color: '#39366F'
+      description: 'You\'ll receive an email with enrollment details and preparation instructions.'
     },
     {
-      icon: Calendar,
       title: 'Class Schedule',
-      description: 'Get your personalized timetable and lab access schedule.',
-      color: '#2a2850'
+      description: 'Get your personalized timetable and lab access schedule.'
     },
     {
-      icon: MapPin,
       title: 'Location Details',
-      description: 'Receive directions and facility information for your first day.',
-      color: '#5B9BD5'
+      description: 'Receive directions and facility information for your first day.'
     }
   ];
 
@@ -192,7 +184,6 @@ const InPersonConfirmationPage = () => {
                 
                 <div className="space-y-6">
                   {nextSteps.map((step, index) => {
-                    const IconComponent = step.icon;
                     return (
                       <div key={index} className="flex gap-4">
                         {/* Step Number */}
@@ -204,19 +195,13 @@ const InPersonConfirmationPage = () => {
 
                         {/* Content */}
                         <div className="flex-1">
-                          <div className="flex items-start gap-3">
-                            <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" 
-                                 style={{ backgroundColor: `${step.color}15`, border: `2px solid ${step.color}30` }}>
-                              <IconComponent size={20} style={{ color: step.color }} />
-                            </div>
-                            <div>
-                              <h3 className="text-base font-bold text-black mb-1">
-                                {step.title}
-                              </h3>
-                              <p className="text-sm text-gray-600 leading-relaxed">
-                                {step.description}
-                              </p>
-                            </div>
+                          <div>
+                            <h3 className="text-base font-bold text-black mb-1">
+                              {step.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 leading-relaxed">
+                              {step.description}
+                            </p>
                           </div>
                         </div>
                       </div>

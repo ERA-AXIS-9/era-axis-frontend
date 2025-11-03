@@ -4,6 +4,7 @@ import Breadcrumb from '../../../components/pages/manufacturing/Breadcrumb';
 import ManufacturingHero from '../../../components/pages/manufacturing/ManufacturingHero';
 import ManufacturingImpact from '../../../components/pages/manufacturing/ManufacturingImpact';
 import CoreServices from '../../../components/pages/manufacturing/CoreServices';
+import SustainableApproach from '../../../components/pages/manufacturing/SustainableApproach';
 import WhyChooseUs from '../../../components/pages/manufacturing/WhyChooseUs';
 import FeaturedProjects from '../../../components/pages/manufacturing/FeaturedProjects';
 import TestimonialsImpact from '../../../components/pages/manufacturing/TestimonialsImpact';
@@ -17,6 +18,7 @@ const ManufacturingPage = () => {
       <ManufacturingHero />
       <ManufacturingImpact />
       <CoreServices />
+      <SustainableApproach />
       <WhyChooseUs />
       <FeaturedProjects />
       <TestimonialsImpact />
