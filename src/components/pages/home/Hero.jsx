@@ -9,7 +9,7 @@ const Hero = () => {
       description: "An innovation ecosystem advancing technology education, circular manufacturing, and open software to solve real community challenges across Africa.",
       pillar: "Education",
       icon: "🎓",
-      backgroundImage: "/images/Homepage/about eraaxis.jpg",
+      backgroundImage: "/images/Educationpage/educationmainpage.png",
       cta1: { text: "Explore Programs", link: "/programs" },
       cta2: { text: "Enroll Now", link: "/enroll" }
     },
@@ -63,32 +63,36 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out"
           style={{
             objectPosition: 'center center',
-            filter: 'brightness(1.2) contrast(1.1)'
+            filter: 'brightness(1.1) contrast(1.05)'
           }}
           loading="lazy"
         />
-        {/* Professional overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#39366F]/40 via-[#39366F]/20 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent"></div>
+        {/* Lighter professional overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#39366F]/50 via-[#39366F]/25 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
       </div>
 
       {/* Content with animations */}
-      <div className="relative z-10 w-full h-full flex items-center px-8 md:px-12 lg:px-16">
-        <div className="max-w-3xl" key={currentSlide}>
+      <div className="relative z-10 w-full h-full flex items-center px-6 md:px-12 lg:px-16">
+        <div className="max-w-4xl w-full" key={currentSlide}>
           {/* Main Headline */}
           <h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 animate-fade-in-up tracking-tight text-white"
-            style={{ textShadow: '3px 3px 12px rgba(0,0,0,0.5)' }}
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-relaxed mb-8 animate-fade-in-up tracking-tight text-white"
+            style={{ 
+              textShadow: '3px 3px 12px rgba(0,0,0,0.7)',
+              lineHeight: '1.2'
+            }}
           >
             {slides[currentSlide].title}
           </h1>
           
           {/* Description */}
           <p 
-            className="text-lg md:text-xl font-medium text-white mb-10 leading-relaxed max-w-2xl animate-fade-in-up"
+            className="text-base md:text-lg lg:text-xl font-medium text-white mb-12 leading-relaxed max-w-2xl animate-fade-in-up"
             style={{ 
-              textShadow: '2px 2px 8px rgba(0,0,0,0.6)',
-              animationDelay: '0.1s' 
+              textShadow: '2px 2px 8px rgba(0,0,0,0.7)',
+              animationDelay: '0.1s',
+              lineHeight: '1.6'
             }}
           >
             {slides[currentSlide].description}

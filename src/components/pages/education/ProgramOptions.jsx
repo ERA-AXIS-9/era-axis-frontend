@@ -7,7 +7,7 @@ const programs = [
     icon: GraduationCap,
     title: 'Junior STEM Basics',
     description: 'STEM for All - Innovation Without Barriers. Learn through hands-on projects using e-waste and local resources.',
-    image: '/images/workingspace.png',
+    image: '/images/Educationpage/junior%20sterm%20basic.png',
     price: 150,
     link: '/services/education/program-details?program=junior-stem',
     id: 'junior-stem'
@@ -16,7 +16,7 @@ const programs = [
     icon: Cpu,
     title: 'Maker: Hardware & Repair',
     description: 'Master electronics, fabrication, and repair skills. Build devices from e-waste and access professional tools.',
-    image: '/images/workingspace.png',
+    image: '/images/Educationpage/maker%20hardware%20and%20repair.png',
     price: 450,
     link: '/services/education/program-details?program=maker-hardware',
     id: 'maker-hardware'
@@ -25,7 +25,7 @@ const programs = [
     icon: Terminal,
     title: 'Coder: Software Foundations',
     description: 'Learn to code from scratch and build practical applications. From mobile apps to smart home systems.',
-    image: '/images/workingspace.png',
+    image: '/images/Educationpage/coder%20software%20fundation.png',
     price: 300,
     link: '/services/education/program-details?program=coder-software',
     id: 'coder-software'

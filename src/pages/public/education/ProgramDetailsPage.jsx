@@ -223,6 +223,13 @@ const ProgramDetailsPage = () => {
   const [expandedModule, setExpandedModule] = useState(null);
   const programId = searchParams.get('program') || 'junior-stem';
   const program = programsData[programId] || programsData['junior-stem'];
+  
+  // Determine the correct image based on program
+  const programImage = programId === 'maker-hardware' 
+    ? '/images/Educationpage/maker%20hardware%20and%20repair.png' 
+    : programId === 'coder-software'
+    ? '/images/Educationpage/coder%20software%20fundation.png'
+    : '/images/Educationpage/junior%20sterm%20basic.png';
   const programPricing = EDUCATION_PROGRAMS[programId] || EDUCATION_PROGRAMS['junior-stem'];
 
   const toggleModule = (index) => {
@@ -237,18 +244,18 @@ const ProgramDetailsPage = () => {
       {/* Hero Section */}
       <section className="relative py-12 sm:py-14 md:py-16 lg:py-20 bg-[#39366F] text-white overflow-hidden">
         {/* Background Image - Right Side */}
-        <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[45%] md:w-2/5 lg:w-2/5 opacity-40 sm:opacity-70 md:opacity-70">
+        <div className="absolute right-0 top-0 bottom-0 w-full sm:w-3/5 lg:w-1/2 opacity-100">
           <img 
-            src="/images/workingspace.png" 
+            src={programImage} 
             alt="Learning environment"
             className="w-full h-full object-cover"
           />
-          {/* Dark overlay for mobile visibility */}
-          <div className="absolute inset-0 bg-black/60 sm:bg-transparent md:bg-transparent"></div>
+          {/* Ultra light overlay for mobile visibility, minimal gradient for desktop */}
+          <div className="absolute inset-0 bg-black/10 sm:bg-gradient-to-l sm:from-transparent sm:via-white/5 sm:to-white/10"></div>
         </div>
 
-        {/* Additional mobile overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50 sm:bg-none md:bg-none"></div>
+        {/* Ultra minimal dark overlay on mobile for better text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/5 to-black/10 sm:bg-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-full sm:max-w-[55%] md:max-w-lg lg:max-w-xl sm:pr-6 md:pr-12 bg-[#39366F]/90 sm:bg-transparent md:bg-transparent backdrop-blur-md sm:backdrop-blur-none md:backdrop-blur-none p-5 pb-6 sm:p-0 md:p-0 rounded-xl sm:rounded-none md:rounded-none">
@@ -363,7 +370,7 @@ const ProgramDetailsPage = () => {
         <div 
           className="absolute inset-0 bg-center bg-cover"
           style={{
-            backgroundImage: 'url(/images/workingspace.png)',
+            backgroundImage: `url(${programImage})`,
             backgroundAttachment: 'scroll'
           }}
         ></div>
@@ -372,8 +379,11 @@ const ProgramDetailsPage = () => {
         <div 
           className="hidden sm:block absolute inset-0 bg-center bg-cover"
           style={{
-            backgroundImage: 'url(/images/workingspace.png)',
-            backgroundAttachment: 'fixed'
+            backgroundImage: `url(${programImage})`,
+            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover'
           }}
         ></div>
 

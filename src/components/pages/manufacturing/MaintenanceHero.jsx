@@ -35,19 +35,11 @@ const MaintenanceHero = () => {
           <div className="relative">
             <div className="relative bg-gradient-to-br from-[#39366F]/10 to-[#5B9BD5]/10 rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src="/images/manufacturing.png" 
+                src="/images/Manufacturing/maintaince.png" 
                 alt="Maintenance and Repair Services"
                 className="w-full h-full object-cover opacity-90"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#39366F]/20 to-transparent"></div>
-              
-              {/* Floating Elements */}
-              <div className="absolute top-4 right-4 bg-white rounded-lg p-3 shadow-lg">
-                <Settings className="text-[#39366F]" size={24} />
-              </div>
-              <div className="absolute bottom-4 left-4 bg-white rounded-lg p-3 shadow-lg">
-                <Wrench className="text-[#5B9BD5]" size={24} />
-              </div>
             </div>
           </div>
         </div>

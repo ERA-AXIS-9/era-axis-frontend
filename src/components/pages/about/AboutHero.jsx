@@ -52,7 +52,7 @@ const AboutHero = () => {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="/images/Homepage/about eraaxis.jpg" 
+                src="/images/Homepage/about.png" 
                 alt="ERA AXIS team collaborating in modern workspace" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 loading="lazy"
