@@ -10,42 +10,50 @@ const EducationHero = () => {
   };
 
   return (
-    <section className="relative min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden bg-[#39366F]">
-      {/* Background Image - Right Side */}
-      <div className="absolute right-0 top-0 bottom-0 w-full sm:w-1/2 lg:w-2/5 opacity-100">
-        <img 
-          src="/images/workingspace.png" 
-          alt="ERA AXIS Education"
-          className="w-full h-full object-cover"
-        />
-        {/* Dark overlay for mobile visibility, gradient for desktop */}
-        <div className="absolute inset-0 bg-black/50 sm:bg-gradient-to-l sm:from-transparent sm:via-white/20 sm:to-white/40"></div>
-      </div>
+    <section className="pt-4 pb-8 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-12 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Card Container with Border Radius */}
+        <div className="p-4 sm:p-6 sm:bg-white sm:rounded-xl sm:border sm:border-gray-200 sm:shadow-sm md:p-8 lg:p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+            
+            {/* Left Content */}
+            <div className="max-w-xl">
+              {/* Main Heading */}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6 leading-tight">
+                STEM for All.
+                <br />
+                <span className="text-[#39366F]">Innovation Without Barriers.</span>
+              </h1>
 
-      {/* Additional dark overlay on mobile for better text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40 sm:bg-none"></div>
+              {/* Subtitle */}
+              <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
+                Transform your future with inclusive, hands-on tech education
+              </p>
 
-      {/* Content - Left Aligned */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-0">
-        <div className="max-w-2xl bg-[#39366F]/80 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-6 sm:p-0 rounded-xl sm:rounded-none">
-          {/* Main Heading */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
-            STEM for All. Innovation Without Barriers.
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8 leading-relaxed drop-shadow-md">
-            Transform your future with inclusive, hands-on tech education
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a 
-              href="#program-options"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#39366F] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 text-base sm:text-lg shadow-lg"
-            >
-              Explore All Courses
-            </a>
+              {/* CTA Button */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a 
+                  href="#program-options"
+                  className="bg-gradient-to-r from-[#39366F] to-[#2a2850] hover:from-[#2a2850] hover:to-[#1a1a3a] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2 text-base w-full sm:w-auto"
+                >
+                  Explore All Courses
+                  <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+            
+            {/* Right Content - Hero Image */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="/images/Educationpage/educationmainpage.png" 
+                  alt="ERA AXIS Education" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
