@@ -99,7 +99,7 @@ const Navbar = () => {
               )
             ))}
             <a 
-              href="/enroll"
+              href="/services/education"
               className="border-2 border-[#39366F] text-[#39366F] px-5 py-2 rounded-lg text-base font-medium hover:bg-[#39366F] hover:text-white transition-all ml-4"
             >
               Enroll
@@ -199,7 +199,7 @@ const Navbar = () => {
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="flex flex-col space-y-3 px-3">
                 <a 
-                  href="/enroll"
+                  href="/services/education"
                   className="text-center border-2 border-[#39366F] text-[#39366F] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#39366F] hover:text-white transition-all"
                 >
                   Enroll

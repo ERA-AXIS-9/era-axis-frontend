@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -143,6 +143,10 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
+          
+          {/* Redirects for old/broken links */}
+          <Route path="/labs" element={<Navigate to="/services/open-labs" replace />} />
+          <Route path="/enroll" element={<Navigate to="/services/education" replace />} />
         </Routes>
       </main>
       <Footer />

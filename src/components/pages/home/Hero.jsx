@@ -10,8 +10,8 @@ const Hero = () => {
       pillar: "Education",
       icon: "🎓",
       backgroundImage: "/images/Educationpage/educationmainpage.png",
-      cta1: { text: "Explore Programs", link: "/programs" },
-      cta2: { text: "Enroll Now", link: "/enroll" }
+      cta1: { text: "Explore Programs", link: "/services/education" },
+      cta2: { text: "Enroll Now", link: "/services/education" }
     },
     {
       title: "CIRCULAR MANUFACTURING. SUSTAINABLE FUTURE.",
@@ -19,7 +19,7 @@ const Hero = () => {
       pillar: "Manufacturing",
       icon: "🏭",
       backgroundImage: "/images/manufacturing.png",
-      cta1: { text: "Our Process", link: "/manufacturing" },
+      cta1: { text: "Our Process", link: "/services/manufacturing" },
       cta2: { text: "Partner With Us", link: "/partner" }
     },
     {
@@ -29,7 +29,7 @@ const Hero = () => {
       icon: "💻",
       backgroundImage: "/images/software.png",
       cta1: { text: "View Projects", link: "/projects" },
-      cta2: { text: "Contribute", link: "/contribute" }
+      cta2: { text: "Our Software", link: "/services/software" }
     },
     {
       title: "COMMUNITY MAKERSPACES. COLLABORATIVE LEARNING.",
@@ -37,8 +37,8 @@ const Hero = () => {
       pillar: "Open Labs",
       icon: "🔬",
       backgroundImage: "/images/workingspace.png",
-      cta1: { text: "Visit Labs", link: "/labs" },
-      cta2: { text: "Book a Space", link: "/book" }
+      cta1: { text: "Visit Labs", link: "/services/open-labs" },
+      cta2: { text: "Book a Space", link: "/services/open-labs" }
     }
   ];
 
@@ -73,7 +73,7 @@ const Hero = () => {
       </div>
 
       {/* Content with animations */}
-      <div className="relative z-10 w-full h-full flex items-center px-6 md:px-12 lg:px-16">
+      <div className="relative z-10 w-full h-full flex items-center justify-start px-6 md:px-12 lg:px-16 pt-16">
         <div className="max-w-4xl w-full" key={currentSlide}>
           {/* Main Headline */}
           <h1 
