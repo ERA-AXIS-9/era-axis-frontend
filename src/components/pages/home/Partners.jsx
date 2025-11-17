@@ -2,12 +2,61 @@ import React from 'react';
 
 const Partners = () => {
   const partners = [
-    { name: 'UNICEF', logo: 'UNICEF' },
-    { name: 'Bloomberg', logo: 'Bloomberg' },
-    { name: 'UNDP', logo: 'UNDP' },
-    { name: 'MIT', logo: 'MIT' },
-    { name: 'Google.org', logo: 'Google.org' },
-    { name: 'Local Gov', logo: 'Local Gov' }
+    { 
+      name: 'UNICEF Startup Labs', 
+      logo: '/images/Partners/unicef-startup-labs.png',
+      alt: 'UNICEF Startup Labs logo'
+    },
+    { 
+      name: 'Google.org', 
+      logo: '/images/Partners/google-org.png',
+      alt: 'Google.org logo'
+    },
+    { 
+      name: 'MEST Africa', 
+      logo: '/images/Partners/mest-africa.png',
+      alt: 'MEST Africa logo'
+    },
+    { 
+      name: 'Bloomberg Philanthropies', 
+      logo: '/images/Partners/bloomberg-philanthropies.png',
+      alt: 'Bloomberg Philanthropies logo'
+    },
+    { 
+      name: 'UNDP', 
+      logo: '/images/Partners/undp.png',
+      alt: 'UNDP logo'
+    },
+    { 
+      name: 'MIT', 
+      logo: '/images/Partners/mit.png',
+      alt: 'MIT logo'
+    },
+    { 
+      name: 'Sekondi Takoradi Metro', 
+      logo: '/images/Partners/sekondi-takoradi-metro.png',
+      alt: 'Sekondi Takoradi Metropolitan Assembly logo'
+    },
+    { 
+      name: 'F6S', 
+      logo: '/images/Partners/f6s.png',
+      alt: 'F6S logo'
+    },
+    { 
+      name: 'Kosmos Innovation Center', 
+      logo: '/images/Partners/kosmos-innovation-center.png',
+      alt: 'Kosmos Innovation Center logo'
+    },
+    { 
+      name: 'Adwumawura', 
+      logo: '/images/Partners/adwumawura.png',
+      alt: 'Adwumawura logo'
+    },
+    { 
+      name: 'Entrepreneurship World Cup', 
+      logo: '/images/Partners/entrepreneurship-world-cup.png',
+      alt: 'Entrepreneurship World Cup logo'
+    }
   ];
 
   // Duplicate partners for seamless loop
@@ -16,7 +65,7 @@ const Partners = () => {
   return (
     <section className="py-9 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-6">Trusted by global leaders</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-6">Partners & Recognition</h2>
         
         {/* Slideshow Container */}
         <div className="relative overflow-hidden">
@@ -33,9 +82,31 @@ const Partners = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#39366F]/5 to-[#5B9BD5]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   
                   {/* Logo content */}
-                  <span className="relative z-10 text-gray-800 font-bold text-lg group-hover:text-[#39366F] transition-all duration-300 group-hover:scale-110">
-                    {partner.logo}
-                  </span>
+                  <div className="flex flex-col items-center justify-center">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.alt}
+                      className="max-h-12 w-auto"
+                      style={{ maxHeight: '48px' }}
+                      onLoad={(e) => {
+                        // Hide text when image loads successfully
+                        e.target.nextSibling.style.display = 'none';
+                      }}
+                      onError={(e) => {
+                        console.log('Image failed to load:', partner.logo);
+                        // Show text when image fails
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'block';
+                      }}
+                    />
+                    {/* Fallback text - hidden by default */}
+                    <span 
+                      className="text-gray-800 font-bold text-sm text-center"
+                      style={{ display: 'none' }}
+                    >
+                      {partner.name}
+                    </span>
+                  </div>
                   
                   {/* Bottom accent line */}
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#39366F] to-[#5B9BD5] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -57,12 +128,12 @@ const Partners = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-200%);
           }
         }
         
         .animate-slide-left {
-          animation: slide-left 20s linear infinite;
+          animation: slide-left 40s linear infinite;
         }
         
         .animate-slide-left:hover {

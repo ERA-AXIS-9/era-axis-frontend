@@ -6,25 +6,25 @@ const projects = [
   {
     name: 'AgriZplanter',
     description: 'Smart planting tool for farmers.',
-    link: 'https://project-link.com/agrizplanter', // External, new tab
+    link: '/services/open-labs/projects',
     image: '/images/Homepage/agriz planter.png',
   },
   {
     name: 'EcoWatch',
     description: 'Low-cost air-quality monitoring.',
-    link: 'https://project-link.com/ecowatch',
+    link: '/services/open-labs/projects',
     image: '/images/Homepage/ECOWATCH.png',
   },
   {
     name: 'RecyBin',
     description: 'Smart waste segregation bins.',
-    link: 'https://project-link.com/recybin',
+    link: '/services/open-labs/projects',
     image: '/images/Homepage/PXL_20240913_102510357.MP.jpg',
   },
   {
     name: 'Smart Health Wearables',
     description: 'Affordable health tracking devices.',
-    link: 'https://project-link.com/healthwearables',
+    link: '/services/open-labs/projects',
     image: '/images/workingspace.png',
   },
 ];
@@ -61,8 +61,6 @@ const ProjectShowcase = () => (
               </p>
               <a
                 href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 font-bold text-base text-[#39366F] hover:text-[#2a2850] transition-all duration-300 group/btn hover:gap-2"
               >
                 Learn More
@@ -78,7 +76,7 @@ const ProjectShowcase = () => (
       </div>
       <div className="flex justify-end">
         <a
-          href="/projects"
+          href="/services/open-labs/projects"
           className="bg-[#39366F] hover:bg-[#2a2850] text-white px-5 py-2 rounded-md font-semibold inline-flex items-center gap-1 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm"
         >
           See More

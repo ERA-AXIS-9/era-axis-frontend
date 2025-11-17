@@ -8,6 +8,12 @@ import AboutPage from './pages/public/about';
 import ProgramsPage from './pages/public/education';
 import ProjectsPage from './pages/public/projects';
 import EcoWatchPage from './pages/public/projects/ecowatch';
+import SafeDrivePage from './pages/public/projects/safedrive';
+import AgrizPlanterPage from './pages/public/projects/agrizplanter';
+import NewsPage from './pages/public/news/index';
+import NEFArticle from './pages/public/news/NEFArticle';
+import YECOArticle from './pages/public/news/YECOArticle';
+import BagaBoardArticle from './pages/public/news/BagaBoardArticle';
 import ContactPage from './pages/public/contact';
 import AdminPage from './pages/admin/DashboardPage';
 
@@ -90,7 +96,13 @@ function App() {
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/ecowatch" element={<EcoWatchPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/projects/safedrive" element={<SafeDrivePage />} />
+          <Route path="/projects/agrizplanter" element={<AgrizPlanterPage />} />
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/news/nef-2025-finalist" element={<NEFArticle />} />
+          <Route path="/news/yeco-2025-selection" element={<YECOArticle />} />
+          <Route path="/news/bagaboard-nexora-2025" element={<BagaBoardArticle />} />
+                    <Route path="/contact" element={<ContactPage />} />
           <Route path="/admin" element={<AdminPage />} />
           
           {/* Service Pages */}

@@ -4,25 +4,28 @@ import { ChevronRight } from 'lucide-react';
 const NewsInsights = () => {
   const articles = [
     {
-      title: "Article placeholder",
-      excerpt: "Brief description of the article content and key insights.",
+      title: "ERA AXIS Among Top 32 Finalists in NEF 2025",
+      excerpt: "Selected from 350+ entries across 38 African countries for STEM-driven e-waste innovation.",
       image: "/images/workingspace.png",
-      date: "Oct 2024",
-      category: "Innovation"
+      date: "Nov 2024",
+      category: "Achievement",
+      link: "/news/nef-2025-finalist"
     },
     {
-      title: "Article placeholder", 
-      excerpt: "Brief description of the article content and key insights.",
+      title: "ERA AXIS Selected for Youth Ecopreneur Programme 2025",
+      excerpt: "Chosen from hundreds of global applications for practical STEM education innovation.",
       image: "/images/software.png",
-      date: "Oct 2024",
-      category: "Technology"
+      date: "Nov 2024",
+      category: "Recognition",
+      link: "/news/yeco-2025-selection"
     },
     {
-      title: "Article placeholder",
-      excerpt: "Brief description of the article content and key insights.", 
+      title: "BagaBoard Wins at Nexora Business Pitching Challenge 2025",
+      excerpt: "Transforms sugarcane waste into eco-friendly electrical casings for enhanced safety.",
       image: "/images/manufacturing.png",
-      date: "Oct 2024",
-      category: "Impact"
+      date: "Nov 2024",
+      category: "Innovation",
+      link: "/news/bagaboard-nexora-2025"
     }
   ];
 
@@ -63,7 +66,7 @@ const NewsInsights = () => {
                     {article.date}
                   </span>
                   <a 
-                    href="#"
+                    href={article.link}
                     className="text-[#39366F] hover:text-[#2a2850] font-semibold text-sm inline-flex items-center gap-1 transition-colors duration-300 group/btn"
                   >
                     Read More

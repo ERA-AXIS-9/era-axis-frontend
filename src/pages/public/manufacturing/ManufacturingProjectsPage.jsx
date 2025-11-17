@@ -118,31 +118,15 @@ const ManufacturingProjectsPage = () => {
     <div className="min-h-screen bg-gray-50">
       
       {/* Hero Section */}
-      <section className="pt-16 pb-12 bg-gradient-to-br from-[#39366F] to-[#2a2850] text-white">
+      <section className="pt-16 pb-8 bg-gradient-to-br from-[#39366F] to-[#2a2850] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              Our Manufacturing Work
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+              Manufacturing Gallery
             </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Explore our portfolio of custom fabrication, repair services, and product development projects. From concept to completion, we bring ideas to life.
+            <p className="text-xl text-white/90">
+              Custom fabrication, repair services, and product development
             </p>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 max-w-2xl">
-              <div className="text-center">
-                <p className="text-4xl font-bold mb-1">500+</p>
-                <p className="text-sm text-white/80">Projects Completed</p>
-              </div>
-              <div className="text-center">
-                <p className="text-4xl font-bold mb-1">200+</p>
-                <p className="text-sm text-white/80">Clients Served</p>
-              </div>
-              <div className="text-center">
-                <p className="text-4xl font-bold mb-1">98%</p>
-                <p className="text-sm text-white/80">Satisfaction Rate</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -244,106 +228,72 @@ const ManufacturingProjectsPage = () => {
         </div>
       </section>
 
-      {/* Featured Case Study */}
+      {/* Featured Projects Gallery */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            
-            {/* Left - Title and Description */}
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-                Featured Case Study
-              </h2>
-              <p className="text-gray-600 max-w-2xl mb-8">
-                Deep dive into one of our most impactful manufacturing projects
-              </p>
-              
-              <div className="space-y-4 mb-6">
-                <div>
-                  <h4 className="font-semibold text-black mb-2">Challenge</h4>
-                  <p className="text-gray-600 text-sm">
-                    Communities lacked access to clean water, and imported filtration systems were too expensive.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-black mb-2">Solution</h4>
-                  <p className="text-gray-600 text-sm">
-                    Developed a low-cost filtration system using local materials, designed for easy maintenance and repair.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-black mb-2">Impact</h4>
-                  <p className="text-gray-600 text-sm">
-                    1000+ units deployed, providing clean water to over 5000 people. 90% reduction in waterborne illnesses.
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-white rounded-lg border border-gray-200">
-                  <p className="text-2xl font-bold text-[#39366F] mb-1">1000+</p>
-                  <p className="text-xs text-gray-600">Units Deployed</p>
-                </div>
-                <div className="text-center p-4 bg-white rounded-lg border border-gray-200">
-                  <p className="text-2xl font-bold text-[#39366F] mb-1">5000+</p>
-                  <p className="text-xs text-gray-600">Beneficiaries</p>
-                </div>
-                <div className="text-center p-4 bg-white rounded-lg border border-gray-200">
-                  <p className="text-2xl font-bold text-[#39366F] mb-1">90%</p>
-                  <p className="text-xs text-gray-600">Illness Reduction</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-12 text-center">
+            Featured Projects Gallery
+          </h2>
+          
+          {/* Gallery Grid - Show top 6 projects */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.slice(0, 6).map((project) => (
+              <div
+                key={project.id}
+                className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                {/* Image Container */}
+                <div className="relative h-64 bg-gradient-to-br from-gray-200 to-gray-300">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  
+                  {/* Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-white font-bold text-lg mb-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-white/90 text-sm">
+                        {project.client}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#39366F] rounded-full text-xs font-semibold">
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Right - Image and Project Info */}
-            <div>
-              <div className="relative h-64 lg:h-80 bg-gradient-to-br from-[#39366F] to-[#5B9BD5] rounded-xl overflow-hidden mb-6">
-                <img 
-                  src="/images/manufacturing.png" 
-                  alt="Water Filtration System"
-                  className="w-full h-full object-cover opacity-80"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
-              
-              <div>
-                <span className="inline-block px-3 py-1 bg-[#39366F] text-white rounded-full text-xs font-semibold mb-4">
-                  Featured Project
-                </span>
-                <h3 className="text-3xl font-bold text-black mb-4">
-                  Water Filtration System for Rural Communities
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Partnering with Clean Water Initiative, we designed and manufactured an affordable water filtration system using locally-sourced materials. The system provides clean drinking water to rural communities across Ghana.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#39366F] to-[#2a2850] text-white">
+      <section className="py-12 bg-gradient-to-r from-[#39366F] to-[#2a2850] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Ready to Start Your Project?
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Start Your Project
           </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Let's bring your manufacturing vision to life. Get a free quote today.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => navigate('/services/manufacturing/book-technician')}
               className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
             >
-              Request a Quote
+              Get Quote
               <ChevronRight size={20} />
             </button>
             <button
               onClick={() => navigate('/contact')}
               className="border-2 border-white text-white hover:bg-white hover:text-[#39366F] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
-              Contact Us
+              Contact
               <ExternalLink size={20} />
             </button>
           </div>

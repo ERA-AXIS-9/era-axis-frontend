@@ -11,13 +11,7 @@ const OpenLabsHero = () => {
             
             {/* Left Content */}
             <div className="max-w-xl">
-              {/* Badge */}
-              <div className="flex items-center mb-4">
-                <span className="inline-flex items-center px-4 py-2 text-sm bg-emerald-50 text-emerald-800 rounded-full font-semibold shadow-sm">
-                  <FlaskConical size={18} className="mr-2" /> Open Labs
-                </span>
-              </div>
-              
+                            
               {/* Main Heading */}
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6 leading-tight">
                 Shared Innovation 
