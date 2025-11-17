@@ -1,110 +1,152 @@
 import React, { useState } from 'react';
-import { ChevronRight, TrendingUp, Users, Award } from 'lucide-react';
+import { Filter, ChevronRight, ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Breadcrumb from '../../../components/pages/open-labs/Breadcrumb';
-
-const categories = ['All Projects', 'Hardware', 'Software', 'Community'];
 
 const projects = [
   {
+    id: 1,
     title: 'Smart Recycling Bins',
     category: 'Hardware',
-    description: 'IoT-enabled waste sorting for communities.',
-    image: '/images/project-placeholder.jpg',
-    status: 'Completed'
+    client: 'Green Communities Initiative',
+    description: 'IoT-enabled waste sorting system with real-time monitoring and automated sorting capabilities.',
+    image: '/images/manufacturing.png',
+    tags: ['IoT', 'Environmental', 'Smart City'],
+    results: '50+ bins deployed, 40% better sorting'
   },
   {
+    id: 2,
     title: 'AgriZplanter',
     category: 'Hardware',
-    description: 'Smart planting tool for farmers.',
-    image: '/images/project-placeholder.jpg',
-    status: 'In Progress'
+    client: 'Local Farmers Cooperative',
+    description: 'Smart planting tool with soil monitoring and automated watering for small-scale farmers.',
+    image: '/images/manufacturing.png',
+    tags: ['Agriculture', 'IoT', 'Automation'],
+    results: '200+ farmers using, 30% yield increase'
   },
   {
+    id: 3,
     title: 'EcoWatch Dashboard',
     category: 'Software',
-    description: 'Air quality monitoring platform.',
-    image: '/images/project-placeholder.jpg',
-    status: 'Completed'
+    client: 'Environmental Protection Agency',
+    description: 'Real-time air quality monitoring platform with predictive analytics and alert system.',
+    image: '/images/manufacturing.png',
+    tags: ['Software', 'Environment', 'Data Analytics'],
+    results: '15 cities monitored, 100K+ users'
   },
   {
+    id: 4,
     title: 'Community Water Filter',
-    category: 'Community',
-    description: 'Low-cost filtration system.',
-    image: '/images/project-placeholder.jpg',
-    status: 'In Progress'
+    category: 'Hardware',
+    client: 'Clean Water Foundation',
+    description: 'Low-cost water filtration system using locally-sourced materials for rural communities.',
+    image: '/images/manufacturing.png',
+    tags: ['Water', 'Community', 'Engineering'],
+    results: '100+ units installed, 5000+ beneficiaries'
   },
   {
+    id: 5,
     title: 'Solar Lamp Kit',
     category: 'Hardware',
-    description: 'Portable solar-powered lighting.',
-    image: '/images/project-placeholder.jpg',
-    status: 'Completed'
+    client: 'Rural Electrification Project',
+    description: 'Portable solar-powered lighting system with phone charging capabilities.',
+    image: '/images/manufacturing.png',
+    tags: ['Solar', 'Energy', 'Rural Development'],
+    results: '1000+ kits distributed, 95% satisfaction'
   },
   {
+    id: 6,
     title: 'School Lab Tools',
-    category: 'Community',
-    description: 'Custom science equipment from e-waste.',
-    image: '/images/project-placeholder.jpg',
-    status: 'Completed'
+    category: 'Hardware',
+    client: 'Education Ministry',
+    description: 'Custom science laboratory equipment built from recycled e-waste components.',
+    image: '/images/manufacturing.png',
+    tags: ['Education', 'E-waste', 'Innovation'],
+    results: '50 schools equipped, 10K+ students served'
+  },
+  {
+    id: 7,
+    title: 'Health Monitoring Device',
+    category: 'Hardware',
+    client: 'Community Health Centers',
+    description: 'Affordable wearable health tracker built with 3D printing and open-source components.',
+    image: '/images/manufacturing.png',
+    tags: ['Healthcare', 'IoT', '3D Printing'],
+    results: '500+ devices distributed, 24/7 monitoring'
+  },
+  {
+    id: 8,
+    title: 'Smart Traffic System',
+    category: 'Software',
+    client: 'City Transportation Authority',
+    description: 'AI-powered traffic management system with real-time optimization and accident prevention.',
+    image: '/images/manufacturing.png',
+    tags: ['AI', 'Transportation', 'Smart City'],
+    results: '30% traffic reduction, 50+ intersections'
+  },
+  {
+    id: 9,
+    title: 'Renewable Energy Trainer',
+    category: 'Hardware',
+    client: 'Technical Schools Network',
+    description: 'Educational kit for teaching renewable energy concepts with hands-on experiments.',
+    image: '/images/manufacturing.png',
+    tags: ['Education', 'Renewable Energy', 'Training'],
+    results: '100 schools adopted, 5K+ students trained'
   }
 ];
 
-const featuredProject = {
-  title: 'Smart Health Wearable',
-  description: 'An affordable health tracking device built entirely in our Open Labs using recycled components and 3D printing. This project demonstrates how accessible technology can solve real healthcare challenges.',
-  impact: 'Used by 50+ community members for daily health monitoring.',
-  team: 'Built by a team of 3 students over 6 months.',
-  image: '/images/project-placeholder.jpg'
-};
-
-const stats = [
-  { icon: TrendingUp, value: '50+', label: 'Projects completed', color: '#39366F' },
-  { icon: Users, value: '100+', label: 'Innovators involved', color: '#5B9BD5' },
-  { icon: Award, value: '15+', label: 'Awards won', color: '#2a2850' }
-];
+const categories = ['All Projects', 'Hardware', 'Software'];
 
 const ProjectsPage = () => {
-  const [activeCategory, setActiveCategory] = useState('All Projects');
+  const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState('All Projects');
 
-  const filteredProjects = activeCategory === 'All Projects' 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+  const filteredProjects = selectedCategory === 'All Projects'
+    ? projects
+    : projects.filter(project => project.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumb />
       
       {/* Hero Section */}
-      <section className="pt-12 pb-8 bg-white border-b border-gray-200">
+      <section className="pt-16 pb-8 bg-gradient-to-br from-[#39366F] to-[#2a2850] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3">
-              Innovations Born in Our Labs
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+              Open Labs Gallery
             </h1>
-            <p className="text-gray-600 text-lg">
-              Real solutions built by real innovators using our facilities.
+            <p className="text-xl text-white/90">
+              Hardware, software, and community innovation projects
             </p>
           </div>
         </div>
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-white border-b border-gray-200">
+      <section className="py-8 bg-white border-b border-gray-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 ${
-                  activeCategory === category
-                    ? 'bg-[#39366F] text-white shadow-md'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+          <div className="flex items-center gap-4 overflow-x-auto pb-2">
+            <div className="flex items-center gap-2 text-gray-700 font-semibold flex-shrink-0">
+              <Filter size={20} />
+              <span>Filter:</span>
+            </div>
+            <div className="flex gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-lg font-medium text-sm transition-all whitespace-nowrap ${
+                    selectedCategory === category
+                      ? 'bg-[#39366F] text-white shadow-md'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -112,47 +154,66 @@ const ProjectsPage = () => {
       {/* Projects Grid */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project, index) => (
+          <div className="mb-6">
+            <p className="text-gray-600">
+              Showing <span className="font-semibold text-black">{filteredProjects.length}</span> projects
+              {selectedCategory !== 'All Projects' && (
+                <span> in <span className="font-semibold text-[#39366F]">{selectedCategory}</span></span>
+              )}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project) => (
               <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                key={project.id}
+                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
               >
                 {/* Project Image */}
-                <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200">
-                  <div className="w-full h-full flex items-center justify-center text-gray-400">
-                    <span className="text-sm">Project Image</span>
+                <div className="relative h-48 bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#39366F] rounded-full text-xs font-semibold">
+                      {project.category}
+                    </span>
                   </div>
                 </div>
 
                 {/* Project Info */}
-                <div className="p-5">
-                  {/* Category & Status */}
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="inline-block px-3 py-1 bg-[#39366F]/10 text-[#39366F] rounded-full text-xs font-semibold">
-                      {project.category}
-                    </span>
-                    <span className={`text-xs font-medium ${
-                      project.status === 'Completed' ? 'text-green-600' : 'text-blue-600'
-                    }`}>
-                      {project.status}
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-black mb-2 group-hover:text-[#39366F] transition-colors">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#39366F] transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-sm text-gray-500 mb-3">
+                    Client: <span className="font-semibold text-gray-700">{project.client}</span>
+                  </p>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
 
-                  <a
-                    href="/projects"
-                    className="inline-flex items-center gap-1 text-sm font-semibold text-[#39366F] hover:gap-2 transition-all"
-                  >
-                    Learn More
-                    <ChevronRight size={16} />
-                  </a>
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Results */}
+                  <div className="pt-4 border-t border-gray-200">
+                    <p className="text-sm text-gray-700">
+                      <span className="font-semibold text-green-600">Results:</span> {project.results}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -160,100 +221,74 @@ const ProjectsPage = () => {
         </div>
       </section>
 
-      {/* Featured Project */}
-      <section className="py-12 bg-white">
+      {/* Featured Projects Gallery */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-black mb-8">Featured Innovation</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-12 text-center">
+            Featured Projects Gallery
+          </h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Image */}
-            <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl">
-              <div className="w-full h-full flex items-center justify-center text-gray-400">
-                <span className="text-sm">Featured Project Image</span>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div>
-              <h3 className="text-2xl font-bold text-black mb-4">{featuredProject.title}</h3>
-              <p className="text-gray-700 text-base leading-relaxed mb-4">
-                {featuredProject.description}
-              </p>
-              
-              <div className="space-y-3 mb-6">
-                <div className="flex items-start gap-2">
-                  <span className="text-green-600 mt-1">✓</span>
-                  <p className="text-gray-600 text-sm">{featuredProject.impact}</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-green-600 mt-1">✓</span>
-                  <p className="text-gray-600 text-sm">{featuredProject.team}</p>
-                </div>
-              </div>
-
-              <a
-                href="/projects"
-                className="bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center gap-2"
+          {/* Gallery Grid - Show top 6 projects */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.slice(0, 6).map((project) => (
+              <div
+                key={project.id}
+                className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
-                View Details
-                <ChevronRight size={18} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-black mb-8 text-center">Impact in Numbers</h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="flex justify-center mb-4">
-                    <div
-                      className="w-16 h-16 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: `${stat.color}15`, border: `2px solid ${stat.color}30` }}
-                    >
-                      <IconComponent size={32} style={{ color: stat.color }} />
+                {/* Image Container */}
+                <div className="relative h-64 bg-gradient-to-br from-gray-200 to-gray-300">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  
+                  {/* Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-white font-bold text-lg mb-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-white/90 text-sm">
+                        {project.client}
+                      </p>
                     </div>
                   </div>
-                  <div className="text-4xl font-bold mb-2" style={{ color: stat.color }}>
-                    {stat.value}
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#39366F] rounded-full text-xs font-semibold">
+                      {project.category}
+                    </span>
                   </div>
-                  <p className="text-gray-600 font-medium">
-                    {stat.label}
-                  </p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#39366F] to-[#2a2850] rounded-2xl p-8 sm:p-12 text-center shadow-xl">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              Do you have a project idea? Let's build it together.
-            </h2>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              Our labs and mentors are ready to help you turn your vision into reality.
-            </p>
-            <a
-              href="/contact"
-              className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-3.5 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+      {/* CTA Section */}
+      <section className="py-12 bg-gradient-to-r from-[#39366F] to-[#2a2850] text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Start Your Project
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => navigate('/services/open-labs/book-session')}
+              className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
             >
-              Start Your Project
-              <ChevronRight size={18} />
-            </a>
+              Book Session
+              <ChevronRight size={20} />
+            </button>
+            <button
+              onClick={() => navigate('/contact')}
+              className="border-2 border-white text-white hover:bg-white hover:text-[#39366F] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 inline-flex items-center justify-center gap-2"
+            >
+              Contact
+              <ExternalLink size={20} />
+            </button>
           </div>
         </div>
       </section>

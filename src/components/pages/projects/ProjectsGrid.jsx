@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const ProjectsGrid = () => {
   const projects = [
     {
-      title: 'Custom Software Development',
-      category: 'Software',
-      description: 'Tailored software solutions designed to meet your specific needs and challenges.',
+      title: 'SafeDrive',
+      category: 'Transportation',
+      description: 'An intelligent road safety innovation that detects driver fatigue, alcohol influence, and risky driving behaviors. It provides real-time alerts to prevent accidents, protect lives, and promote safer transportation systems across Africa.',
       status: 'Active',
-      image: '/images/Homepage/PXL_20250913_140827397.MP.jpg',
-      link: '/services/software/custom'
+      image: '/images/Homepage/ERA SAFEDRIVE.jpeg',
+      link: '/projects/safedrive'
     },
     {
       title: 'IoT & Data Platforms',

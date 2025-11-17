@@ -5,21 +5,21 @@ const Projects = () => {
   const projects = [
     {
       name: 'EcoWatch',
-      description: 'Real-time air quality monitoring system tracking pollution levels across multiple locations.',
+      description: 'Real-time air quality monitoring across multiple locations.',
       link: '/projects/ecowatch',
       image: '/images/Homepage/ECOWATCH.png'
     },
     {
-      name: 'Smart Farm IoT',
-      description: 'Agricultural monitoring system with IoT sensors for monitoring soil moisture and optimizing irrigation.',
-      link: '#',
+      name: 'AgrizPlanter',
+      description: 'Automated rice planting device for increased farming efficiency.',
+      link: '/projects/agrizplanter',
       image: '/images/Homepage/agriz planter.png'
     },
     {
-      name: 'Custom Software Development',
-      description: 'Tailored software solutions designed to meet your specific needs and challenges.',
-      link: '/services/software/custom',
-      image: '/images/Homepage/PXL_20250913_140827397.MP.jpg'
+      name: 'SafeDrive',
+      description: 'Intelligent road safety system detecting driver fatigue and risky behaviors.',
+      link: '/projects/safedrive',
+      image: '/images/Homepage/ERA SAFEDRIVE.jpeg'
     }
   ];
 

@@ -2,7 +2,7 @@
 
 A modern, responsive web application for ERA AXIS - Empowering Innovators, Transforming Communities. This platform showcases STEM education, circular manufacturing, open-source software, and community makerspaces across Africa.
 
-## 🚀 Overview
+##  Overview
 
 ERA AXIS is an innovation ecosystem advancing technology education, circular manufacturing, and open software to solve real community challenges across Africa. The website serves as a comprehensive platform for:
 
@@ -12,7 +12,7 @@ ERA AXIS is an innovation ecosystem advancing technology education, circular man
 - **Open Labs** - Collaborative makerspaces and innovation hubs
 - **Partnerships & Donations** - Community engagement and support
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 19.1.1** - Modern React with latest features
@@ -61,7 +61,7 @@ era-axis-website/
 └── vite.config.js          # Vite configuration
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -94,14 +94,14 @@ era-axis-website/
 5. **Open your browser**
    Navigate to `http://localhost:5173`
 
-## 📋 Available Scripts
+##  Available Scripts
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint for code quality checks
 
-## 🌐 Features
+##  Features
 
 ### Core Pages
 - **Home** - Hero carousel with service showcase
@@ -146,7 +146,7 @@ era-axis-website/
 - **Forms** - Clean, accessible inputs
 - **Modals** - Overlay dialogs for actions
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 ```bash
@@ -215,7 +215,7 @@ npm run preview
 - Payment processing needs implementation
 - Redux state management not fully implemented
 
-## 📄 License
+##  License
 
 This project is private property of ERA AXIS. All rights reserved.
 
