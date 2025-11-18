@@ -35,7 +35,7 @@ const MaintenanceHero = () => {
           <div className="relative">
             <div className="relative bg-gradient-to-br from-[#39366F]/10 to-[#5B9BD5]/10 rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src="/images/Manufacturing/maintaince.png" 
+                src="/images/Manufacturing/Maintaenance.png" 
                 alt="Maintenance and Repair Services"
                 className="w-full h-full object-cover opacity-90"
               />

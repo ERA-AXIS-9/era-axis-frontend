@@ -5,6 +5,7 @@ import { Calendar, ArrowRight } from 'lucide-react';
 const NewsGrid = () => {
   const articles = [
     {
+      id: 1,
       title: "ERA AXIS Among Top 32 Finalists in NEF 2025",
       excerpt: "Selected from 350+ entries across 38 African countries for STEM-driven e-waste innovation in the Africa Energy Innovation Challenge.",
       fullContent: `We are proud to announce that ERA AXIS has been selected among the Top 32 finalists out of more than 350 entries received from 38 countries across Africa in the 10th Africa Energy Innovation Challenge (AEIC), organized by the Nigeria Energy Forum (NEF). 
@@ -26,6 +27,7 @@ As one of Africa's Top 32 finalists, ERA AXIS proudly represents Ghana, demonstr
       slug: "nef-2025-finalist"
     },
     {
+      id: 2,
       title: "ERA AXIS Selected for Youth Ecopreneur Programme 2025",
       excerpt: "Chosen from hundreds of global applications for practical STEM education innovation in the prestigious YECO programme.",
       fullContent: `We're excited to announce that ERA AXIS has been selected to participate in the 2025 Youth Ecopreneur Programme (YECO), a prestigious global initiative empowering young entrepreneurs driving sustainable, green, and inclusive innovations across the world.
@@ -50,6 +52,7 @@ Stay tuned as we share our progress throughout the programme and beyond. Togethe
       slug: "yeco-2025-selection"
     },
     {
+      id: 3,
       title: "BagaBoard Wins at Nexora Business Pitching Challenge 2025",
       excerpt: "BagaBoard transforms sugarcane waste into eco-friendly electrical casings, winning 1st Runner-Up at the prestigious competition.",
       fullContent: `We are proud to announce that BagaBoard, one of ERA AXIS's innovative projects, emerged as the 1st Runner-Up at the Nexora Business Pitching Challenge 2025, held at the National Theatre, Accra.
@@ -122,7 +125,7 @@ BagaBoard — From Waste to Watt.`,
                     By {article.author}
                   </span>
                   <Link 
-                    to={`/news/${article.slug}`}
+                    to={`/newsletter/article/${article.id}`}
                     className="text-[#39366F] hover:text-[#2a2850] font-semibold text-sm inline-flex items-center gap-1 transition-colors duration-300 group/btn"
                   >
                     Read More
