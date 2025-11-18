@@ -11,9 +11,6 @@ import EcoWatchPage from './pages/public/projects/ecowatch';
 import SafeDrivePage from './pages/public/projects/safedrive';
 import AgrizPlanterPage from './pages/public/projects/agrizplanter';
 import NewsPage from './pages/public/news/index';
-import NEFArticle from './pages/public/news/NEFArticle';
-import YECOArticle from './pages/public/news/YECOArticle';
-import BagaBoardArticle from './pages/public/news/BagaBoardArticle';
 import ContactPage from './pages/public/contact';
 import AdminPage from './pages/admin/DashboardPage';
 
@@ -67,6 +64,7 @@ import PartnershipApplicationPage from './pages/public/partnership/apply';
 import BlogPage from './pages/public/blog';
 import GalleryPage from './pages/public/gallery';
 import NewsletterPage from './pages/public/newsletter';
+import ArticlePage from './pages/public/newsletter/ArticlePage';
 
 
 function App() {
@@ -99,9 +97,9 @@ function App() {
           <Route path="/projects/safedrive" element={<SafeDrivePage />} />
           <Route path="/projects/agrizplanter" element={<AgrizPlanterPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/news/nef-2025-finalist" element={<NEFArticle />} />
-          <Route path="/news/yeco-2025-selection" element={<YECOArticle />} />
-          <Route path="/news/bagaboard-nexora-2025" element={<BagaBoardArticle />} />
+          <Route path="/news/nef-2025-finalist" element={<Navigate to="/newsletter/article/1" replace />} />
+          <Route path="/news/yeco-2025-selection" element={<Navigate to="/newsletter/article/2" replace />} />
+          <Route path="/news/bagaboard-nexora-2025" element={<Navigate to="/newsletter/article/3" replace />} />
                     <Route path="/contact" element={<ContactPage />} />
           <Route path="/admin" element={<AdminPage />} />
           
@@ -155,6 +153,7 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
+          <Route path="/newsletter/article/:id" element={<ArticlePage />} />
           
           {/* Redirects for old/broken links */}
           <Route path="/labs" element={<Navigate to="/services/open-labs" replace />} />

@@ -9,7 +9,7 @@ const Hero = () => {
       description: "An innovation ecosystem advancing technology education, circular manufacturing, and open software to solve real community challenges across Africa.",
       pillar: "Education",
       icon: "🎓",
-      backgroundImage: "/images/Educationpage/educationmainpage.png",
+      backgroundImage: "/images/Educationpage/education.png",
       cta1: { text: "Explore Programs", link: "/services/education" },
       cta2: { text: "Enroll Now", link: "/services/education" }
     },
@@ -18,7 +18,7 @@ const Hero = () => {
       description: "Transforming e-waste into opportunity through circular fabrication and upcycling for social good. Building sustainable manufacturing solutions.",
       pillar: "Manufacturing",
       icon: "🏭",
-      backgroundImage: "/images/manufacturing.png",
+      backgroundImage: "/images/Homepage/manufacturing.png",
       cta1: { text: "Our Process", link: "/services/manufacturing" },
       cta2: { text: "Partner With Us", link: "/partner" }
     },
@@ -27,7 +27,7 @@ const Hero = () => {
       description: "Building open-source tools that empower communities to create their own technological solutions. Driving digital transformation through innovation.",
       pillar: "Software",
       icon: "💻",
-      backgroundImage: "/images/software.png",
+      backgroundImage: "/images/Homepage/Software(1).png",
       cta1: { text: "View Projects", link: "/projects" },
       cta2: { text: "Our Software", link: "/services/software" }
     },
@@ -36,7 +36,7 @@ const Hero = () => {
       description: "Creating accessible spaces where innovators gather to research, experiment, and build together. Fostering collaborative innovation and learning.",
       pillar: "Open Labs",
       icon: "🔬",
-      backgroundImage: "/images/workingspace.png",
+      backgroundImage: "/images/Homepage/openlabs.png",
       cta1: { text: "Visit Labs", link: "/services/open-labs" },
       cta2: { text: "Book a Space", link: "/services/open-labs" }
     }
