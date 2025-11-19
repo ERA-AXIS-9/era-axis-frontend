@@ -3,13 +3,13 @@ import { Award, Trophy, Star } from 'lucide-react';
 
 const Awards = () => {
   const awards = [
-    {
-      icon: Trophy,
-      title: "Innovation Excellence Award",
-      year: "2024",
-      organization: "Ghana Tech Awards",
-      description: "Recognized for outstanding contribution to technology innovation in West Africa."
-    },
+    // {
+    //   icon: Trophy,
+    //   title: "Innovation Excellence Award",
+    //   year: "2024",
+    //   organization: "Ghana Tech Awards",
+    //   description: "Recognized for outstanding contribution to technology innovation in West Africa."
+    // },
     {
       icon: Award,
       title: "Sustainability Champion",

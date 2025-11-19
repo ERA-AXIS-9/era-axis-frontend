@@ -1,61 +1,58 @@
 import React from 'react';
-import { FlaskConical, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const OpenLabsHero = () => {
   return (
-    <section className="pt-4 pb-8 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-12 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Card Container with Border Radius */}
-        <div className="p-4 sm:p-6 sm:bg-white sm:rounded-xl sm:border sm:border-gray-200 sm:shadow-sm md:p-8 lg:p-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+    <section className="relative isolate overflow-hidden">
+      <div className="max-w-none px-0">
+        {/* Full-bleed hero container */}
+        <div className="relative overflow-hidden">
+          <img 
+            src="/images/workingspace.png" 
+            alt="Open Labs Innovation Space" 
+            className="absolute inset-0 w-full h-full object-cover brightness-110 contrast-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a3a]/60 via-[#39366F]/45 to-[#5B9BD5]/25"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="relative px-6 md:px-10 lg:px-14 py-12 md:py-16 lg:py-20 min-h-[400px] md:min-h-[480px] lg:min-h-[560px] flex items-center">
             
             {/* Left Content */}
-            <div className="max-w-xl">
-                            
+            <div className="max-w-3xl">
+              {/* Accent Badge */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-1 w-12 bg-gradient-to-r from-[#5B9BD5] to-[#39366F]"></div>
+                <span className="text-sm md:text-base font-bold text-[#5B9BD5] uppercase tracking-widest">Open Labs</span>
+              </div>
+              
               {/* Main Heading */}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6 leading-tight">
-                Shared Innovation 
-                <br />
-                <span className="text-[#39366F]">Spaces for All</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 leading-tight">
+                Shared Innovation Spaces for All
               </h1>
 
               {/* Subtitle */}
-              <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 leading-relaxed">
                 Community-driven R&D hubs where anyone can prototype, test, and build real solutions.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
                 <a 
                   href="#facilities"
-                  className="bg-gradient-to-r from-[#39366F] to-[#2a2850] hover:from-[#2a2850] hover:to-[#1a1a3a] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2 text-base w-full sm:w-auto"
+                  className="group bg-[#39366F] hover:bg-[#2a2850] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 inline-flex items-center justify-center gap-3 transform hover:-translate-y-1 w-full sm:w-auto"
                 >
                   Explore Labs
-                  <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform" />
                 </a>
                 
                 <a 
                   href="/services/open-labs/book-session"
-                  className="border-2 border-[#39366F] text-[#39366F] hover:bg-[#39366F] hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 inline-flex items-center justify-center gap-2 text-base w-full sm:w-auto"
+                  className="group bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#39366F] px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 inline-flex items-center justify-center gap-3 transform hover:-translate-y-1 w-full sm:w-auto"
                 >
                   Book a Visit
-                  <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform" />
                 </a>
               </div>
             </div>
-            
-            {/* Right Content - Hero Image */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src="/images/workingspace.png" 
-                  alt="Open Labs Innovation Space" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            
           </div>
         </div>
       </div>

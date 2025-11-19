@@ -1,75 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
+import { articlesData } from '../../../data/articlesData';
 
 const NewsGrid = () => {
-  const articles = [
-    {
-      id: 1,
-      title: "ERA AXIS Among Top 32 Finalists in NEF 2025",
-      excerpt: "Selected from 350+ entries across 38 African countries for STEM-driven e-waste innovation in the Africa Energy Innovation Challenge.",
-      fullContent: `We are proud to announce that ERA AXIS has been selected among the Top 32 finalists out of more than 350 entries received from 38 countries across Africa in the 10th Africa Energy Innovation Challenge (AEIC), organized by the Nigeria Energy Forum (NEF). 
-
-Themed "Transforming Energy Transition, Youth Employment & Local Manufacturing," this prestigious competition celebrates Africa's most promising innovators driving clean-energy and manufacturing transformation.
-
-Representing Ghana, ERA AXIS is competing under Track 3: Greening Local Manufacturing & Value Addition with the project titled:
-
-"Driving Green Manufacturing and Job Creation through Practical STEM and E-Waste Innovation in Ghana."
-
-ERA AXIS's solution showcases how practical STEM education and e-waste innovation can empower youth to design and locally manufacture affordable clean technologies. By reusing discarded electronics, applying reverse engineering, and integrating software development, ERA AXIS reduces dependency on imported kits, lowers production costs, and creates pathways for youth employment and green manufacturing.
-
-As one of Africa's Top 32 finalists, ERA AXIS proudly represents Ghana, demonstrating how STEM-driven local innovation can create green jobs, strengthen local industries, and contribute to a sustainable circular economy. We remain committed to making STEM practical, affordable, and inclusive empowering young Africans to turn waste into innovation and ideas into lasting impact.`,
-      image: "/images/workingspace.png",
-      date: "November 2024",
-      category: "Achievement",
-      author: "ERA AXIS Team",
-      readTime: "5 min read",
-      slug: "nef-2025-finalist"
-    },
-    {
-      id: 2,
-      title: "ERA AXIS Selected for Youth Ecopreneur Programme 2025",
-      excerpt: "Chosen from hundreds of global applications for practical STEM education innovation in the prestigious YECO programme.",
-      fullContent: `We're excited to announce that ERA AXIS has been selected to participate in the 2025 Youth Ecopreneur Programme (YECO), a prestigious global initiative empowering young entrepreneurs driving sustainable, green, and inclusive innovations across the world.
-
-Out of hundreds of applications from around the globe, ERA AXIS was chosen for its groundbreaking work in making STEM education practical, affordable, and impact-driven, enabling young Africans to design real-world solutions from locally available and recycled materials.
-
-The YECO Programme, organized by the International Trade Centre (ITC) and Ye! Community, supports youth-led ventures tackling environmental and social challenges through entrepreneurship. As part of this year's cohort, ERA AXIS will join other exceptional ecopreneurs to strengthen our climate-smart innovation strategies, expand partnerships, and scale our impact across Africa.
-
-"This opportunity reinforces our mission to empower Africa's innovators and accelerate homegrown climate solutions. YECO provides the perfect platform to exchange ideas, build collaborations, and position ERA AXIS at the forefront of sustainable innovation on the continent."
-— John Ransford Arthur, Founder & CEO, ERA AXIS
-
-Through the YECO journey, ERA AXIS aims to deepen its work in STEM for All, advance circular manufacturing, and grow its Open Labs network creating pathways for African youth to design, build, and commercialize sustainable technologies.
-
-Stay tuned as we share our progress throughout the programme and beyond. Together, we're building a generation of innovators solving Africa's most pressing challenges through science, technology, and creativity.
-
-#EmpoweringAfricasInnovators | #YECO2025 | #ERAAXIS`,
-      image: "/images/software.png",
-      date: "November 2024",
-      category: "Recognition",
-      author: "ERA AXIS Team",
-      readTime: "6 min read",
-      slug: "yeco-2025-selection"
-    },
-    {
-      id: 3,
-      title: "BagaBoard Wins at Nexora Business Pitching Challenge 2025",
-      excerpt: "BagaBoard transforms sugarcane waste into eco-friendly electrical casings, winning 1st Runner-Up at the prestigious competition.",
-      fullContent: `We are proud to announce that BagaBoard, one of ERA AXIS's innovative projects, emerged as the 1st Runner-Up at the Nexora Business Pitching Challenge 2025, held at the National Theatre, Accra.
-
-BagaBoard is redefining electrical safety and sustainability in Ghana by transforming sugarcane waste into eco-friendly, fire-resistant electrical casings. This breakthrough innovation not only enhances household safety but also promotes a cleaner environment by converting agricultural waste into durable, locally manufactured products.
-
-This recognition marks a major milestone in our mission to build safer, greener, and affordable innovations, Made in Ghana, for Africa. It reinforces ERA AXIS's commitment to empowering young innovators to create sustainable solutions that address real challenges in manufacturing, energy, and environmental protection.
-
-BagaBoard — From Waste to Watt.`,
-      image: "/images/manufacturing.png",
-      date: "November 2024",
-      category: "Innovation",
-      author: "ERA AXIS Team",
-      readTime: "4 min read",
-      slug: "bagaboard-nexora-2025"
-    }
-  ];
+  // Get only the first 3 articles for the news grid
+  const articles = Object.values(articlesData).slice(0, 3);
 
   return (
     <section className="py-12 sm:py-16 bg-white">
