@@ -1,6 +1,5 @@
 import React from 'react';
 import ManufacturingNavbar from '../../../components/ManufacturingNavbar';
-import Breadcrumb from '../../../components/pages/manufacturing/Breadcrumb';
 import ManufacturingHero from '../../../components/pages/manufacturing/ManufacturingHero';
 import ManufacturingImpact from '../../../components/pages/manufacturing/ManufacturingImpact';
 import CoreServices from '../../../components/pages/manufacturing/CoreServices';
@@ -14,7 +13,6 @@ const ManufacturingPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <ManufacturingNavbar />
-      <Breadcrumb />
       <ManufacturingHero />
       <ManufacturingImpact />
       <CoreServices />

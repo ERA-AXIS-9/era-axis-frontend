@@ -67,14 +67,20 @@ const Hero = () => {
           }}
           loading="lazy"
         />
-        {/* Lighter professional overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#39366F]/50 via-[#39366F]/25 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+        {/* Manufacturing-style overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a3a]/60 via-[#39366F]/45 to-[#5B9BD5]/25"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       {/* Content with animations */}
-      <div className="relative z-10 w-full h-full flex items-center justify-start px-6 md:px-12 lg:px-16 pt-16">
+      <div className="relative z-10 w-full h-full flex items-center justify-start px-6 md:px-12 lg:px-16 pt-16 pb-32">
         <div className="max-w-4xl w-full" key={currentSlide}>
+          {/* Accent Badge */}
+          <div className="flex items-center gap-3 mb-6 animate-fade-in-up">
+            <div className="h-1 w-12 bg-gradient-to-r from-[#5B9BD5] to-[#39366F]"></div>
+            <span className="text-sm md:text-base font-bold text-[#5B9BD5] uppercase tracking-widest">{slides[currentSlide].pillar}</span>
+          </div>
+          
           {/* Main Headline */}
           <h1 
             className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-relaxed mb-8 animate-fade-in-up tracking-tight text-white"
@@ -99,10 +105,10 @@ const Hero = () => {
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="flex flex-col sm:flex-row gap-6 md:gap-8 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <a 
               href={slides[currentSlide].cta1.link}
-              className="group bg-[#39366F] hover:bg-[#2a2850] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 flex items-center justify-center gap-3 transform hover:-translate-y-1"
+              className="group bg-[#39366F] hover:bg-[#2a2850] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 flex items-center justify-center gap-4 transform hover:-translate-y-1"
             >
               {slides[currentSlide].cta1.text}
               <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +117,7 @@ const Hero = () => {
             </a>
             <a 
               href={slides[currentSlide].cta2.link}
-              className="group bg-transparent border-3 border-white hover:bg-white hover:text-[#39366F] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 flex items-center justify-center gap-3 transform hover:-translate-y-1"
+              className="group bg-transparent border-3 border-white hover:bg-white hover:text-[#39366F] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 flex items-center justify-center gap-4 transform hover:-translate-y-1"
             >
               {slides[currentSlide].cta2.text}
               <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
