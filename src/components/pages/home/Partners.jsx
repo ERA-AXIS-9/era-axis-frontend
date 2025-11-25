@@ -8,11 +8,6 @@ const Partners = () => {
       alt: 'UNICEF Startup Labs logo'
     },
     { 
-      name: 'Google.org', 
-      logo: '/images/Partners/google-org.png',
-      alt: 'Google.org logo'
-    },
-    { 
       name: 'MEST Africa', 
       logo: '/images/Partners/mest-africa.png',
       alt: 'MEST Africa logo'
@@ -21,16 +16,6 @@ const Partners = () => {
       name: 'Bloomberg Philanthropies', 
       logo: '/images/Partners/bloomberg-philanthropies.png',
       alt: 'Bloomberg Philanthropies logo'
-    },
-    { 
-      name: 'UNDP', 
-      logo: '/images/Partners/undp.png',
-      alt: 'UNDP logo'
-    },
-    { 
-      name: 'MIT', 
-      logo: '/images/Partners/mit.png',
-      alt: 'MIT logo'
     },
     { 
       name: 'Sekondi Takoradi Metro', 
@@ -51,11 +36,6 @@ const Partners = () => {
       name: 'Adwumawura', 
       logo: '/images/Partners/adwumawura.png',
       alt: 'Adwumawura logo'
-    },
-    { 
-      name: 'Entrepreneurship World Cup', 
-      logo: '/images/Partners/entrepreneurship-world-cup.png',
-      alt: 'Entrepreneurship World Cup logo'
     }
   ];
 
@@ -133,7 +113,7 @@ const Partners = () => {
         }
         
         .animate-slide-left {
-          animation: slide-left 40s linear infinite;
+          animation: slide-left 15s linear infinite;
         }
         
         .animate-slide-left:hover {

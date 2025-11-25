@@ -3,6 +3,7 @@ import SoftwareNavbar from '../../../components/SoftwareNavbar';
 import ProjectDetailHero from '../../../components/pages/projects/ProjectDetailHero';
 import ProjectOverview from '../../../components/pages/projects/ProjectOverview';
 import ProjectChallenges from '../../../components/pages/projects/ProjectChallenges';
+import ProjectVideos from '../../../components/pages/projects/ProjectVideos';
 import ProjectGallery from '../../../components/pages/projects/ProjectGallery';
 import ProjectImpact from '../../../components/pages/projects/ProjectImpact';
 import RelatedProjects from '../../../components/pages/projects/RelatedProjects';
@@ -13,9 +14,9 @@ const AgrizPlanterPage = () => {
     title: 'AgrizPlanter',
     category: 'Agriculture',
     description: 'An automated rice planting device designed to eliminate the stress of manual transplanting, increase planting speed and accuracy, and improve farmers\' efficiency and productivity.',
-    status: 'Active',
+    status: 'In Progress',
     year: '2024',
-    image: '/images/Homepage/agriz planter.png'
+    image: '/images/agrizplanter/agrizplanter.jpg'
   };
 
   const overview = {
@@ -51,7 +52,7 @@ const AgrizPlanterPage = () => {
     {
       title: 'SafeDrive',
       description: 'Intelligent road safety system',
-      image: '/images/Homepage/ERA SAFEDRIVE.jpeg',
+      image: '/images/safedrive/safedrive.jpg',
       link: '/projects/safedrive'
     },
     {
@@ -68,13 +69,32 @@ const AgrizPlanterPage = () => {
     }
   ];
 
+  const galleryItems = [
+    { image: '/images/agrizplanter/agrizplanter.jpg', alt: 'AgrizPlanter device in action' },
+    { image: '/images/agrizplanter/agrizplanter1.jpg', alt: 'AgrizPlanter field deployment' }
+  ];
+
+  const videos = [
+    { 
+      src: '/videos/agrizplanter/agrizplanter.mp4', 
+      title: 'Development Progress',
+      description: 'Watch the AgrizPlanter development progress and crafting'
+    },
+    { 
+      src: '/videos/agrizplanter/agrizplanter1.mp4', 
+      title: 'Development in Action',
+      description: 'See the AgrizPlanter being crafted during the development phase'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SoftwareNavbar />
       <ProjectDetailHero project={projectData} />
       <ProjectOverview overview={overview} />
       <ProjectChallenges challenges={challenges} />
-      <ProjectGallery />
+      <ProjectVideos videos={videos} />
+      <ProjectGallery items={galleryItems} galleryLink="/projects/agrizplanter/gallery" />
       <ProjectImpact metrics={metrics} />
       <RelatedProjects projects={relatedProjects} />
       <ProjectDetailCTA />

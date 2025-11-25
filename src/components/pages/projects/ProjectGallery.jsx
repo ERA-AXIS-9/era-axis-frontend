@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ProjectGallery = () => {
-  const galleryItems = [
+const ProjectGallery = ({ items, galleryLink = '/projects/ecowatch/gallery' }) => {
+  const galleryItems = items || [
     { image: '/images/ecowatch-gallery/ecowatch8.png', alt: 'EcoWatch sensor casing' },
     { image: '/images/Homepage/for ecowatch.jpeg', alt: 'EcoWatch monitoring system' },
     { image: '/images/ecowatch-gallery/ecowatch6.png', alt: 'EcoWatch deployment in the field' }
@@ -38,7 +38,7 @@ const ProjectGallery = () => {
         {/* CTA Button */}
         <div className="mt-10 text-center">
           <a
-            href="/projects/ecowatch/gallery"
+            href={galleryLink}
             className="inline-block bg-[#39366F] text-white font-bold text-lg px-8 py-3 rounded-lg hover:bg-[#2a2850] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             See All Photos
