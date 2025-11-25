@@ -7,7 +7,7 @@ const Projects = () => {
       name: 'EcoWatch',
       description: 'Real-time air quality monitoring across multiple locations.',
       link: '/projects/ecowatch',
-      image: '/images/Homepage/ECOWATCH.png'
+      image: '/images/Homepage/ECOWatch1.png'
     },
     {
       name: 'AgrizPlanter',
