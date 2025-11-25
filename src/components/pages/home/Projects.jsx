@@ -10,16 +10,16 @@ const Projects = () => {
       image: '/images/Homepage/ECOWatch1.png'
     },
     {
-      name: 'AgrizPlanter',
-      description: 'Automated rice planting device for increased farming efficiency.',
-      link: '/projects/agrizplanter',
-      image: '/images/Homepage/agriz planter.png'
-    },
-    {
       name: 'SafeDrive',
       description: 'Intelligent road safety system detecting driver fatigue and risky behaviors.',
       link: '/projects/safedrive',
-      image: '/images/Homepage/ERA SAFEDRIVE.jpeg'
+      image: '/images/safedrive/safedrive.jpg'
+    },
+    {
+      name: 'AgrizPlanter',
+      description: 'Automated rice planting device for increased farming efficiency.',
+      link: '/projects/agrizplanter',
+      image: '/images/agrizplanter/agrizplanter.jpg'
     }
   ];
 

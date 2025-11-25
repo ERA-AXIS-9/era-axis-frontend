@@ -15,7 +15,7 @@ const SafeDrivePage = () => {
     description: 'An intelligent road safety innovation that detects driver fatigue, alcohol influence, and risky driving behaviors. It provides real-time alerts to prevent accidents, protect lives, and promote safer transportation systems across Africa.',
     status: 'Active',
     year: '2024',
-    image: '/images/Homepage/ERA SAFEDRIVE.jpeg'
+    image: '/images/safedrive/safedrive.jpg'
   };
 
   const overview = {
@@ -23,7 +23,7 @@ const SafeDrivePage = () => {
     details: 'By providing immediate alerts and intervention mechanisms, SafeDrive helps reduce road accidents and save lives across African transportation networks. The technology is adaptable to various vehicle types and driving conditions.',
     techStack: ['React', 'Python', 'TensorFlow', 'IoT Sensors', 'GPS', 'Cloud Computing'],
     timeline: '8 months',
-    teamSize: '6 developers + 3 engineers + 2 safety experts'
+    teamSize: '2 developers + 1 electrical electronic engineer + 1 safety expert'
   };
 
   const challenges = [
@@ -44,7 +44,7 @@ const SafeDrivePage = () => {
   const metrics = [
     { value: '94%', label: 'Detection Accuracy' },
     { value: '40%', label: 'Accident Reduction' },
-    { value: '15K+', label: 'Active Installations' }
+    { value: '25+', label: 'Active Installations' }
   ];
 
   const relatedProjects = [
@@ -68,13 +68,19 @@ const SafeDrivePage = () => {
     }
   ];
 
+  const galleryItems = [
+    { image: '/images/safedrive/safedrive.jpg', alt: 'SafeDrive system in vehicle' },
+    { image: '/images/safedrive/safedrive1.jpg', alt: 'SafeDrive sensor installation' },
+    { image: '/images/safedrive/safedrive2.jpg', alt: 'SafeDrive monitoring dashboard' }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SoftwareNavbar />
       <ProjectDetailHero project={projectData} />
       <ProjectOverview overview={overview} />
       <ProjectChallenges challenges={challenges} />
-      <ProjectGallery />
+      <ProjectGallery items={galleryItems} galleryLink="/projects/safedrive/gallery" />
       <ProjectImpact metrics={metrics} />
       <RelatedProjects projects={relatedProjects} />
       <ProjectDetailCTA />

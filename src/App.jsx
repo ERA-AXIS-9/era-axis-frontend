@@ -11,6 +11,8 @@ import EcoWatchPage from './pages/public/projects/ecowatch';
 import SafeDrivePage from './pages/public/projects/safedrive';
 import AgrizPlanterPage from './pages/public/projects/agrizplanter';
 import EcoWatchGalleryPage from './pages/public/projects/EcoWatchGalleryPage';
+import SafeDriveGalleryPage from './pages/public/projects/SafeDriveGalleryPage';
+import AgrizPlanterGalleryPage from './pages/public/projects/AgrizPlanterGalleryPage';
 import NewsPage from './pages/public/news/index';
 import ContactPage from './pages/public/contact';
 import AdminPage from './pages/admin/DashboardPage';
@@ -97,7 +99,9 @@ function App() {
           <Route path="/projects/ecowatch" element={<EcoWatchPage />} />
           <Route path="/projects/ecowatch/gallery" element={<EcoWatchGalleryPage />} />
           <Route path="/projects/safedrive" element={<SafeDrivePage />} />
+          <Route path="/projects/safedrive/gallery" element={<SafeDriveGalleryPage />} />
           <Route path="/projects/agrizplanter" element={<AgrizPlanterPage />} />
+          <Route path="/projects/agrizplanter/gallery" element={<AgrizPlanterGalleryPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/nef-2025-finalist" element={<Navigate to="/newsletter/article/1" replace />} />
           <Route path="/news/yeco-2025-selection" element={<Navigate to="/newsletter/article/2" replace />} />
