@@ -33,7 +33,7 @@ const insights = [
     date: "November 2024",
     readingTime: "4 min read",
     author: "ERA AXIS Team",
-    image: "/images/manufacturing.png",
+    image: "/images/newsletter/bagaboard-nexora-2025.jpeg",
     summary: "BagaBoard, one of ERA AXIS's innovative projects, emerged as the 1st Runner-Up at the Nexora Business Pitching Challenge 2025, transforming sugarcane waste into eco-friendly, fire-resistant electrical casings.",
     content: "Full article content would go here..."
   },
@@ -174,7 +174,7 @@ const NewsletterPage = () => {
             <div className="lg:col-span-1">
               <div className="sticky top-8 space-y-8">
                 {/* Newsletter Subscription Form */}
-                <div className="bg-gradient-to-br from-[#39366F] to-[#2a2850] rounded-2xl shadow-xl p-8 text-white">
+                <div className="bg-[#39366F] rounded-2xl shadow-xl p-8 text-white">
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold mb-3">
                       Join the Innovation Hub
@@ -198,7 +198,7 @@ const NewsletterPage = () => {
                     
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                      className="w-full bg-white hover:bg-gray-100 text-[#39366F] px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                     >
                       Subscribe Now →
                     </button>

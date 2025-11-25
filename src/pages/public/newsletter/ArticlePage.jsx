@@ -124,7 +124,7 @@ const ArticlePage = () => {
           <aside className="lg:col-span-2 space-y-6">
             {/* Hero image */}
             <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
-              <img src={article.image} alt={article.title} className="w-full h-80 md:h-96 object-cover" />
+              <img src={article.image} alt={article.title} className="w-full h-80 md:h-96 object-cover object-bottom" />
             </div>
 
             {/* Heading + excerpt under hero */}
@@ -143,7 +143,7 @@ const ArticlePage = () => {
               <img
                 src={article.secondaryImage || article.image}
                 alt={`${article.title} secondary`}
-                className="w-full h-56 sm:h-64 md:h-72 object-cover"
+                className="w-full h-56 sm:h-64 md:h-72 object-cover object-bottom"
               />
             </div>
 
@@ -159,7 +159,7 @@ const ArticlePage = () => {
 
         {/* Related heading accent */}
         
-        <section className="mt-16 rounded-2xl bg-gradient-to-r from-[#39366F] to-[#5B9BD5] p-8 text-white">
+        <section className="mt-16 rounded-2xl bg-[#39366F] p-8 text-white">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h3 className="text-2xl font-bold">Want to Partner with ERA AXIS?</h3>
@@ -167,7 +167,7 @@ const ArticlePage = () => {
             </div>
             <Link
               to="/partner"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-[#39366F] font-semibold hover:bg-gray-100"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-[#39366F] font-semibold hover:bg-gray-100 transition-colors"
             >
               Explore Partnership Opportunities
             </Link>

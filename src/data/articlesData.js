@@ -75,8 +75,8 @@ export const articlesData = {
     date: "November 2024",
     readingTime: "4 min read",
     author: "ERA AXIS Team",
-    image: "/images/manufacturing.png",
-    secondaryImage: "/images/workingspace.png",
+    image: "/images/newsletter/bagaboard-nexora-2025.jpeg",
+    secondaryImage: "/images/newsletter/bagaboard-nexora-2025.jpeg",
     rightColumnHeading: "Sustainable Innovation",
     rightColumnExcerpt: "BagaBoard transforms sugarcane waste into eco-friendly, fire-resistant electrical casings, addressing safety and environmental challenges.",
     content: `

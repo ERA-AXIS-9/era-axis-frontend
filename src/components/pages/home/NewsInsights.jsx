@@ -22,7 +22,7 @@ const NewsInsights = () => {
     {
       title: "BagaBoard Wins at Nexora Business Pitching Challenge 2025",
       excerpt: "Transforms sugarcane waste into eco-friendly electrical casings for enhanced safety.",
-      image: "/images/manufacturing.png",
+      image: "/images/newsletter/bagaboard-nexora-2025.jpeg",
       date: "Nov 2024",
       category: "Innovation",
       link: "/newsletter/article/3"
@@ -43,11 +43,11 @@ const NewsInsights = () => {
               className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100"
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

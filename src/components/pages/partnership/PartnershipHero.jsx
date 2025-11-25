@@ -51,20 +51,20 @@ const PartnershipHero = () => {
       <section className="pt-4 pb-8 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-12 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Card Container with Border Radius */}
-          <div className="p-4 sm:p-6 sm:bg-white sm:rounded-xl sm:border sm:border-gray-200 sm:shadow-sm md:p-8 lg:p-12">
+          <div className="p-4 sm:p-6 sm:bg-[#39366F] sm:rounded-xl sm:border sm:border-[#39366F] sm:shadow-sm md:p-8 lg:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               
               {/* Left Content */}
               <div className="max-w-xl">
                 {/* Main Heading */}
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6 leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                   Build Strategic Partnerships.
                   <br />
-                  <span className="text-[#39366F]">Transform Communities Together.</span>
+                  <span className="text-green-400">Transform Communities Together.</span>
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 leading-relaxed">
                   Join forces with ERA AXIS to drive innovation, develop talent, and create lasting social impact across Africa.
                 </p>
 
