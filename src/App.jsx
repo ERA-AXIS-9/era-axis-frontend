@@ -10,6 +10,7 @@ import ProjectsPage from './pages/public/projects';
 import EcoWatchPage from './pages/public/projects/ecowatch';
 import SafeDrivePage from './pages/public/projects/safedrive';
 import AgrizPlanterPage from './pages/public/projects/agrizplanter';
+import EcoWatchGalleryPage from './pages/public/projects/EcoWatchGalleryPage';
 import NewsPage from './pages/public/news/index';
 import ContactPage from './pages/public/contact';
 import AdminPage from './pages/admin/DashboardPage';
@@ -94,6 +95,7 @@ function App() {
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/ecowatch" element={<EcoWatchPage />} />
+          <Route path="/projects/ecowatch/gallery" element={<EcoWatchGalleryPage />} />
           <Route path="/projects/safedrive" element={<SafeDrivePage />} />
           <Route path="/projects/agrizplanter" element={<AgrizPlanterPage />} />
           <Route path="/news" element={<NewsPage />} />

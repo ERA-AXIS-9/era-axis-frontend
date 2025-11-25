@@ -16,11 +16,10 @@ const ImpactStats = () => {
     },
     {
       icon: Recycle,
-      number: 0,
-      suffix: '',
+      number: 10,
+      suffix: ' tons',
       label: 'E-waste transformed',
-      color: '#5B9BD5',
-      placeholder: '—'
+      color: '#5B9BD5'
     },
     {
       icon: Lightbulb,
@@ -31,11 +30,10 @@ const ImpactStats = () => {
     },
     {
       icon: Globe,
-      number: 0,
+      number: 4,
       suffix: '',
       label: 'Global recognition',
-      color: '#4a8bc2',
-      placeholder: '—'
+      color: '#4a8bc2'
     }
   ];
 

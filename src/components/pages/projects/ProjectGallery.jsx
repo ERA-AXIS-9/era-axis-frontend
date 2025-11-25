@@ -2,9 +2,9 @@ import React from 'react';
 
 const ProjectGallery = () => {
   const galleryItems = [
+    { image: '/images/ecowatch-gallery/ecowatch8.png', alt: 'EcoWatch sensor casing' },
     { image: '/images/Homepage/for ecowatch.jpeg', alt: 'EcoWatch monitoring system' },
-    { image: '/images/Homepage/ECOWATCH.png', alt: 'EcoWatch dashboard' },
-    { image: '/images/Homepage/PXL_20250913_133342582.MP.jpg', alt: 'Field deployment' }
+    { image: '/images/ecowatch-gallery/ecowatch6.png', alt: 'EcoWatch deployment in the field' }
   ];
 
   return (
@@ -33,6 +33,16 @@ const ProjectGallery = () => {
               />
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="mt-10 text-center">
+          <a
+            href="/projects/ecowatch/gallery"
+            className="inline-block bg-[#39366F] text-white font-bold text-lg px-8 py-3 rounded-lg hover:bg-[#2a2850] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
+          >
+            See All Photos
+          </a>
         </div>
       </div>
     </section>
