@@ -118,62 +118,6 @@ const ArticlePage = () => {
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
             </div>
-
-            <section className="mt-10">
-              <div className="rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm bg-white">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Enjoying this Insight?</h3>
-                <p className="text-gray-600 mt-1">Subscribe for more insights.</p>
-                <form onSubmit={handleSubscribe} className="mt-4 flex flex-col sm:flex-row gap-3">
-                  <label htmlFor="article-email" className="sr-only">Email address</label>
-                  <input
-                    id="article-email"
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="flex-1 px-3 py-2 rounded-md border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#39366F]"
-                  />
-                  <button
-                    type="submit"
-                    className="px-4 py-2 rounded-md bg-[#39366F] hover:bg-[#2a2850] text-white font-semibold inline-flex items-center justify-center gap-2"
-                    aria-label="Subscribe"
-                  >
-                    Subscribe
-                    <ArrowRight size={16} />
-                  </button>
-                </form>
-                {isSubscribed && (
-                  <p className="mt-2 text-sm text-green-600">Thanks! You'll hear from us soon.</p>
-                )}
-              </div>
-            </section>
-
-            {/* Related */}
-            <section className="mt-12">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-1.5 h-6 bg-green-500 rounded"></span>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Related Articles</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {Object.values(articlesData)
-                  .filter((a) => a.id !== parseInt(id))
-                  .slice(0, 3)
-                  .map((rel) => (
-                    <Link key={rel.id} to={`/newsletter/article/${rel.id}`} className="group">
-                      <div className="h-full rounded-lg border border-gray-200 hover:border-gray-300 overflow-hidden">
-                        <div className="flex gap-4 p-4">
-                          <img src={rel.image} alt={rel.title} className="w-20 h-20 rounded object-cover flex-shrink-0" />
-                          <div>
-                            <h4 className="font-semibold text-gray-900 group-hover:text-[#39366F]">{rel.title}</h4>
-                            <p className="text-sm text-gray-500">{rel.readingTime}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-              </div>
-            </section>
           </article>
 
           {/* Right: sidebar */}

@@ -17,48 +17,27 @@ const insights = [
   },
   {
     id: 2,
-    title: "The Future of African Tech: Emerging Trends and Investment Opportunities",
-    category: "Market Analysis",
-    date: "October 2024",
-    readingTime: "8 min read",
-    author: "Research Team",
+    title: "ERA AXIS Selected for the 2025 Youth Ecopreneur Programme (YECO)",
+    category: "Partnership",
+    date: "November 2024",
+    readingTime: "4 min read",
+    author: "ERA AXIS Team",
     image: "/images/manufacturing.png",
-    summary: "Explore the transformative technologies shaping Africa's digital landscape and discover where smart investors are focusing their capital for maximum impact and returns in 2025 and beyond.",
+    summary: "ERA AXIS selected from hundreds of global applications for the prestigious 2025 Youth Ecopreneur Programme (YECO), a global initiative empowering young entrepreneurs driving sustainable, green, and inclusive innovations.",
     content: "Full article content would go here..."
   },
   {
     id: 3,
-    title: "Smart Manufacturing Solutions: Revolutionizing Ghana's Industrial Sector",
-    category: "Innovation Spotlight",
-    date: "October 2024",
-    readingTime: "6 min read",
-    author: "Engineering Team",
+    title: "BagaBoard Wins 1st Runner-Up at Nexora Business Pitching Challenge 2025",
+    category: "Innovation",
+    date: "November 2024",
+    readingTime: "4 min read",
+    author: "ERA AXIS Team",
     image: "/images/manufacturing.png",
-    summary: "How IoT-enabled manufacturing and custom fabrication are creating new opportunities for local businesses, reducing costs, and improving productivity across Ghana's industrial value chain.",
+    summary: "BagaBoard, one of ERA AXIS's innovative projects, emerged as the 1st Runner-Up at the Nexora Business Pitching Challenge 2025, transforming sugarcane waste into eco-friendly, fire-resistant electrical casings.",
     content: "Full article content would go here..."
   },
-  {
-    id: 4,
-    title: "Building Sustainable Communities: The Impact of Open Labs Innovation",
-    category: "Community Impact",
-    date: "September 2024",
-    readingTime: "7 min read",
-    author: "Community Team",
-    image: "/images/workingspace.png",
-    summary: "Discover how our shared innovation spaces are empowering local entrepreneurs, students, and creators to turn their ideas into reality while fostering sustainable development in communities across Ghana.",
-    content: "Full article content would go here..."
-  },
-  {
-    id: 5,
-    title: "Renewable Energy in Africa: Opportunities and Challenges for 2025",
-    category: "Energy Insights",
-    date: "September 2024",
-    readingTime: "10 min read",
-    author: "Energy Analyst",
-    image: "/images/manufacturing.png",
-    summary: "An in-depth analysis of Africa's renewable energy landscape, examining key opportunities for investment, technological innovations driving change, and the challenges that must be overcome for sustainable growth.",
-    content: "Full article content would go here..."
-  }
+  
 ];
 
 const NewsletterPage = () => {
