@@ -9,15 +9,15 @@ const NewsInsights = () => {
       image: "/images/workingspace.png",
       date: "Nov 2024",
       category: "Achievement",
-      link: "/news/nef-2025-finalist"
+      link: "/newsletter/article/1"
     },
     {
-      title: "ERA AXIS Selected for Youth Ecopreneur Programme 2025",
-      excerpt: "Chosen from hundreds of global applications for practical STEM education innovation.",
-      image: "/images/software.png",
+      title: "ERA AXIS Selected for the 2025 Youth Ecopreneur Programme (YECO)",
+      excerpt: "ERA AXIS selected from hundreds of global applications for the prestigious 2025 Youth Ecopreneur Programme (YECO).",
+      image: "/images/manufacturing.png",
       date: "Nov 2024",
-      category: "Recognition",
-      link: "/news/yeco-2025-selection"
+      category: "Partnership",
+      link: "/newsletter/article/2"
     },
     {
       title: "BagaBoard Wins at Nexora Business Pitching Challenge 2025",
@@ -25,7 +25,7 @@ const NewsInsights = () => {
       image: "/images/manufacturing.png",
       date: "Nov 2024",
       category: "Innovation",
-      link: "/news/bagaboard-nexora-2025"
+      link: "/newsletter/article/3"
     }
   ];
 
@@ -87,7 +87,7 @@ const NewsInsights = () => {
         {/* See More Button */}
         <div className="flex justify-end">
           <a 
-            href="/news"
+            href="/newsletter"
             className="bg-[#39366F] hover:bg-[#2a2850] text-white px-5 py-2 rounded-md font-semibold inline-flex items-center gap-1 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm"
           >
             See More

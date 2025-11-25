@@ -10,107 +10,98 @@ export const articlesData = {
     image: "/images/workingspace.png",
     secondaryImage: "/images/manufacturing.png",
     rightColumnHeading: "Innovation in Practice",
-    rightColumnExcerpt: "In ERA AXIS among top 32 finalists, our approach integrates practical STEM with clean manufacturing to remove barriers to innovation and scale local impact.",
+    rightColumnExcerpt: "Practical STEM education and e-waste innovation empower youth to design and locally manufacture affordable clean technologies.",
     content: `
-      <p>We are proud to announce that ERA AXIS has been selected as one of the top 32 finalists in the prestigious NEF 2025 Africa Energy Innovation Challenge. This recognition highlights our commitment to driving sustainable energy solutions across the African continent.</p>
+      <p>We are proud to announce that ERA AXIS has been selected among the Top 32 finalists out of more than 350 entries received from 38 countries across Africa in the 10th Africa Energy Innovation Challenge (AEIC), organized by the Nigeria Energy Forum (NEF). Themed "Transforming Energy Transition, Youth Employment &amp; Local Manufacturing," this prestigious competition celebrates Africa's most promising innovators driving clean-energy and manufacturing transformation.</p>
       
-      <h2>The Challenge and Our Achievement</h2>
-      <p>The NEF Africa Energy Innovation Challenge represents one of the continent's most prestigious platforms for showcasing groundbreaking energy solutions. Out of hundreds of applicants from across Africa, ERA AXIS's innovative approach to sustainable manufacturing and energy efficiency has earned us a place among the elite finalists.</p>
+      <h2>Our Track and Project</h2>
+      <p>Representing Ghana, ERA AXIS is competing under Track 3: Greening Local Manufacturing &amp; Value Addition with the project titled:</p>
       
-      <blockquote>"This recognition validates our mission to empower African innovation through sustainable technology and collaborative solutions. We're honored to represent Ghana on this continental stage."</blockquote>
+      <blockquote>"Driving Green Manufacturing and Job Creation through Practical STEM and E-Waste Innovation in Ghana."</blockquote>
       
       <h2>Our Innovation Approach</h2>
-      <p>Our submission focused on integrated smart manufacturing solutions that combine IoT technology with renewable energy systems. This approach addresses critical challenges in Africa's industrial sector while promoting environmental sustainability.</p>
+      <p>ERA AXIS's solution showcases how practical STEM education and e-waste innovation can empower youth to design and locally manufacture affordable clean technologies. By reusing discarded electronics, applying reverse engineering, and integrating software development, ERA AXIS reduces dependency on imported kits, lowers production costs, and creates pathways for youth employment and green manufacturing.</p>
       
       <h3>Key Innovation Highlights:</h3>
       <ul>
-        <li>Smart energy monitoring systems for manufacturing facilities</li>
-        <li>Integration of renewable energy sources with industrial processes</li>
-        <li>Real-time optimization algorithms for energy efficiency</li>
-        <li>Community-focused solutions that create local impact</li>
+        <li>Practical STEM education integrated with e-waste innovation</li>
+        <li>Reverse engineering of discarded electronics for local manufacturing</li>
+        <li>Software development integration for affordable clean technologies</li>
+        <li>Youth employment and green manufacturing pathways</li>
+        <li>Reduced dependency on imported kits and production costs</li>
       </ul>
       
       <h2>What This Means for Africa</h2>
-      <p>Being selected as a finalist demonstrates the growing recognition of African-led innovation in the global energy sector. Our success paves the way for increased investment in sustainable technologies across the continent and showcases Ghana's emergence as a hub for technological innovation.</p>
-      
-      <p>The NEF 2025 challenge provides us with an unprecedented opportunity to scale our solutions, connect with global partners, and contribute to Africa's energy transition. We remain committed to our vision of empowering communities through innovative, sustainable technology solutions.</p>
+      <p>As one of Africa's Top 32 finalists, ERA AXIS proudly represents Ghana, demonstrating how STEM-driven local innovation can create green jobs, strengthen local industries, and contribute to a sustainable circular economy. We remain committed to making STEM practical, affordable, and inclusive—empowering young Africans to turn waste into innovation and ideas into lasting impact.</p>
     `,
     excerpt: "Selected from 350+ entries across 38 African countries for STEM-driven e-waste innovation in the Africa Energy Innovation Challenge.",
     slug: "nef-2025-finalist"
   },
   2: {
     id: 2,
-    title: "The Future of African Tech: Emerging Trends and Investment Opportunities",
-    category: "Market Analysis",
-    date: "October 2024",
-    readingTime: "8 min read",
-    author: "Research Team",
+    title: "ERA AXIS Selected for the 2025 Youth Ecopreneur Programme (YECO)",
+    category: "Partnership",
+    date: "November 2024",
+    readingTime: "4 min read",
+    author: "ERA AXIS Team",
     image: "/images/manufacturing.png",
     secondaryImage: "/images/workingspace.png",
-    rightColumnHeading: "Investment Hotspots",
-    rightColumnExcerpt: "Fintech, AgriTech, logistics and AI continue to attract capital as local solutions mature across African markets.",
+    rightColumnHeading: "Global Recognition",
+    rightColumnExcerpt: "Selected from hundreds of global applications for groundbreaking work in practical STEM education and sustainable innovation.",
     content: `
-      <p>Africa's technology landscape is undergoing a remarkable transformation, driven by innovation, investment, and a growing ecosystem of entrepreneurs and developers. This comprehensive analysis explores the key trends shaping the continent's digital future and identifies the most promising investment opportunities for 2025 and beyond.</p>
+      <p>We're excited to announce that ERA AXIS has been selected to participate in the 2025 Youth Ecopreneur Programme (YECO), a prestigious global initiative empowering young entrepreneurs driving sustainable, green, and inclusive innovations across the world.</p>
       
-      <h2>The Digital Revolution Accelerates</h2>
-      <p>African tech startups raised over $5 billion in 2024, marking a significant milestone in the continent's journey toward digital transformation. This surge in investment reflects growing confidence in African innovation and the immense potential of local markets.</p>
+      <h2>Selection and Recognition</h2>
+      <p>Out of hundreds of applications from around the globe, ERA AXIS was chosen for its groundbreaking work in making STEM education practical, affordable, and impact-driven, enabling young Africans to design real-world solutions from locally available and recycled materials.</p>
       
-      <blockquote>"Africa is not just adopting technology; we're creating solutions uniquely suited to our challenges and opportunities. The next decade will see African-led innovations addressing global challenges."</blockquote>
+      <h2>About the YECO Programme</h2>
+      <p>The YECO Programme, organized by the International Trade Centre (ITC) and Ye! Community, supports youth-led ventures tackling environmental and social challenges through entrepreneurship. As part of this year's cohort, ERA AXIS will join other exceptional ecopreneurs to strengthen our climate-smart innovation strategies, expand partnerships, and scale our impact across Africa.</p>
       
-      <h2>Key Emerging Trends</h2>
+      <blockquote>"This opportunity reinforces our mission to empower Africa's innovators and accelerate homegrown climate solutions. YECO provides the perfect platform to exchange ideas, build collaborations, and position ERA AXIS at the forefront of sustainable innovation on the continent." — John Ransford Arthur, Founder &amp; CEO, ERA AXIS</blockquote>
       
-      <h3>1. Fintech Evolution</h3>
-      <p>Financial technology continues to lead African innovation, with new focus areas including embedded finance, decentralized solutions, and cross-border payment systems. The success of mobile money has created a foundation for more sophisticated financial services.</p>
+      <h2>Our Goals Through YECO</h2>
+      <p>Through the YECO journey, ERA AXIS aims to deepen its work in STEM for All, advance circular manufacturing, and grow its Open Labs network—creating pathways for African youth to design, build, and commercialize sustainable technologies.</p>
       
-      <h3>2. AgriTech Transformation</h3>
-      <p>Agriculture technology is attracting significant investment as solutions address food security challenges. Smart farming, supply chain optimization, and market access platforms are revolutionizing traditional agricultural practices.</p>
-      
-      <h2>Investment Hotspots for 2025</h2>
-      <ul>
-        <li><strong>Renewable Energy Tech:</strong> Solutions addressing Africa's energy access challenges</li>
-        <li><strong>Educational Technology:</strong> Platforms democratizing access to quality education</li>
-        <li><strong>Logistics and Supply Chain:</strong> Optimizing movement of goods and services</li>
-        <li><strong>Artificial Intelligence:</strong> Local AI solutions for African contexts</li>
-      </ul>
-      
-      <h2>The Road Ahead</h2>
-      <p>As we look toward 2025, the African tech ecosystem is poised for exponential growth. Strong government support, increasing local talent development, and growing international partnerships create a fertile environment for innovation.</p>
+      <h2>Looking Forward</h2>
+      <p>Stay tuned as we share our progress throughout the programme and beyond. Together, we're building a generation of innovators solving Africa's most pressing challenges through science, technology, and creativity.</p>
     `,
-    excerpt: "Africa's technology landscape is undergoing a remarkable transformation with emerging trends in fintech, AgriTech, and AI.",
-    slug: "african-tech-trends"
+    excerpt: "ERA AXIS selected from hundreds of global applications for the prestigious 2025 Youth Ecopreneur Programme (YECO).",
+    slug: "yeco-2025-selection"
   },
   3: {
     id: 3,
-    title: "Smart Manufacturing Solutions: Revolutionizing Ghana's Industrial Sector",
-    category: "Innovation Spotlight",
-    date: "October 2024",
-    readingTime: "6 min read",
-    author: "Engineering Team",
+    title: "BagaBoard Wins 1st Runner-Up at Nexora Business Pitching Challenge 2025",
+    category: "Innovation",
+    date: "November 2024",
+    readingTime: "4 min read",
+    author: "ERA AXIS Team",
     image: "/images/manufacturing.png",
     secondaryImage: "/images/workingspace.png",
-    rightColumnHeading: "Industry 4.0",
-    rightColumnExcerpt: "IoT monitoring and additive manufacturing enable real-time optimization and faster product cycles for local firms.",
+    rightColumnHeading: "Sustainable Innovation",
+    rightColumnExcerpt: "BagaBoard transforms sugarcane waste into eco-friendly, fire-resistant electrical casings, addressing safety and environmental challenges.",
     content: `
-      <p>Ghana's industrial sector is experiencing a technological renaissance as smart manufacturing solutions transform traditional production processes. This revolution is creating new opportunities for local businesses, reducing operational costs, and positioning Ghana as a regional leader in industrial innovation.</p>
+      <p>We are proud to announce that BagaBoard, one of ERA AXIS's innovative projects, emerged as the 1st Runner-Up at the Nexora Business Pitching Challenge 2025, held at the National Theatre, Accra.</p>
       
-      <h2>The Smart Manufacturing Advantage</h2>
-      <p>Smart manufacturing integrates advanced technologies such as IoT, AI, and automation to create more efficient, flexible, and responsive production systems. For Ghana's industrial sector, this means increased competitiveness and the ability to serve both local and international markets more effectively.</p>
+      <h2>The BagaBoard Innovation</h2>
+      <p>BagaBoard is redefining electrical safety and sustainability in Ghana by transforming sugarcane waste into eco-friendly, fire-resistant electrical casings. This breakthrough innovation not only enhances household safety but also promotes a cleaner environment by converting agricultural waste into durable, locally manufactured products.</p>
       
-      <blockquote>"Smart manufacturing is not just about technology; it's about empowering local businesses to compete globally while creating sustainable jobs and economic growth in Ghana."</blockquote>
+      <h2>Impact and Vision</h2>
+      <p>This recognition marks a major milestone in our mission to build safer, greener, and affordable innovations—Made in Ghana, for Africa. It reinforces ERA AXIS's commitment to empowering young innovators to create sustainable solutions that address real challenges in manufacturing, energy, and environmental protection.</p>
       
-      <h2>Key Technologies Driving Transformation</h2>
+      <h3>Key Innovation Highlights:</h3>
+      <ul>
+        <li>Transforms agricultural waste (sugarcane) into valuable products</li>
+        <li>Fire-resistant electrical casings for enhanced household safety</li>
+        <li>Eco-friendly and sustainable manufacturing process</li>
+        <li>Locally manufactured products reducing import dependency</li>
+        <li>Circular economy model promoting environmental protection</li>
+      </ul>
       
-      <h3>1. IoT-Enabled Production Monitoring</h3>
-      <p>Internet of Things sensors provide real-time data on production processes, enabling predictive maintenance, quality control, and optimization of resource usage. Ghanaian manufacturers are seeing 30-40% improvements in efficiency through IoT implementation.</p>
-      
-      <h3>2. Custom Fabrication and 3D Printing</h3>
-      <p>Additive manufacturing is revolutionizing prototyping and small-batch production, reducing costs and time-to-market for innovative products. Local entrepreneurs can now test and iterate designs rapidly without massive upfront investment.</p>
-      
-      <h2>Building the Future</h2>
-      <p>ERA AXIS is at the forefront of this transformation, providing Ghanaian businesses with access to smart manufacturing technologies, training, and support. Our Open Labs facilities serve as innovation hubs where local entrepreneurs can experiment with advanced manufacturing technologies.</p>
+      <h2>From Waste to Watt</h2>
+      <p>BagaBoard exemplifies how practical innovation can turn waste into opportunity. By leveraging locally available materials and applying engineering excellence, we're creating products that are safer, more affordable, and environmentally responsible. This is innovation that matters—innovation that transforms communities.</p>
     `,
-    excerpt: "Smart manufacturing integrates IoT, AI, and automation to transform Ghana's industrial sector.",
-    slug: "smart-manufacturing-ghana"
+    excerpt: "BagaBoard wins 1st Runner-Up at Nexora Business Pitching Challenge 2025 for transforming sugarcane waste into eco-friendly electrical casings.",
+    slug: "bagaboard-nexora-2025"
   },
   4: {
     id: 4,

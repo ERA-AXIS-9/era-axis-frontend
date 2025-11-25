@@ -13,7 +13,6 @@ import AgrizPlanterPage from './pages/public/projects/agrizplanter';
 import EcoWatchGalleryPage from './pages/public/projects/EcoWatchGalleryPage';
 import SafeDriveGalleryPage from './pages/public/projects/SafeDriveGalleryPage';
 import AgrizPlanterGalleryPage from './pages/public/projects/AgrizPlanterGalleryPage';
-import NewsPage from './pages/public/news/index';
 import ContactPage from './pages/public/contact';
 import AdminPage from './pages/admin/DashboardPage';
 
@@ -102,7 +101,6 @@ function App() {
           <Route path="/projects/safedrive/gallery" element={<SafeDriveGalleryPage />} />
           <Route path="/projects/agrizplanter" element={<AgrizPlanterPage />} />
           <Route path="/projects/agrizplanter/gallery" element={<AgrizPlanterGalleryPage />} />
-          <Route path="/news" element={<NewsPage />} />
           <Route path="/news/nef-2025-finalist" element={<Navigate to="/newsletter/article/1" replace />} />
           <Route path="/news/yeco-2025-selection" element={<Navigate to="/newsletter/article/2" replace />} />
           <Route path="/news/bagaboard-nexora-2025" element={<Navigate to="/newsletter/article/3" replace />} />

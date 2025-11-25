@@ -17,7 +17,7 @@ const Newsletter = () => {
         <div className="mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-2">Stay connected with ERA AXIS</h2>
           <p className="text-base font-medium text-gray-600">
-            Subscribe for updates and impact stories
+            Subscribe for updates and adfefwfsvfsvimpact stories
           </p>
         </div>
         
