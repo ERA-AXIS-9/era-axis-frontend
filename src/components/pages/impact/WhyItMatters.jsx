@@ -35,15 +35,18 @@ const WhyItMatters = () => {
           </div>
 
           {/* Right Visual */}
-          <div>
-            <div className="relative rounded-2xl h-80 overflow-hidden shadow-lg">
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative rounded-2xl w-full h-96 sm:h-[450px] lg:h-[500px] overflow-hidden shadow-2xl group">
               <img 
-                src="/images/workingspace.png"
+                src="/images/gallery/p19.jpeg"
                 alt="Learners working on hands-on projects in ERA AXIS workspace"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              {/* Optional overlay for text readability */}
-              <div className="absolute inset-0 bg-black/10 rounded-2xl"></div>
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-2xl"></div>
+              
+              {/* Decorative border */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-white/20"></div>
             </div>
           </div>
 
