@@ -5,6 +5,27 @@ const categories = ['All', 'Education', 'Household', 'Organization', 'IoT'];
 
 const projects = [
   {
+    title: 'BagaBoard',
+    description: 'Developed a fire-resistant, eco-friendly electrical extension board casing made from sugarcane bagasse to replace unsafe plastic alternatives.',
+    category: 'Household',
+    image: '/images/Manufacturing/bagaboard.png',
+    link: '/services/manufacturing/projects'
+  },
+  {
+    title: 'Automated School Alarm System',
+    description: 'Designed a programmable bell and notification system that automates school time management and eliminates manual bell ringing.',
+    category: 'Education',
+    image: '/images/Manufacturing/Automated School Alarm System .png',
+    link: '/services/manufacturing/projects'
+  },
+  {
+    title: 'Audio Amplifier',
+    description: 'Built a high-fidelity audio amplification system delivering clear, powerful sound output for classroom, auditorium, and public-use applications.',
+    category: 'Education',
+    image: '/images/Manufacturing/Audio Amplifier .png',
+    link: '/services/manufacturing/projects'
+  },
+  {
     title: 'Home Automation with 8 Functions',
     description: 'Developed a smart home control system enabling users to remotely manage lighting, security, appliances, and environmental functions from a single interface.',
     category: 'IoT',
@@ -121,9 +142,11 @@ const ProjectsShowcase = () => {
             >
               {/* Project Image */}
               <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  <span className="text-sm">Project Image</span>
-                </div>
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
               {/* Project Info */}
@@ -141,15 +164,6 @@ const ProjectsShowcase = () => {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
-
-                {/* View Details Link */}
-                <a
-                  href={project.link}
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-[#39366F] hover:gap-2 transition-all"
-                >
-                  View Details
-                  <ExternalLink size={16} />
-                </a>
               </div>
             </div>
           ))}

@@ -41,7 +41,7 @@ const FeaturedProjects = () => {
             </p>
           </div>
           <a
-            href="/services/manufacturing/projects"
+            href="/services/projectShowcase"
             className="hidden sm:inline-flex items-center gap-2 text-[#39366F] hover:text-[#2a2850] font-semibold transition-colors group"
           >
             View All Projects
@@ -89,7 +89,7 @@ const FeaturedProjects = () => {
         {/* Mobile View All Button */}
         <div className="sm:hidden flex justify-center">
           <a
-            href="/services/manufacturing/projects"
+            href="/services/projectShowcase"
             className="inline-flex items-center gap-2 bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
           >
             View All Projects
