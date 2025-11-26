@@ -5,66 +5,73 @@ const categories = ['All', 'Education', 'Household', 'Organization', 'IoT'];
 
 const projects = [
   {
-    title: 'STEM/Lab Devices',
-    description: 'Custom-built science tools and devices for education.',
+    title: 'Home Automation with 8 Functions',
+    description: 'Developed a smart home control system enabling users to remotely manage lighting, security, appliances, and environmental functions from a single interface.',
+    category: 'IoT',
+    image: '/images/Manufacturing/Home Automation with 8 Functions .png',
+    link: '/services/manufacturing/projects'
+  },
+  {
+    title: 'Automated Water Pump System with SMS Integration',
+    description: 'Engineered a smart pumping solution that automatically controls water levels and sends real-time status alerts and notifications via SMS.',
+    category: 'IoT',
+    image: '/images/Manufacturing/Automated Water Pump System with SMS Integration.png',
+    link: '/services/manufacturing/projects'
+  },
+  {
+    title: 'Student Hands-On Project',
+    description: 'Implemented practical engineering workshops that equip students with real-world technical skills through project-based learning and device fabrication.',
     category: 'Education',
-    image: '/images/project-placeholder.jpg',
+    image: '/images/Manufacturing/Student Hands-On Project.png',
     link: '/services/manufacturing/projects'
   },
   {
-    title: 'Community Makerspaces',
-    description: 'Shared innovation spaces and training hubs.',
-    category: 'Organization',
-    image: '/images/project-placeholder.jpg',
-    link: '/services/manufacturing/projects'
-  },
-  {
-    title: 'IoT Live Monitoring',
-    description: 'Real-time sensors for climate and health tracking.',
+    title: 'SafeDrive',
+    description: 'Built a smart driver monitoring system that uses real-time sensor data to detect impairment and enhance road safety through instant alerts and data-driven insights.',
     category: 'IoT',
-    image: '/images/project-placeholder.jpg',
+    image: '/images/Manufacturing/SafeDrive.png',
     link: '/services/manufacturing/projects'
   },
   {
-    title: 'Solar-Powered Devices',
-    description: 'Energy-efficient equipment for field use.',
+    title: 'Wooden Extension Board',
+    description: 'Designed and fabricated custom wooden extension boards featuring integrated surge protectors and aesthetically pleasing finishes for consumer and professional use.',
     category: 'Household',
-    image: '/images/project-placeholder.jpg',
+    image: '/images/Manufacturing/Wooden Extension Board .png',
     link: '/services/manufacturing/projects'
   },
   {
-    title: 'Assistive Tech Kits',
-    description: 'Accessible tools for inclusive classrooms.',
-    category: 'Education',
-    image: '/images/project-placeholder.jpg',
+    title: 'Smart Dustbin',
+    description: 'Developed a smart dustbin prototype that uses ultrasonic sensors to measure fill level and wirelessly communicate status, optimising waste collection routes and efficiency.',
+    category: 'IoT',
+    image: '/images/Manufacturing/Smart Dustbin .png',
     link: '/services/manufacturing/projects'
   },
   {
-    title: 'Safe Water Module',
-    description: 'Filtration systems built with local parts.',
-    category: 'Household',
-    image: '/images/project-placeholder.jpg',
-    link: '/services/manufacturing/projects'
-  },
-  {
-    title: 'Org Data Dashboard',
-    description: 'Centralized tracking for schools and firms.',
+    title: 'Fingerprint Gate',
+    description: 'Developed and implemented a biometric access control system using a fingerprint scanner integrated into a motorised gate mechanism for enhanced security and automated entry.',
     category: 'Organization',
-    image: '/images/project-placeholder.jpg',
+    image: '/images/Manufacturing/Fingerprint Gate .png',
     link: '/services/manufacturing/projects'
   },
   {
-    title: 'Smart Recycling',
-    description: 'Bins with IoT to measure waste patterns.',
-    category: 'IoT',
-    image: '/images/project-placeholder.jpg',
+    title: 'PureGuide',
+    description: 'Developed a smart, wall-mounted sterilisation device utilising UV-C light to safely and automatically sanitise mobile phones.',
+    category: 'Household',
+    image: '/images/Manufacturing/PureGuide .png',
     link: '/services/manufacturing/projects'
   },
   {
-    title: 'Smart Home Kits',
-    description: 'IoT integrations for household efficiency.',
+    title: 'CoopTech',
+    description: 'Designed an automated climate control system utilising sensors, ventilation fans, and misters to precisely regulate temperature, humidity, and air quality for optimal poultry health and productivity.',
+    category: 'Organization',
+    image: '/images/Manufacturing/CoopTech.png',
+    link: '/services/manufacturing/projects'
+  },
+  {
+    title: 'EcoWatch',
+    description: 'Developed a portable monitoring device utilising specialised sensors to accurately measure carbon emissions released into the atmosphere, automatically recording and storing the environmental data for analysis.',
     category: 'IoT',
-    image: '/images/project-placeholder.jpg',
+    image: '/images/Manufacturing/EcoWatch.png',
     link: '/services/manufacturing/projects'
   }
 ];

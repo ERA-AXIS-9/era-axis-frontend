@@ -4,23 +4,23 @@ import { ExternalLink } from 'lucide-react';
 const FeaturedProjects = () => {
   const featuredProjects = [
     {
-      title: 'RecyBin Smart Sorter',
-      description: 'Automated waste sorting system using computer vision and machine learning.',
-      image: '/images/manufacturing.png',
+      title: 'BagaBoard',
+      description: 'Developed a fire-resistant, eco-friendly electrical extension board casing made from sugarcane bagasse to replace unsafe plastic alternatives.',
+      image: '/images/Manufacturing/bagaboard.png',
       link: '/services/manufacturing/projects',
       featured: true
     },
     {
-      title: 'School Science Kits',
-      description: 'Affordable science experiment kits for rural schools using recycled materials.',
-      image: '/images/manufacturing.png',
+      title: 'Automated School Alarm System',
+      description: 'Designed a programmable bell and notification system that automates school time management and eliminates manual bell ringing.',
+      image: '/images/Manufacturing/Automated School Alarm System .png',
       link: '/services/manufacturing/projects',
       featured: false
     },
     {
-      title: 'Energy-Saving Devices',
-      description: 'Affordable power management systems for households and small businesses.',
-      image: '/images/manufacturing.png',
+      title: 'Audio Amplifier',
+      description: 'Built a high-fidelity audio amplification system delivering clear, powerful sound output for classroom, auditorium, and public-use applications.',
+      image: '/images/Manufacturing/Audio Amplifier .png',
       link: '/services/manufacturing/projects',
       featured: false
     }
