@@ -9,7 +9,7 @@ const ManufacturingNavbar = () => {
   const manufacturingLinks = [
     { name: 'Home', path: '/services/manufacturing' },
     { name: 'Services', isDropdown: true },
-    { name: 'Projects', path: '/services/manufacturing/projects' },
+    { name: 'Projects', path: '/services/projectShowcase' },
     { name: 'Book Technician', path: '/services/manufacturing/book-technician' },
     { name: 'Contact', path: '/contact', state: { from: 'manufacturing' } }
   ];

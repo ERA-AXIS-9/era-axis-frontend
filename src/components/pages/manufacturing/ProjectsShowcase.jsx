@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ExternalLink } from 'lucide-react';
 
 const categories = ['All', 'Education', 'Household', 'Organization', 'IoT'];
 

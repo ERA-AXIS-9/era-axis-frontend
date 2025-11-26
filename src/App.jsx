@@ -79,11 +79,12 @@ function App() {
   const isManufacturingPage = location.pathname.startsWith('/services/manufacturing');
   const isOpenLabsPage = location.pathname.startsWith('/services/open-labs');
   const isProjectsPage = location.pathname.startsWith('/projects');
+  const isProjectsShowcase = location.pathname === '/services/projectShowcase';
   
   // Check if on contact page with service context
   const isContactWithService = location.pathname === '/contact' && location.state?.from;
   
-  const hideMainNavbar = isSoftwarePage || isEducationPage || isManufacturingPage || isOpenLabsPage || isProjectsPage || isContactWithService;
+  const hideMainNavbar = isSoftwarePage || isEducationPage || isManufacturingPage || isOpenLabsPage || isProjectsPage || isContactWithService || isProjectsShowcase;
 
   return (
     <div className="flex flex-col min-h-screen">
