@@ -1,5 +1,5 @@
-import React from 'react';
-import { Play, Clock, User } from 'lucide-react';
+import React, { useState } from 'react';
+import { Play, Clock, User, X } from 'lucide-react';
 
 const StoriesOfChange = () => {
   const stories = [
@@ -8,23 +8,28 @@ const StoriesOfChange = () => {
       description: "From discarded devices to working prototype that helps local clinics charge patients.",
       duration: "3:45",
       speaker: "Kwame Asante",
-      thumbnail: "/images/manufacturing.png"
+      thumbnail: "/images/Educationpage/education.png",
+      videoUrl: "https://drive.google.com/file/d/1Rbc_L8zSC1dI-6k2tCaDF7Uubyl_PBOc/preview"
     },
     {
       title: "Farmers Dashboard Project", 
       description: "A low-cost dashboard built by learners to track rainfall and yield for smallholders.",
       duration: "4:12",
       speaker: "Ama Osei",
-      thumbnail: "/images/software.png"
+      thumbnail: "/images/Educationpage/education.png",
+      videoUrl: "https://drive.google.com/file/d/1Rbc_L8zSC1dI-6k2tCaDF7Uubyl_PBOc/preview"
     },
     {
       title: "E-waste Turned into STEM Kits",
       description: "Old laptops and phones become electronics kits powering practical lessons.",
       duration: "2:58",
       speaker: "Joseph Mensah",
-      thumbnail: "/images/workingspace.png"
+      thumbnail: "/images/Educationpage/education.png",
+      videoUrl: "https://drive.google.com/file/d/1Rbc_L8zSC1dI-6k2tCaDF7Uubyl_PBOc/preview"
     }
   ];
+
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
     <section className="py-6 bg-white">
@@ -38,7 +43,7 @@ const StoriesOfChange = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
           {stories.map((story, index) => (
-            <div key={index} className="bg-white group cursor-pointer">
+            <div key={index} className="bg-white group cursor-pointer" onClick={() => setSelectedVideo(story.videoUrl)}>
               
               {/* Video Thumbnail */}
               <div className="relative rounded-lg h-40 sm:h-48 mb-4 overflow-hidden group-hover:shadow-lg transition-all duration-300">
@@ -94,6 +99,29 @@ const StoriesOfChange = () => {
         </div>
 
       </div>
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="relative bg-white rounded-lg w-full max-w-6xl h-[80vh]">
+            <button 
+              onClick={() => setSelectedVideo(null)} 
+              className="absolute -top-4 -right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-black transition-colors z-10 shadow-lg"
+            >
+              <X size={24} />
+            </button>
+            <iframe 
+              src={selectedVideo}
+              title="Impact Story Video"
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+              className="w-full h-full rounded-lg"
+            ></iframe>
+          </div>
+        </div>
+      )}
+
     </section>
   );
 };

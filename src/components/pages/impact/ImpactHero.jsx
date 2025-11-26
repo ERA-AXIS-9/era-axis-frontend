@@ -1,19 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { ChevronRight, Play, Pause } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronRight, Play, X } from 'lucide-react';
 
 const ImpactHero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
-
-  const handlePlayClick = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
-
-  const handleVideoPlay = () => setIsPlaying(true);
-  const handleVideoPause = () => setIsPlaying(false);
 
   return (
     <section className="relative pt-20 sm:pt-28 lg:pt-32 pb-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 overflow-hidden">
@@ -71,35 +60,25 @@ const ImpactHero = () => {
           <div className="relative lg:col-span-1">
             
             {/* Video Container with premium styling */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer" onClick={() => setIsPlaying(true)}>
               
               {/* Gradient border effect */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#39366F] to-[#5a5789] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur -z-10"></div>
               
-              {/* Video */}
+              {/* Video Thumbnail */}
               <div className="relative bg-black rounded-2xl overflow-hidden aspect-video">
-                <video 
-                  ref={videoRef}
-                  src="/videos/impactstories/UNICEF ERAAXIS VIDEO.mp4" 
+                <img 
+                  src="/images/Educationpage/education.png"
                   alt="ERA AXIS Impact Video"
                   className="w-full h-full object-cover"
-                  controls
-                  controlsList="nodownload"
-                  onPlay={handleVideoPlay}
-                  onPause={handleVideoPause}
                 />
                 
-                {/* Centered Play/Pause Button Overlay - Shows when not playing */}
-                {!isPlaying && (
-                  <button
-                    onClick={handlePlayClick}
-                    className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-all duration-300 group/btn"
-                  >
-                    <div className="w-20 h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg group-hover/btn:scale-110 transition-transform duration-300">
-                      <Play className="text-[#39366F] ml-1" size={32} fill="currentColor" />
-                    </div>
-                  </button>
-                )}
+                {/* Centered Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all duration-300">
+                  <div className="w-20 h-20 bg-white/90 group-hover:bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="text-[#39366F] ml-1" size={32} fill="currentColor" />
+                  </div>
+                </div>
               </div>
 
               {/* Accent corner */}
@@ -111,6 +90,29 @@ const ImpactHero = () => {
         </div>
 
       </div>
+
+      {/* Video Modal */}
+      {isPlaying && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="relative bg-white rounded-lg w-full max-w-6xl h-[80vh]">
+            <button 
+              onClick={() => setIsPlaying(false)} 
+              className="absolute -top-4 -right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-black transition-colors z-10 shadow-lg"
+            >
+              <X size={24} />
+            </button>
+            <iframe 
+              src="https://drive.google.com/file/d/1Rbc_L8zSC1dI-6k2tCaDF7Uubyl_PBOc/preview"
+              title="ERA AXIS Impact Video"
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+              className="w-full h-full rounded-lg"
+            ></iframe>
+          </div>
+        </div>
+      )}
+
     </section>
   );
 };
