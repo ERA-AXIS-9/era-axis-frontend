@@ -18,12 +18,6 @@ const ManufacturingHero = () => {
             
             {/* Left Content */}
             <div className="max-w-3xl">
-              {/* Accent Badge */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-1 w-12 bg-gradient-to-r from-[#5B9BD5] to-[#39366F]"></div>
-                <span className="text-sm md:text-base font-bold text-[#5B9BD5] uppercase tracking-widest">Manufacturing</span>
-              </div>
-              
               {/* Main Heading */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 leading-tight">
                 From Building to Maintaining
