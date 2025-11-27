@@ -13,6 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^3.1.0",
     "@reduxjs/toolkit": "^2.2.5",
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.7.2",

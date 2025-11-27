@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, MapPin, Mail, Phone, Facebook, Linkedin, Youtube, Instagram, Send, User, MessageSquare } from 'lucide-react';
+import { ChevronRight, MapPin, Mail, Phone, Send, User, MessageSquare } from 'lucide-react';
 
 const ContactHero = () => {
   const [formData, setFormData] = useState({
@@ -41,10 +41,10 @@ const ContactHero = () => {
   return (
     <section className="pt-16 sm:pt-20 lg:pt-24 pb-12 bg-gradient-to-br from-white via-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           
           {/* Left Content - Contact Form */}
-          <div className={`p-6 sm:bg-white sm:rounded-2xl sm:border sm:border-gray-200 sm:shadow-lg hover:shadow-2xl sm:p-8 transition-all duration-700 hover:scale-[1.02] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`lg:col-span-2 p-6 sm:bg-white sm:rounded-2xl sm:border sm:border-gray-200 sm:shadow-lg hover:shadow-2xl sm:p-8 transition-all duration-700 hover:scale-[1.02] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             
             <div className="mb-8">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight mb-4">
@@ -147,7 +147,7 @@ const ContactHero = () => {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 mb-1">Our Location</div>
-                    <span className="text-base text-gray-900 font-semibold">ERA AXIS HQ - Faslbadz, Ghana</span>
+                    <span className="text-base text-gray-900 font-semibold">ERA AXIS HQ – Essikado, Ghana</span>
                   </div>
                 </div>
               </div>
@@ -159,7 +159,7 @@ const ContactHero = () => {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 mb-1">Email Address</div>
-                    <span className="text-base text-gray-900 font-semibold">info@era-axis.com</span>
+                    <span className="text-base text-gray-900 font-semibold">support@eraaxis.com</span>
                   </div>
                 </div>
               </div>
@@ -171,7 +171,7 @@ const ContactHero = () => {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 mb-1">Phone Number</div>
-                    <span className="text-base text-gray-900 font-semibold">+233 [Insert Number]</span>
+                    <span className="text-base text-gray-900 font-semibold">+233 50 958 2497</span>
                   </div>
                 </div>
               </div>
@@ -181,28 +181,26 @@ const ContactHero = () => {
             {/* Social Media */}
             <div className="bg-white border border-gray-200 px-5 py-6 rounded-xl shadow-sm">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Connect With Us</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                <a href="#" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
-                  <Facebook className="text-[#39366F] group-hover:text-[#2a2850]" size={18} />
-                  <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">Facebook</span>
-                </a>
-                <a href="#" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
-                  <Linkedin className="text-[#39366F] group-hover:text-[#2a2850]" size={18} />
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <a href="https://www.linkedin.com/company/era-axis" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
+                  <i className="fa-brands fa-linkedin text-[#39366F] group-hover:text-[#2a2850]"></i>
                   <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">LinkedIn</span>
                 </a>
-                <a href="#" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
-                  <div className="w-4 h-4 flex items-center justify-center">
-                    <span className="text-[#39366F] group-hover:text-[#2a2850] font-bold text-sm">𝕏</span>
-                  </div>
+                <a href="https://x.com/ERRAAXIS?t=EphVMATn3dQAMr4lE3su1Q&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
+                  <i className="fa-brands fa-x-twitter text-[#39366F] group-hover:text-[#2a2850]"></i>
                   <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">X</span>
                 </a>
-                <a href="#" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
-                  <Youtube className="text-[#39366F] group-hover:text-[#2a2850]" size={18} />
-                  <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">YouTube</span>
-                </a>
-                <a href="#" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
-                  <Instagram className="text-[#39366F] group-hover:text-[#2a2850]" size={18} />
+                <a href="https://www.instagram.com/era_axis?igsh=OTNsems5YWJjeDZh" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
+                  <i className="fa-brands fa-square-instagram text-[#39366F] group-hover:text-[#2a2850]"></i>
                   <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@eraaxis?_t=ZM-8ztLE4T5YDs&_r=1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
+                  <i className="fa-brands fa-tiktok text-[#39366F] group-hover:text-[#2a2850]"></i>
+                  <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">TikTok</span>
+                </a>
+                <a href="https://wa.me/233509582497" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
+                  <i className="fa-brands fa-square-whatsapp text-[#39366F] group-hover:text-[#2a2850]"></i>
+                  <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">WhatsApp</span>
                 </a>
               </div>
             </div>

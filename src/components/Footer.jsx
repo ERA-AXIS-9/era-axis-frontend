@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { X, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -72,23 +71,29 @@ const Footer = () => {
                 <span className="font-semibold text-white">Address:</span> ERA AXIS HQ – Essikado, Ghana
               </p>
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Email:</span> <a href="mailto:info@eraaxis.com" className="hover:text-[#39366F] transition-colors">info@eraaxis.com</a>
+                <span className="font-semibold text-white">Email:</span> <a href="mailto:support@eraaxis.com" className="hover:text-[#39366F] transition-colors">support@eraaxis.com</a>
               </p>
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Phone:</span> +233 [insert]
+                <span className="font-semibold text-white">Phone:</span> <a href="tel:+233509582497" className="hover:text-[#39366F] transition-colors">+233 50 958 2497</a>
               </p>
             </div>
             
             {/* Social Media */}
             <div className="flex items-center space-x-3 mb-4">
-              <a href="https://x.com/eraaxis" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="X (formerly Twitter)">
-                <X size={16} />
+              <a href="https://www.linkedin.com/company/era-axis" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="LinkedIn">
+                <i className="fa-brands fa-linkedin text-white"></i>
               </a>
-              <a href="https://instagram.com/eraaxis" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="Instagram">
-                <Instagram size={16} />
+              <a href="https://x.com/ERRAAXIS?t=EphVMATn3dQAMr4lE3su1Q&s=09" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="X (formerly Twitter)">
+                <i className="fa-brands fa-x-twitter text-white"></i>
               </a>
-              <a href="https://linkedin.com/company/eraaxis" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="LinkedIn">
-                <Linkedin size={16} />
+              <a href="https://www.instagram.com/era_axis?igsh=OTNsems5YWJjeDZh" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="Instagram">
+                <i className="fa-brands fa-square-instagram text-white"></i>
+              </a>
+              <a href="https://www.tiktok.com/@eraaxis?_t=ZM-8ztLE4T5YDs&_r=1" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="TikTok">
+                <i className="fa-brands fa-tiktok text-white"></i>
+              </a>
+              <a href="https://wa.me/233509582497" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="WhatsApp">
+                <i className="fa-brands fa-square-whatsapp text-white"></i>
               </a>
             </div>
             
