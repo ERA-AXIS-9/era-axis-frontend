@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { CheckCircle, ChevronRight, Calendar, Zap, Users, Wrench, Lightbulb, Award, ChevronDown, Check } from 'lucide-react';
+import { CheckCircle, ChevronRight, Calendar, Zap, Users, Wrench, Lightbulb, Award, ChevronDown, Check, Code2, Cpu, Database, Globe, Terminal, Rocket } from 'lucide-react';
 import EducationNavbar from '../../../components/EducationNavbar';
 import Breadcrumb from '../../../components/pages/education/Breadcrumb';
+
+// Import course images directly to handle paths correctly
+import makerHardwareImage from '/images/Educationpage/maker hardware and repair.png';
+import juniorStemImage from '/images/Educationpage/junior sterm basic.png';
+import coderSoftwareImage from '/images/Educationpage/coder software fundation.png';
 
 const membershipData = {
   title: 'ERA AXIS Membership Dues',
   tagline: 'Access Innovation. Build Skills. Shape the Future.',
   price: 15,
   priceType: 'month',
+  image: '/images/Educationpage/junior%20sterm%20basic.png',
   description: 'Becoming a member of ERA AXIS gives students, innovators, hobbyists, and young creators access to practical, inclusive, and affordable STEM learning. Your dues help us keep our tools running, support new projects, and make innovation accessible to everyone.',
   
   benefits: [
@@ -113,6 +119,7 @@ const courseData = {
     price: 400,
     priceType: 'one-time',
     duration: '6 months',
+    image: makerHardwareImage,
     description: 'Master electronics, fabrication, and repair skills. Build devices from e-waste and access professional tools. This comprehensive course teaches you hands-on skills in electronics, 3D printing, laser cutting, and device repair.',
     benefits: [
       'Learn electronics fundamentals and circuit design',
@@ -130,6 +137,31 @@ const courseData = {
       'Device Repair Techniques',
       'Project Documentation'
     ],
+    technologies: [
+      { icon: Cpu, title: 'Electronics & Circuits', description: 'Master circuit design, microcontrollers, and sensor integration' },
+      { icon: Wrench, title: 'Fabrication Tools', description: 'Learn 3D printing, laser cutting, and CNC machining' },
+      { icon: Zap, title: 'Power Systems', description: 'Understand power management, batteries, and energy efficiency' },
+      { icon: Code2, title: 'Embedded Systems', description: 'Program microcontrollers and IoT devices' },
+      { icon: Lightbulb, title: 'Problem Solving', description: 'Troubleshoot and repair electronic devices' },
+      { icon: Rocket, title: 'Project Deployment', description: 'Build and deploy functional hardware projects' }
+    ],
+    realWorldProjects: [
+      {
+        title: 'Smart Home Device',
+        description: 'Build an IoT-enabled smart home device with sensors and wireless connectivity.',
+        technologies: ['Arduino', 'Sensors', '3D Printing', 'WiFi Module']
+      },
+      {
+        title: 'E-Waste Refurbishment',
+        description: 'Repair and refurbish electronic devices from e-waste, extending their lifespan.',
+        technologies: ['Soldering', 'Diagnostics', 'Component Replacement', 'Testing']
+      },
+      {
+        title: 'Custom Hardware Project',
+        description: 'Design and build a custom hardware solution for a real-world problem.',
+        technologies: ['Circuit Design', 'PCB Layout', 'Fabrication', 'Assembly']
+      }
+    ],
     projects: [
       { title: 'Custom Electronics Build', description: 'Design and build a functional electronic device of your choice' },
       { title: '3D Printed Device', description: 'Create a 3D-printed enclosure or mechanical part' },
@@ -143,6 +175,7 @@ const courseData = {
     price: 400,
     priceType: 'one-time',
     duration: '4 months',
+    image: coderSoftwareImage,
     description: 'Learn to code from scratch and build practical applications. From mobile apps to smart home systems. This course covers programming fundamentals, web development, and application building with hands-on projects.',
     benefits: [
       'Learn programming from the ground up',
@@ -160,6 +193,31 @@ const courseData = {
       'Database Design',
       'Software Best Practices'
     ],
+    technologies: [
+      { icon: Code2, title: 'Frontend Development', description: 'Master HTML5, CSS3, JavaScript, and modern frameworks like React' },
+      { icon: Terminal, title: 'Backend Development', description: 'Build robust server-side applications with Node.js and Express' },
+      { icon: Database, title: 'Database Management', description: 'Learn both SQL and NoSQL databases with PostgreSQL and MongoDB' },
+      { icon: Globe, title: 'Web APIs', description: 'Create and consume RESTful APIs and implement authentication' },
+      { icon: Wrench, title: 'Development Tools', description: 'Use professional tools like Git, VS Code, and command line' },
+      { icon: Rocket, title: 'Deployment', description: 'Deploy applications using cloud platforms and CI/CD pipelines' }
+    ],
+    realWorldProjects: [
+      {
+        title: 'E-Commerce Platform',
+        description: 'Build a full-featured online store with product catalog, shopping cart, and payment integration.',
+        technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe']
+      },
+      {
+        title: 'Social Media Dashboard',
+        description: 'Create a real-time social media analytics dashboard with data visualization.',
+        technologies: ['React', 'D3.js', 'Express', 'WebSocket']
+      },
+      {
+        title: 'Task Management System',
+        description: 'Develop a collaborative task management system with real-time updates.',
+        technologies: ['React', 'Redux', 'Node.js', 'MongoDB']
+      }
+    ],
     projects: [
       { title: 'Personal Website', description: 'Build a responsive personal or portfolio website' },
       { title: 'Web Application', description: 'Create a functional web app with database integration' },
@@ -173,6 +231,7 @@ const courseData = {
     price: 400,
     priceType: 'one-time',
     duration: '3 months',
+    image: juniorStemImage,
     description: 'Perfect for beginners. Learn fundamental STEM concepts through hands-on projects and interactive workshops. This course introduces you to electronics, coding, and fabrication in an accessible way.',
     benefits: [
       'Learn STEM fundamentals in an engaging way',
@@ -190,6 +249,31 @@ const courseData = {
       '3D Design Basics',
       'Project Planning'
     ],
+    technologies: [
+      { icon: Zap, title: 'Electronics Basics', description: 'Learn circuits, components, and how electricity works' },
+      { icon: Code2, title: 'Introduction to Coding', description: 'Start with block-based coding and simple programming' },
+      { icon: Cpu, title: 'Microcontrollers', description: 'Understand Arduino and basic microcontroller programming' },
+      { icon: Lightbulb, title: '3D Design Basics', description: 'Learn fundamentals of 3D modeling and design' },
+      { icon: Wrench, title: 'Hands-On Making', description: 'Build and prototype with real tools and materials' },
+      { icon: Rocket, title: 'Project Building', description: 'Combine skills to create your first STEM projects' }
+    ],
+    realWorldProjects: [
+      {
+        title: 'LED Light Showghdgkj;lrhkjrhi',
+        description: 'Build an interactive LED circuit that responds to sensors and creates light patterns.',
+        technologies: ['Arduino', 'LEDs', 'Sensors', 'Breadboard']
+      },
+      {
+        title: 'Simple Robot',
+        description: 'Create a basic robot that can move and respond to obstacles.',
+        technologies: ['Arduino', 'Motors', 'Sensors', '3D Printing']
+      },
+      {
+        title: 'Smart Device Project',
+        description: 'Build a smart device that combines electronics, coding, and design.',
+        technologies: ['Arduino', 'Coding', '3D Design', 'Assembly']
+      }
+    ],
     projects: [
       { title: 'LED Circuit Project', description: 'Build your first electronic circuit with LEDs' },
       { title: 'Simple Code Program', description: 'Write your first program and see it in action' },
@@ -203,10 +287,22 @@ const ProgramDetailsPage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [openFaq, setOpenFaq] = useState(null);
+  const [scrollY, setScrollY] = useState(0);
+  const projectsSectionRef = useRef(null);
   
   const programId = searchParams.get('program') || 'junior-stem';
   const isMembership = programId === 'junior-stem';
   const currentData = isMembership ? membershipData : courseData[programId];
+
+  // Parallax scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   if (!currentData) {
     return (
@@ -234,8 +330,8 @@ const ProgramDetailsPage = () => {
         {/* Background Image - Right Side */}
         <div className="absolute right-0 top-0 bottom-0 w-full sm:w-3/5 lg:w-1/2 opacity-100">
           <img 
-            src="/images/Educationpage/junior%20sterm%20basic.png" 
-            alt="ERA AXIS Membership"
+            src={currentData.image} 
+            alt={currentData.title}
             className="w-full h-full object-cover"
           />
           {/* Ultra light overlay for mobile visibility, minimal gradient for desktop */}
@@ -368,6 +464,73 @@ const ProgramDetailsPage = () => {
           </div>
         </section>
       )}
+
+      {/* Technologies You'll Master - Only for Courses */}
+      {!isMembership && currentData.technologies && (
+        <section className="py-8 sm:py-12 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12">Technologies You'll Master</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {currentData.technologies.map((tech, index) => {
+                const IconComponent = tech.icon;
+                return (
+                  <div key={index} className="bg-gray-800 border border-gray-700 rounded-lg p-5 sm:p-6 hover:border-[#39366F] hover:shadow-lg transition-all">
+                    <IconComponent size={28} className="text-[#39366F] mb-3" />
+                    <h3 className="text-lg font-bold text-white mb-2">{tech.title}</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">{tech.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Real-World Projects - Only for Courses */}
+      {!isMembership && currentData.realWorldProjects && (
+        <section 
+          ref={projectsSectionRef}
+          className="py-16 sm:py-20 bg-gradient-to-br from-[#39366F] to-[#2a2850] relative overflow-hidden flex items-center min-h-[600px]"
+        >
+          {/* Parallax Background Image */}
+          <img 
+            src={currentData.image}
+            alt="Course background"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              transform: `translateY(${scrollY * 0.4}px)`,
+              opacity: 0.5,
+              zIndex: 0
+            }}
+          />
+          
+          {/* Gradient Overlay for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#39366F]/40 via-[#39366F]/50 to-[#2a2850]/60 z-5"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Real-World Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {currentData.realWorldProjects.map((project, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-2xl hover:border-[#5B9BD5] hover:shadow-lg hover:shadow-[#5B9BD5]/20 transition-all duration-300"
+                >
+                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                  <p className="text-white/90 text-base mb-5 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span key={techIndex} className="inline-block px-3 py-1 bg-[#5B9BD5]/30 border border-[#5B9BD5]/60 text-[#92c5fd] text-xs font-semibold rounded-full hover:bg-[#5B9BD5]/50 transition-colors">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
 
       {/* Membership Benefits at a Glance - Only for Membership */}
       {isMembership && (
