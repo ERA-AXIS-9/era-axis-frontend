@@ -9,6 +9,11 @@ import makerHardwareImage from '/images/Educationpage/maker hardware and repair.
 import juniorStemImage from '/images/Educationpage/junior sterm basic.png';
 import coderSoftwareImage from '/images/Educationpage/coder software fundation.png';
 
+// Add smooth scrolling to the entire page
+if (typeof document !== 'undefined') {
+  document.documentElement.style.scrollBehavior = 'smooth';
+}
+
 const membershipData = {
   title: 'ERA AXIS Membership Dues',
   tagline: 'Access Innovation. Build Skills. Shape the Future.',
@@ -294,13 +299,21 @@ const ProgramDetailsPage = () => {
   const isMembership = programId === 'junior-stem';
   const currentData = isMembership ? membershipData : courseData[programId];
 
-  // Parallax scroll effect
+  // Enhanced parallax scroll effect with requestAnimationFrame
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -490,36 +503,50 @@ const ProgramDetailsPage = () => {
       {!isMembership && currentData.realWorldProjects && (
         <section 
           ref={projectsSectionRef}
-          className="py-16 sm:py-20 bg-gradient-to-br from-[#39366F] to-[#2a2850] relative overflow-hidden flex items-center min-h-[600px]"
+          className="relative overflow-hidden min-h-[600px] flex items-center"
+          style={{
+            background: '#1a1a2e',
+            padding: '4rem 0'
+          }}
         >
-          {/* Parallax Background Image */}
-          <img 
-            src={currentData.image}
-            alt="Course background"
-            className="absolute inset-0 w-full h-full object-cover"
+          {/* Parallax Background */}
+          <div 
+            className="absolute inset-0 w-full h-full"
             style={{
-              transform: `translateY(${scrollY * 0.4}px)`,
-              opacity: 0.5,
-              zIndex: 0
+              backgroundImage: `url(${currentData.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundAttachment: 'fixed',
+              transform: `translateY(${scrollY * 0.2}px)`,
+              willChange: 'transform',
+              zIndex: 1,
+              opacity: 0.9
             }}
           />
           
-          {/* Gradient Overlay for better text visibility */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#39366F]/40 via-[#39366F]/50 to-[#2a2850]/60 z-5"></div>
+          {/* Lighter overlay */}
+          <div className="absolute inset-0 bg-black/20 z-2" />
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          {/* Content */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Real-World Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {currentData.realWorldProjects.map((project, index) => (
                 <div 
                   key={index} 
-                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-2xl hover:border-[#5B9BD5] hover:shadow-lg hover:shadow-[#5B9BD5]/20 transition-all duration-300"
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 
+                            shadow-2xl hover:border-[#5B9BD5] hover:shadow-lg hover:shadow-[#5B9BD5]/20 
+                            transition-all duration-300 transform hover:-translate-y-1 hover:bg-white/20
+                            cursor-pointer"
                 >
                   <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
                   <p className="text-white/90 text-base mb-5 leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="inline-block px-3 py-1 bg-[#5B9BD5]/30 border border-[#5B9BD5]/60 text-[#92c5fd] text-xs font-semibold rounded-full hover:bg-[#5B9BD5]/50 transition-colors">
+                    {project.technologies && project.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex} 
+                        className="inline-block px-3 py-1 bg-[#5B9BD5]/30 border border-[#5B9BD5]/60 text-[#92c5fd] text-xs font-semibold rounded-full hover:bg-[#5B9BD5]/50 transition-colors"
+                      >
                         {tech}
                       </span>
                     ))}
