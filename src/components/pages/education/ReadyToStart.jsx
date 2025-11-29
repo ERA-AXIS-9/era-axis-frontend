@@ -7,8 +7,10 @@ const ReadyToStart = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* CTA Container - Brand Color Card */}
-        <div className="bg-[#39366F] rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="group relative bg-[#39366F] rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+          {/* Gradient overlay on hover */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
             
             {/* Left Side - Text Content */}
             <div className="text-left flex-1">

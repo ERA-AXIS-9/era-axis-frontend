@@ -50,16 +50,16 @@ const InPersonConfirmationPage = () => {
           {/* Success Icon */}
           <div className="inline-flex items-center justify-center mb-6">
             <div className="relative">
-              <div className="w-24 h-24 bg-gradient-to-br from-green-50 to-green-100 rounded-full flex items-center justify-center shadow-lg">
-                <CheckCircle size={56} className="text-green-600" strokeWidth={2.5} />
+              <div className="w-24 h-24 bg-gradient-to-br from-[#F0F4FF] to-[#E8ECFF] rounded-full flex items-center justify-center shadow-lg">
+                <CheckCircle size={56} className="text-[#2A2D7C]" strokeWidth={2.5} />
               </div>
-              <div className="absolute inset-0 w-24 h-24 border-4 border-green-200 rounded-full animate-ping opacity-20"></div>
+              <div className="absolute inset-0 w-24 h-24 border-4 border-[#2A2D7C]/20 rounded-full animate-ping opacity-20"></div>
             </div>
           </div>
 
           {/* Success Badge */}
           <div className="mb-4">
-            <span className="inline-block px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#F0F4FF] text-[#2A2D7C] rounded-full text-sm font-semibold mb-4">
               Enrollment Submitted Successfully
             </span>
           </div>
@@ -69,7 +69,7 @@ const InPersonConfirmationPage = () => {
           </h1>
 
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Your enrollment for <span className="font-semibold text-[#5B9BD5]">{program.name}</span> has been received.
+            Your enrollment for <span className="font-semibold text-[#2A2D7C]">{program.name}</span> has been received.
             We're excited to start this innovation journey with you.
           </p>
 
@@ -77,7 +77,7 @@ const InPersonConfirmationPage = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
             <button
               onClick={() => navigate('/services/education')}
-              className="bg-[#5B9BD5] hover:bg-[#4a8bc2] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+              className="bg-[#2A2D7C] hover:bg-[#1a1d4d] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
             >
               Explore More Programs
               <ChevronRight size={18} />
@@ -85,7 +85,7 @@ const InPersonConfirmationPage = () => {
             
             <button
               onClick={() => navigate('/contact')}
-              className="border-2 border-[#5B9BD5] text-[#5B9BD5] hover:bg-[#5B9BD5] hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+              className="border-2 border-[#2A2D7C] text-[#2A2D7C] hover:bg-[#2A2D7C] hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 inline-flex items-center justify-center gap-2"
             >
               Contact Support
             </button>
@@ -160,16 +160,16 @@ const InPersonConfirmationPage = () => {
                 </div>
 
                 {/* Info Box */}
-                <div className="mt-6 p-4 bg-green-50 border border-green-100 rounded-lg">
-                  <p className="text-sm text-green-900">
+                <div className="mt-6 p-4 bg-[#F0F4FF] border border-[#2A2D7C]/20 rounded-lg">
+                  <p className="text-sm text-[#2A2D7C]">
                     <span className="font-semibold">🎉 Congratulations!</span> Your spot in the program is reserved. 
                     We'll contact you soon with the next steps.
                   </p>
                 </div>
 
                 {/* Important Note */}
-                <div className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-lg">
-                  <p className="text-sm text-blue-900">
+                <div className="mt-6 p-4 bg-[#F0F4FF] border border-[#2A2D7C]/20 rounded-lg">
+                  <p className="text-sm text-[#2A2D7C]">
                     <span className="font-semibold">💡 Note:</span> All tools and materials for hands-on activities 
                     will be provided by ERA AXIS at no additional cost.
                   </p>
@@ -188,7 +188,7 @@ const InPersonConfirmationPage = () => {
                       <div key={index} className="flex gap-4">
                         {/* Step Number */}
                         <div className="flex-shrink-0">
-                          <div className="w-8 h-8 rounded-full bg-[#5B9BD5] text-white flex items-center justify-center text-sm font-bold">
+                          <div className="w-8 h-8 rounded-full bg-[#2A2D7C] text-white flex items-center justify-center text-sm font-bold">
                             {index + 1}
                           </div>
                         </div>
@@ -218,7 +218,7 @@ const InPersonConfirmationPage = () => {
                     </p>
                     <button
                       onClick={() => navigate('/contact')}
-                      className="w-full bg-[#5B9BD5] hover:bg-[#4a8bc2] text-white px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg text-sm"
+                      className="w-full bg-[#2A2D7C] hover:bg-[#1a1d4d] text-white px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg text-sm"
                     >
                       Get Support
                     </button>

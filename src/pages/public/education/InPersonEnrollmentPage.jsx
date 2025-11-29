@@ -55,13 +55,13 @@ const InPersonEnrollmentPage = () => {
       <section className="pt-6 pb-4 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-[#5B9BD5] rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-10 h-10 bg-[#2A2D7C] rounded-lg flex items-center justify-center shadow-sm">
               <Users size={20} className="text-white" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-black">In-Person Classroom Enrollment</h1>
               <p className="text-sm text-gray-600">
-                Program: <span className="font-semibold text-[#5B9BD5]">{program.name}</span> • {program.duration}
+                Program: <span className="font-semibold text-[#2A2D7C]">{program.name}</span> • {program.duration}
               </p>
             </div>
           </div>
@@ -87,11 +87,11 @@ const InPersonEnrollmentPage = () => {
                 
                 <form onSubmit={handleSubmit} className="p-6">
                   {/* Membership Dues Alert */}
-                  <div className="mb-6 bg-amber-50 border-l-4 border-amber-400 rounded-lg p-4 flex gap-3">
-                    <AlertCircle size={20} className="text-amber-600 flex-shrink-0 mt-0.5" />
+                  <div className="mb-6 bg-[#F0F4FF] border-l-4 border-[#2A2D7C] rounded-lg p-4 flex gap-3">
+                    <AlertCircle size={20} className="text-[#2A2D7C] flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-sm font-semibold text-amber-900 mb-1">⚠️ Membership Required</p>
-                      <p className="text-sm text-amber-800">
+                      <p className="text-sm font-semibold text-[#2A2D7C] mb-1">⚠️ Membership Required</p>
+                      <p className="text-sm text-[#2A2D7C]">
                         To enroll in this course, you must also maintain an active ERA AXIS Membership (GHS 15/month). This is in addition to the course fee. You can activate your membership during the payment process.
                       </p>
                     </div>
@@ -100,7 +100,7 @@ const InPersonEnrollmentPage = () => {
                   {/* Personal Information Card */}
                   <div className="mb-6 bg-gray-50 rounded-lg p-4 border border-gray-100">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 bg-[#5B9BD5] rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-[#2A2D7C] rounded-full flex items-center justify-center">
                         <span className="text-white text-xs font-bold">1</span>
                       </div>
                       <h3 className="text-sm font-bold text-black">Personal Information</h3>
@@ -117,7 +117,7 @@ const InPersonEnrollmentPage = () => {
                           onChange={handleInputChange}
                           placeholder="John Mensah"
                           required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all text-sm bg-white"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all text-sm bg-white"
                         />
                       </div>
                       <div>
@@ -131,7 +131,7 @@ const InPersonEnrollmentPage = () => {
                           onChange={handleInputChange}
                           placeholder="john@example.com"
                           required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all text-sm bg-white"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all text-sm bg-white"
                         />
                       </div>
                       <div>
@@ -145,7 +145,7 @@ const InPersonEnrollmentPage = () => {
                           onChange={handleInputChange}
                           placeholder="+233 000 000 000"
                           required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all text-sm bg-white"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all text-sm bg-white"
                         />
                       </div>
                       <div>
@@ -158,7 +158,7 @@ const InPersonEnrollmentPage = () => {
                           value={formData.dateOfBirth}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all text-sm bg-white"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all text-sm bg-white"
                         />
                       </div>
                     </div>
@@ -173,7 +173,7 @@ const InPersonEnrollmentPage = () => {
                         onChange={handleInputChange}
                         placeholder="123 Main Street, Accra"
                         required
-                        className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all text-sm bg-white"
+                        className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all text-sm bg-white"
                       />
                     </div>
                   </div>
@@ -181,7 +181,7 @@ const InPersonEnrollmentPage = () => {
                   {/* Emergency Contact Card */}
                   <div className="mb-6 bg-gray-50 rounded-lg p-4 border border-gray-100">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 bg-[#5B9BD5] rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-[#2A2D7C] rounded-full flex items-center justify-center">
                         <span className="text-white text-xs font-bold">2</span>
                       </div>
                       <h3 className="text-sm font-bold text-black">Emergency Contact</h3>
@@ -198,7 +198,7 @@ const InPersonEnrollmentPage = () => {
                           onChange={handleInputChange}
                           placeholder="Jane Mensah"
                           required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all text-sm bg-white"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all text-sm bg-white"
                         />
                       </div>
                       <div>
@@ -212,7 +212,7 @@ const InPersonEnrollmentPage = () => {
                           onChange={handleInputChange}
                           placeholder="+233 000 000 000"
                           required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all text-sm bg-white"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all text-sm bg-white"
                         />
                       </div>
                     </div>
@@ -221,7 +221,7 @@ const InPersonEnrollmentPage = () => {
                   {/* Education & Goals Card */}
                   <div className="mb-6 bg-gray-50 rounded-lg p-4 border border-gray-100">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 bg-[#5B9BD5] rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-[#2A2D7C] rounded-full flex items-center justify-center">
                         <span className="text-white text-xs font-bold">3</span>
                       </div>
                       <h3 className="text-sm font-bold text-black">Education & Goals</h3>
@@ -236,7 +236,7 @@ const InPersonEnrollmentPage = () => {
                           value={formData.educationLevel}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all bg-white text-sm"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all bg-white text-sm"
                         >
                           <option value="">Select Level</option>
                           <option value="primary">Primary School</option>
@@ -258,7 +258,7 @@ const InPersonEnrollmentPage = () => {
                           rows="3"
                           placeholder="Tell us about your goals and what you hope to achieve..."
                           required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all resize-none text-sm bg-white"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all resize-none text-sm bg-white"
                         />
                       </div>
                       <div>
@@ -271,7 +271,7 @@ const InPersonEnrollmentPage = () => {
                           onChange={handleInputChange}
                           rows="3"
                           placeholder="Any previous coding, electronics, or STEM experience..."
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all resize-none text-sm bg-white"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all resize-none text-sm bg-white"
                         />
                       </div>
                       <div>
@@ -284,7 +284,7 @@ const InPersonEnrollmentPage = () => {
                           onChange={handleInputChange}
                           rows="3"
                           placeholder="Your career goals, projects you want to build, skills you want to develop..."
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all resize-none text-sm bg-white"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all resize-none text-sm bg-white"
                         />
                       </div>
                     </div>
@@ -293,7 +293,7 @@ const InPersonEnrollmentPage = () => {
                   {/* Schedule & Logistics Card */}
                   <div className="mb-6 bg-gray-50 rounded-lg p-4 border border-gray-100">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 bg-[#5B9BD5] rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-[#2A2D7C] rounded-full flex items-center justify-center">
                         <span className="text-white text-xs font-bold">4</span>
                       </div>
                       <h3 className="text-sm font-bold text-black">Schedule & Logistics</h3>
@@ -308,7 +308,7 @@ const InPersonEnrollmentPage = () => {
                           value={formData.availability}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#5B9BD5] focus:border-transparent outline-none transition-all bg-white text-sm"
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all bg-white text-sm"
                         >
                           <option value="">Select Schedule</option>
                           <option value="weekday-morning">Weekday Mornings (9am-12pm)</option>
@@ -327,7 +327,7 @@ const InPersonEnrollmentPage = () => {
                             checked={formData.transportation}
                             onChange={handleInputChange}
                             required
-                            className="w-4 h-4 text-[#5B9BD5] border-gray-300 rounded focus:ring-[#5B9BD5]"
+                            className="w-4 h-4 text-[#2A2D7C] border-gray-300 rounded focus:ring-[#2A2D7C]"
                           />
                           <span className="text-sm text-gray-700">I can arrange transportation to/from the facility</span>
                         </label>
@@ -339,7 +339,7 @@ const InPersonEnrollmentPage = () => {
                   <div className="flex gap-3 pt-4 border-t border-gray-100">
                     <button
                       type="submit"
-                      className="flex-1 bg-[#5B9BD5] hover:bg-[#4a8bc2] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md text-sm"
+                      className="flex-1 bg-[#2A2D7C] hover:bg-[#1a1d4d] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md text-sm"
                     >
                       Submit Enrollment
                     </button>
@@ -363,7 +363,7 @@ const InPersonEnrollmentPage = () => {
                   
                   <div className="space-y-4 mb-6">
                     <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                      <div className="w-8 h-8 bg-[#5B9BD5] rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-[#2A2D7C] rounded-lg flex items-center justify-center flex-shrink-0">
                         <Users size={16} className="text-white" />
                       </div>
                       <div>
@@ -373,7 +373,7 @@ const InPersonEnrollmentPage = () => {
                     </div>
 
                     <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                      <div className="w-8 h-8 bg-[#5B9BD5] rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-[#2A2D7C] rounded-lg flex items-center justify-center flex-shrink-0">
                         <Calendar size={16} className="text-white" />
                       </div>
                       <div>
@@ -383,7 +383,7 @@ const InPersonEnrollmentPage = () => {
                     </div>
 
                     <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                      <div className="w-8 h-8 bg-[#5B9BD5] rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-[#2A2D7C] rounded-lg flex items-center justify-center flex-shrink-0">
                         <MapPin size={16} className="text-white" />
                       </div>
                       <div>
@@ -393,20 +393,20 @@ const InPersonEnrollmentPage = () => {
                     </div>
                   </div>
 
-                  <div className="bg-green-50 border border-green-100 rounded-lg p-4 mb-4">
-                    <p className="text-sm text-green-900 font-semibold mb-2">Free Registration</p>
-                    <p className="text-sm text-green-800">
+                  <div className="bg-[#F0F4FF] border border-[#2A2D7C]/20 rounded-lg p-4 mb-4">
+                    <p className="text-sm text-[#2A2D7C] font-semibold mb-2">Free Registration</p>
+                    <p className="text-sm text-[#2A2D7C]">
                       No payment required to enroll. We'll discuss payment options during your confirmation call.
                     </p>
                   </div>
 
-                  <div className="bg-blue-50 border border-blue-100 rounded-lg p-4">
-                    <p className="text-sm text-blue-900 font-semibold mb-2">🎯 In-Person Benefits:</p>
+                  <div className="bg-[#F0F4FF] border border-[#2A2D7C]/20 rounded-lg p-4">
+                    <p className="text-sm text-[#2A2D7C] font-semibold mb-2">🎯 In-Person Benefits:</p>
                     <div className="space-y-1">
-                      <p className="text-sm text-blue-800">✓ Hands-on lab access</p>
-                      <p className="text-sm text-blue-800">✓ Direct mentorship</p>
-                      <p className="text-sm text-blue-800">✓ Collaborative projects</p>
-                      <p className="text-sm text-blue-800">✓ In-Person certificate</p>
+                      <p className="text-sm text-[#2A2D7C]">✓ Hands-on lab access</p>
+                      <p className="text-sm text-[#2A2D7C]">✓ Direct mentorship</p>
+                      <p className="text-sm text-[#2A2D7C]">✓ Collaborative projects</p>
+                      <p className="text-sm text-[#2A2D7C]">✓ In-Person certificate</p>
                     </div>
                   </div>
                 </div>

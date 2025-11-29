@@ -10,9 +10,9 @@ const membershipProgram = {
   image: '/images/Educationpage/junior%20sterm%20basic.png',
   price: 15,
   priceType: 'monthly',
-  link: '/services/education/program-details?program=junior-stem',
-  id: 'junior-stem',
-  color: '#39366F',
+  link: '/services/education/membership-enrollment',
+  id: 'membership',
+  color: '#2A2D7C',
   popular: true
 };
 
@@ -56,38 +56,43 @@ const ProgramOptions = () => {
   const MembershipCard = ({ program }) => {
     return (
       <div
-        className={`bg-white border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 ${
-          program.popular ? 'border-[#39366F] shadow-md' : 'border-gray-200'
+        className={`group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border overflow-hidden ${
+          program.popular ? 'border-[#2A2D7C]' : 'border-gray-100 hover:border-[#2A2D7C]/20'
         }`}
       >
-        {program.popular && (
-          <div className="mb-4">
-            <span className="inline-flex items-center gap-1 px-3 py-1 bg-[#39366F] text-white rounded-full text-xs font-semibold">
-              <Star size={14} className="fill-white" />
-              Most Popular
-            </span>
-          </div>
-        )}
-
-        <h3 className="text-xl font-bold text-black mb-2">{program.title}</h3>
-        <p className="text-gray-600 text-sm mb-4">{program.subtitle}</p>
+        {/* Gradient background on hover */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2A2D7C]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
-        <div className="mb-4">
-          <span className="text-4xl font-bold" style={{ color: program.color }}>
-            GHS {program.price}
-          </span>
-          <span className="text-gray-500 text-lg">/{program.priceType}</span>
+        <div className="relative z-10">
+          {program.popular && (
+            <div className="mb-4">
+              <span className="inline-flex items-center gap-1 px-3 py-1 bg-[#2A2D7C] text-white rounded-full text-xs font-semibold">
+                <Star size={14} className="fill-white" />
+                Most Popular
+              </span>
+            </div>
+          )}
+
+          <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#2A2D7C] transition-colors duration-300">{program.title}</h3>
+          <p className="text-gray-600 text-sm mb-4 group-hover:text-gray-700 transition-colors duration-300">{program.subtitle}</p>
+          
+          <div className="mb-4">
+            <span className="text-4xl font-bold" style={{ color: program.color }}>
+              GHS {program.price}
+            </span>
+            <span className="text-gray-500 text-lg">/{program.priceType}</span>
+          </div>
+
+          <p className="text-gray-600 text-sm mb-6 group-hover:text-gray-700 transition-colors duration-300">{program.description}</p>
+
+          <a
+            href={program.link}
+            className="w-full bg-[#2A2D7C] hover:bg-[#1a1d4d] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2"
+          >
+            Learn More
+            <ChevronRight size={18} />
+          </a>
         </div>
-
-        <p className="text-gray-600 text-sm mb-6">{program.description}</p>
-
-        <a
-          href={program.link}
-          className="w-full bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2"
-        >
-          Learn More
-          <ChevronRight size={18} />
-        </a>
       </div>
     );
   };
@@ -96,8 +101,11 @@ const ProgramOptions = () => {
     const IconComponent = program.icon;
     return (
       <div
-        className="group relative bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200"
+        className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-[#39366F]/20"
       >
+        {/* Gradient background on hover */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#39366F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
+        
         {/* Image */}
         <div className="relative h-40 sm:h-48 overflow-hidden">
           <img 
@@ -109,17 +117,19 @@ const ProgramOptions = () => {
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6">
+        <div className="p-4 sm:p-6 relative z-10">
           {/* Icon and Title */}
           <div className="flex items-center gap-3 mb-3">
-            <IconComponent size={20} className="text-[#39366F] flex-shrink-0" />
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+            <div className="p-2 rounded-lg bg-gradient-to-br from-[#39366F]/10 to-[#39366F]/5 group-hover:scale-110 transition-transform duration-300">
+              <IconComponent size={20} className="text-[#39366F] flex-shrink-0" />
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[#39366F] transition-colors duration-300">
               {program.title}
             </h3>
           </div>
 
           {/* Description */}
-          <p className="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed">
+          <p className="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
             {program.description}
           </p>
 
