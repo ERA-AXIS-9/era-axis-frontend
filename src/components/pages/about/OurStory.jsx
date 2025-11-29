@@ -1,7 +1,13 @@
 import React from 'react';
 import { Lightbulb, Building2, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const OurStory = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+  const contentAnimation = useScrollAnimation({ type: 'slideUp', delay: 0.1 });
+  const sidebarAnimation = useScrollAnimation({ type: 'slideLeft', delay: 0.2 });
+
   return (
     <section id="story" className="pt-4 pb-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,14 +15,36 @@ const OurStory = () => {
           
           {/* Left Content */}
           <div className="lg:col-span-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6">Our Story</h2>
+            <motion.h2 
+              ref={titleAnimation.ref}
+              initial={titleAnimation.initial}
+              animate={titleAnimation.animate}
+              variants={titleAnimation.variants}
+              transition={titleAnimation.transition}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6"
+            >
+              Our Story
+            </motion.h2>
             
             {/* Brief Intro */}
-            <p className="text-xl text-[#39366F] font-medium mb-8 leading-relaxed">
+            <motion.p 
+              ref={contentAnimation.ref}
+              initial={contentAnimation.initial}
+              animate={contentAnimation.animate}
+              variants={contentAnimation.variants}
+              transition={contentAnimation.transition}
+              className="text-xl text-[#39366F] font-medium mb-8 leading-relaxed"
+            >
               From vision to reality - how ERA AXIS became West Africa's leading innovation ecosystem.
-            </p>
+            </motion.p>
             
-            <div className="space-y-6">
+            <motion.div 
+              className="space-y-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <p className="text-lg text-gray-700 leading-relaxed">
                 <span className="font-semibold text-black">Founded in 2020</span> and incorporated in 2024, ERA AXIS was created to respond to what innovation means in our context. We are more than a training program - we are a 
                 <span className="font-semibold text-[#39366F]"> complete ecosystem</span> combining education, manufacturing, software development, and open labs into one unified platform.
@@ -26,7 +54,7 @@ const OurStory = () => {
                 We partner with <span className="font-semibold text-black">schools, community groups, and industry</span> to create solutions that are inclusive, affordable, and sustainable. By developing unique and 
                 transformative open-source tools, we <span className="font-semibold text-[#39366F]">minimize costs while maximizing impact</span> across communities.
               </p>
-            </div>
+            </motion.div>
 
             {/* Call to Action */}
             <div className="mt-8">
@@ -41,7 +69,14 @@ const OurStory = () => {
           </div>
 
           {/* Right Sidebar - Timeline & Stats */}
-          <div className="lg:col-span-4">
+          <motion.div 
+            ref={sidebarAnimation.ref}
+            initial={sidebarAnimation.initial}
+            animate={sidebarAnimation.animate}
+            variants={sidebarAnimation.variants}
+            transition={sidebarAnimation.transition}
+            className="lg:col-span-4"
+          >
             <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
               <h3 className="font-bold text-black mb-6">Our Journey</h3>
               
@@ -87,7 +122,7 @@ const OurStory = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

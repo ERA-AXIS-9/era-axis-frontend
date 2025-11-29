@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Users, Recycle, Lightbulb, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const ImpactStats = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [animatedNumbers, setAnimatedNumbers] = useState({});
   const sectionRef = useRef();
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
 
   const stats = [
     {
@@ -88,21 +91,45 @@ const ImpactStats = () => {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div className="text-left mb-8">
+        <motion.div 
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+          className="text-left mb-8"
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-4">
             Our Impact
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl">
             Transforming communities through innovation, education, and sustainable solutions across West Africa.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <motion.div 
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+        >
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
-              <div 
-                key={index} 
+              <motion.div 
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5 }}
                 className="group relative bg-white p-3 sm:p-4 rounded-xl border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
                 {/* Gradient background on hover */}
@@ -144,10 +171,10 @@ const ImpactStats = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Donate CTA */}
         <div className="flex justify-center mt-8">

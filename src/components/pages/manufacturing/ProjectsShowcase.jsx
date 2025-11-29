@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const categories = ['All', 'Education', 'Household', 'Organization', 'IoT'];
 
@@ -98,6 +100,7 @@ const projects = [
 
 const ProjectsShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
 
   const filteredProjects = activeCategory === 'All' 
     ? projects 
@@ -108,7 +111,14 @@ const ProjectsShowcase = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Filter Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+        <motion.div 
+          className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8"
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+        >
           <h2 className="text-xl font-bold text-black">Filter by Category</h2>
           
           {/* Category Buttons */}
@@ -130,13 +140,30 @@ const ProjectsShowcase = () => {
               Reset
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+        >
           {filteredProjects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
               className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
             >
               {/* Project Image */}
@@ -164,17 +191,23 @@ const ProjectsShowcase = () => {
                   {project.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Results Count */}
-        <div className="mt-8 text-center">
+        <motion.div 
+          className="mt-8 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="text-gray-600">
             Showing <span className="font-semibold text-black">{filteredProjects.length}</span> of{' '}
             <span className="font-semibold text-black">{projects.length}</span> projects
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

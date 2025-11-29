@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const features = [
   {
@@ -24,22 +26,48 @@ const features = [
 ];
 
 const SustainableApproach = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+
   return (
     <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="mb-12">
+        <motion.div 
+          className="mb-12"
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
             Sustainable Production
           </h2>
-        </div>
+        </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+        >
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
               className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 hover:border-[#39366F]/30 group"
             >
               {/* Title */}
@@ -51,9 +79,9 @@ const SustainableApproach = () => {
               <p className="text-gray-600 text-sm leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA Section */}
         <div className="mt-12 text-left">

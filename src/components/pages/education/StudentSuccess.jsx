@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { User } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const StudentSuccess = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+  const subtitleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0.1 });
   const testimonials = [
     {
       quote: "I built my first circuit with recycled parts and it actually worked! Now I help fix electronics in my community.",
@@ -30,14 +34,28 @@ const StudentSuccess = () => {
     <section className="py-16 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header - Left Aligned */}
-        <div className="mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
+        <motion.div className="mb-12">
+          <motion.h2 
+            ref={titleAnimation.ref}
+            initial={titleAnimation.initial}
+            animate={titleAnimation.animate}
+            variants={titleAnimation.variants}
+            transition={titleAnimation.transition}
+            className="text-3xl sm:text-4xl font-bold text-black mb-4"
+          >
             Student Success Stories
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl">
+          </motion.h2>
+          <motion.p 
+            ref={subtitleAnimation.ref}
+            initial={subtitleAnimation.initial}
+            animate={subtitleAnimation.animate}
+            variants={subtitleAnimation.variants}
+            transition={subtitleAnimation.transition}
+            className="text-lg text-gray-600 max-w-3xl"
+          >
             Hear from our graduates who are transforming their communities with skills learned at ERA AXIS
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
         {/* Carousel Container */}
         <div className="relative">

@@ -1,7 +1,10 @@
 import React from 'react';
 import { TrendingUp, Users, Award } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const ManufacturingImpact = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
   const metrics = [
     {
       icon: TrendingUp,
@@ -27,22 +30,46 @@ const ManufacturingImpact = () => {
     <section className="py-12 md:py-16 bg-gradient-to-r from-gray-100 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div className="text-left mb-12">
+        <motion.div 
+          className="text-left mb-12"
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-black tracking-tight mb-4">
             Our Manufacturing Impact
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl">
             Transforming e-waste into sustainable solutions while building skills and creating opportunities across communities.
           </p>
-        </div>
+        </motion.div>
 
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl w-full">
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+          >
           {metrics.map((metric, index) => {
             const IconComponent = metric.icon;
             return (
-              <div 
-                key={index} 
+              <motion.div 
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5 }}
                 className="group relative bg-white p-3 sm:p-4 rounded-xl border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
                 {/* Gradient background on hover */}
@@ -76,10 +103,10 @@ const ManufacturingImpact = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

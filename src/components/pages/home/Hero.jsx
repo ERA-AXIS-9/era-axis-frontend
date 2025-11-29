@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -74,32 +75,50 @@ const Hero = () => {
 
       {/* Content with animations */}
       <div className="relative z-10 w-full h-full flex items-center justify-start px-6 md:px-12 lg:px-16 pt-32 pb-32">
-        <div className="max-w-4xl w-full" key={currentSlide}>
-          {/* Main Headline */}
-          <h1 
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-relaxed mb-8 animate-fade-in-up tracking-tight text-white"
-            style={{ 
-              textShadow: '3px 3px 12px rgba(0,0,0,0.7)',
-              lineHeight: '1.2'
-            }}
+        <AnimatePresence mode="wait">
+          <motion.div 
+            className="max-w-4xl w-full" 
+            key={currentSlide}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
           >
-            {slides[currentSlide].title}
-          </h1>
-          
-          {/* Description */}
-          <p 
-            className="text-base md:text-lg lg:text-xl font-medium text-white mb-12 leading-relaxed max-w-2xl animate-fade-in-up"
-            style={{ 
-              textShadow: '2px 2px 8px rgba(0,0,0,0.7)',
-              animationDelay: '0.1s',
-              lineHeight: '1.6'
-            }}
-          >
-            {slides[currentSlide].description}
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 md:gap-8 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            {/* Main Headline */}
+            <motion.h1 
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-relaxed mb-8 tracking-tight text-white"
+              style={{ 
+                textShadow: '3px 3px 12px rgba(0,0,0,0.7)',
+                lineHeight: '1.2'
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+            >
+              {slides[currentSlide].title}
+            </motion.h1>
+            
+            {/* Description */}
+            <motion.p 
+              className="text-base md:text-lg lg:text-xl font-medium text-white mb-12 leading-relaxed max-w-2xl"
+              style={{ 
+                textShadow: '2px 2px 8px rgba(0,0,0,0.7)',
+                lineHeight: '1.6'
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              {slides[currentSlide].description}
+            </motion.p>
+            
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 md:gap-8 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
             <a 
               href={slides[currentSlide].cta1.link}
               className="group bg-[#39366F] hover:bg-[#2a2850] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 flex items-center justify-center gap-4 transform hover:-translate-y-1"
@@ -118,8 +137,9 @@ const Hero = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Slideshow Dots */}

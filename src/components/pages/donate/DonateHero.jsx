@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const DonateHero = () => {
   const navigate = useNavigate();
@@ -21,21 +22,58 @@ const DonateHero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/10 to-black/15 sm:bg-none"></div>
 
       {/* Content - Left Aligned */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-0">
-        <div className="max-w-lg sm:max-w-xl">
+      <motion.div 
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-0"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div 
+          className="max-w-lg sm:max-w-xl"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+        >
           
           {/* Main Heading - Left Aligned */}
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
+          <motion.h1 
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.6 }}
+          >
             Your Gift Creates Innovators. Your E-Waste Heals the Planet.
-          </h1>
+          </motion.h1>
 
           {/* Subtitle - Left Aligned */}
-          <p className="text-xs sm:text-sm lg:text-base text-white mb-6 sm:mb-8 leading-relaxed drop-shadow-md max-w-xl">
+          <motion.p 
+            className="text-xs sm:text-sm lg:text-base text-white mb-6 sm:mb-8 leading-relaxed drop-shadow-md max-w-xl"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.6 }}
+          >
             Every contribution empowers learners and fuels sustainable innovation across Africa.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons - Left Aligned */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.6 }}
+          >
             <button 
               onClick={() => navigate('/donate/ewaste')}
               className="bg-white hover:bg-gray-100 text-[#39366F] px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg font-semibold transition-all duration-200 w-full sm:w-auto text-center"
@@ -49,9 +87,9 @@ const DonateHero = () => {
             >
               Become a Monthly Supporter
             </button>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

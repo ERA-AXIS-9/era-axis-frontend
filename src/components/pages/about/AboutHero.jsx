@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const AboutHero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const contentAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+  const imageAnimation = useScrollAnimation({ type: 'slideRight', delay: 0.2 });
 
   useEffect(() => {
     setIsVisible(true);
@@ -17,7 +21,13 @@ const AboutHero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           
           {/* Left Content */}
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <motion.div 
+            ref={contentAnimation.ref}
+            initial={contentAnimation.initial}
+            animate={contentAnimation.animate}
+            variants={contentAnimation.variants}
+            transition={contentAnimation.transition}
+          >
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6 leading-tight">
               Transforming Communities Through 
               <span className="text-[#39366F]"> Innovation</span>
@@ -46,10 +56,17 @@ const AboutHero = () => {
                 <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
-          </div>
+          </motion.div>
           
           {/* Right Content - Hero Image */}
-          <div className="relative">
+          <motion.div 
+            ref={imageAnimation.ref}
+            initial={imageAnimation.initial}
+            animate={imageAnimation.animate}
+            variants={imageAnimation.variants}
+            transition={imageAnimation.transition}
+            className="relative"
+          >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src="/images/Homepage/about.png" 
@@ -58,8 +75,7 @@ const AboutHero = () => {
                 loading="lazy"
               />
             </div>
-            
-          </div>
+          </motion.div>
           
           </div>
         </div>

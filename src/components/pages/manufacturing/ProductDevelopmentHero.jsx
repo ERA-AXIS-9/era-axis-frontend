@@ -1,5 +1,6 @@
 import React from 'react';
 import { Lightbulb, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ProductDevelopmentHero = () => {
   return (
@@ -19,20 +20,40 @@ const ProductDevelopmentHero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40 sm:bg-none"></div>
 
       {/* Content - Left Aligned */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-0">
+      <motion.div 
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-0"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="max-w-2xl">
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
+          <motion.h1 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Turn Prototypes Into Real Products
-          </h1>
+          </motion.h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8 leading-relaxed drop-shadow-md max-w-2xl">
+          <motion.p 
+            className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8 leading-relaxed drop-shadow-md max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Transform your innovative ideas into durable, market-ready products using sustainable materials and expert engineering.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             <a 
               href="/services/manufacturing/projects?category=Product Development"
               className="bg-white hover:bg-gray-100 text-[#39366F] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto text-center inline-flex items-center justify-center gap-2"
@@ -48,9 +69,9 @@ const ProductDevelopmentHero = () => {
               View Services
               <ChevronRight size={18} />
             </a>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,5 +1,7 @@
 import React from 'react';
 import { ClipboardList, CreditCard, GraduationCap } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const steps = [
   {
@@ -26,20 +28,46 @@ const steps = [
 ];
 
 const HowEnrollmentWorks = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <h2 className="text-3xl font-bold text-gray-900 mb-10">
+        <motion.h2 
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+          className="text-3xl font-bold text-gray-900 mb-10"
+        >
           How Enrollment Works
-        </h2>
+        </motion.h2>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.12
+              }
+            }
+          }}
+        >
           {steps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
               className="bg-white rounded-xl p-8 border-2 border-gray-200 hover:border-[#39366F] hover:shadow-lg transition-all duration-300"
             >
               {/* Step Number */}
@@ -56,9 +84,9 @@ const HowEnrollmentWorks = () => {
               <p className="text-base text-gray-600 leading-relaxed">
                 {step.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

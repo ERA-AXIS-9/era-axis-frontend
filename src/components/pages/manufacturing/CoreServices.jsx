@@ -1,5 +1,7 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const services = [
   {
@@ -23,23 +25,49 @@ const services = [
 ];
 
 const CoreServices = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+
   return (
     <section id="core-services" className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="mb-8">
+        <motion.div 
+          className="mb-8"
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
             Core Services
           </h2>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.12
+              }
+            }
+          }}
+        >
           {services.map((service, index) => (
-            <a
+            <motion.a
               key={index}
               href={service.link}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
               className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 hover:border-[#39366F]/30 group block h-full"
             >
               {/* Title with left accent border */}
@@ -59,9 +87,9 @@ const CoreServices = () => {
                 Learn More
                 <ChevronRight size={16} />
               </div>
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

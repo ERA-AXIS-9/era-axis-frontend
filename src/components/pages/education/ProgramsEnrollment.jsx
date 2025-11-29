@@ -1,5 +1,7 @@
 import React from 'react';
 import { ChevronRight, BookOpen, Users, Briefcase } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const learningApproaches = [
   {
@@ -17,20 +19,46 @@ const learningApproaches = [
 ];
 
 const ProgramsEnrollment = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <h2 className="text-3xl font-bold text-gray-900 mb-10">
+        <motion.h2 
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+          className="text-3xl font-bold text-gray-900 mb-10"
+        >
           How We Teach
-        </h2>
+        </motion.h2>
 
         {/* Learning Approaches Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.12
+              }
+            }
+          }}
+        >
           {learningApproaches.map((approach, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
               className="group relative bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-[#39366F] hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
               {/* Gradient background on hover */}
@@ -53,9 +81,9 @@ const ProgramsEnrollment = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

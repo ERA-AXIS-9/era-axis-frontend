@@ -1,7 +1,11 @@
 import React from 'react';
 import { ChevronRight, Play } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const Gallery = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+  
   const mediaItems = [
     {
       type: 'image',
@@ -33,7 +37,14 @@ const Gallery = () => {
   return (
     <section className="py-9 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-6">
+        <motion.div 
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+          className="flex justify-between items-center mb-6"
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight">Media Gallery</h2>
           <a 
             href="/gallery"
@@ -42,12 +53,29 @@ const Gallery = () => {
             See Gallery
             <ChevronRight size={16} />
           </a>
-        </div>
+        </motion.div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <motion.div 
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.08
+              }
+            }
+          }}
+        >
           {mediaItems.map((item, index) => (
-            <div 
-              key={index} 
+            <motion.div 
+              key={index}
+              variants={{
+                hidden: { opacity: 0, scale: 0.9 },
+                visible: { opacity: 1, scale: 1 }
+              }}
+              transition={{ duration: 0.5 }}
               className="group relative aspect-square bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
             >
               {/* Subtle glow effect */}
@@ -87,9 +115,9 @@ const Gallery = () => {
               
               {/* Corner indicator */}
               <div className="absolute top-3 right-3 w-2 h-2 bg-[#39366F] rounded-full opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-20"></div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
