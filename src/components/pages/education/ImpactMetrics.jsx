@@ -44,18 +44,18 @@ const ImpactMetrics = () => {
             return (
               <div
                 key={index}
-                className="group relative bg-white p-3 sm:p-4 rounded-xl border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                className="group relative bg-white p-3 sm:p-4 rounded-2xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:border-[#39366F]/20 overflow-hidden"
               >
                 {/* Gradient background on hover */}
                 <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300"
-                  style={{ background: `linear-gradient(135deg, ${metric.color}20, ${metric.color}10)` }}
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: `linear-gradient(135deg, ${metric.color}15, ${metric.color}5)` }}
                 ></div>
                 
                 {/* Content */}
                 <div className="flex items-center space-x-2 sm:space-x-3 relative z-10">
                   <div 
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300 bg-gray-50 group-hover:bg-gray-100 flex-shrink-0"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 bg-gray-50 group-hover:bg-gray-100 flex-shrink-0"
                   >
                     <IconComponent 
                       size={20} 

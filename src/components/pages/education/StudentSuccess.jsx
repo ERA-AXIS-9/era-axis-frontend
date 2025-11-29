@@ -53,29 +53,34 @@ const StudentSuccess = () => {
                 key={`first-${index}`} 
                 className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-3"
               >
-                <div className="bg-white p-4 sm:p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  {/* Quote mark decoration */}
-                  <div className="text-3xl sm:text-4xl text-[#39366F]/20 font-serif leading-none mb-3 sm:mb-4">"</div>
+                <div className="group relative bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:border-[#39366F]/20 overflow-hidden">
+                  {/* Gradient background on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#39366F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
-                  {/* Quote */}
-                  <blockquote className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  
-                  {/* Author Info */}
-                  <div className="flex items-center space-x-3">
-                    {/* Avatar */}
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#39366F] flex items-center justify-center text-white font-bold text-sm sm:text-base">
-                      {testimonial.avatar}
-                    </div>
+                  <div className="relative z-10">
+                    {/* Quote mark decoration */}
+                    <div className="text-3xl sm:text-4xl text-[#39366F]/20 font-serif leading-none mb-3 sm:mb-4">"</div>
                     
-                    {/* Name and Role */}
-                    <div>
-                      <div className="font-bold text-black text-sm sm:text-base">
-                        {testimonial.author}
+                    {/* Quote */}
+                    <blockquote className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base group-hover:text-gray-800 transition-colors duration-300">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    
+                    {/* Author Info */}
+                    <div className="flex items-center space-x-3">
+                      {/* Avatar */}
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#39366F] flex items-center justify-center text-white font-bold text-sm sm:text-base group-hover:scale-110 transition-transform duration-300">
+                        {testimonial.avatar}
                       </div>
-                      <div className="text-xs sm:text-sm text-gray-600">
-                        {testimonial.role}
+                      
+                      {/* Name and Role */}
+                      <div>
+                        <div className="font-bold text-black text-sm sm:text-base group-hover:text-[#39366F] transition-colors duration-300">
+                          {testimonial.author}
+                        </div>
+                        <div className="text-xs sm:text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                          {testimonial.role}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -89,29 +94,34 @@ const StudentSuccess = () => {
                 key={`second-${index}`} 
                 className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-3"
               >
-                <div className="bg-white p-4 sm:p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  {/* Quote mark decoration */}
-                  <div className="text-3xl sm:text-4xl text-[#39366F]/20 font-serif leading-none mb-3 sm:mb-4">"</div>
+                <div className="group relative bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:border-[#39366F]/20 overflow-hidden">
+                  {/* Gradient background on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#39366F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
-                  {/* Quote */}
-                  <blockquote className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  
-                  {/* Author Info */}
-                  <div className="flex items-center space-x-3">
-                    {/* Avatar */}
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#39366F] flex items-center justify-center text-white font-bold text-sm sm:text-base">
-                      {testimonial.avatar}
-                    </div>
+                  <div className="relative z-10">
+                    {/* Quote mark decoration */}
+                    <div className="text-3xl sm:text-4xl text-[#39366F]/20 font-serif leading-none mb-3 sm:mb-4">"</div>
                     
-                    {/* Name and Role */}
-                    <div>
-                      <div className="font-bold text-black text-sm sm:text-base">
-                        {testimonial.author}
+                    {/* Quote */}
+                    <blockquote className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base group-hover:text-gray-800 transition-colors duration-300">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    
+                    {/* Author Info */}
+                    <div className="flex items-center space-x-3">
+                      {/* Avatar */}
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#39366F] flex items-center justify-center text-white font-bold text-sm sm:text-base group-hover:scale-110 transition-transform duration-300">
+                        {testimonial.avatar}
                       </div>
-                      <div className="text-xs sm:text-sm text-gray-600">
-                        {testimonial.role}
+                      
+                      {/* Name and Role */}
+                      <div>
+                        <div className="font-bold text-black text-sm sm:text-base group-hover:text-[#39366F] transition-colors duration-300">
+                          {testimonial.author}
+                        </div>
+                        <div className="text-xs sm:text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                          {testimonial.role}
+                        </div>
                       </div>
                     </div>
                   </div>

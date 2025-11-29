@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Monitor, Calendar, Clock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Monitor, Calendar, Clock, CheckCircle } from 'lucide-react';
 import Breadcrumb from '../../../components/pages/education/Breadcrumb';
 
-const programs = {
-  'junior-stem': { name: 'Junior STEM Basics', duration: '3 months' },
-  'maker-hardware': { name: 'Maker: Hardware & Repair', duration: '6 months' },
-  'coder-software': { name: 'Coder: Software Foundations', duration: '4 months' }
+const membershipProgram = {
+  name: 'ERA AXIS Membership Dues',
+  duration: 'Monthly',
+  price: 15,
+  priceType: 'month'
 };
 
-const OnlineEnrollmentPage = () => {
+const OnlineMembershipEnrollmentPage = () => {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const programId = searchParams.get('program') || 'junior-stem';
-  const program = programs[programId] || programs['junior-stem'];
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -24,10 +22,7 @@ const OnlineEnrollmentPage = () => {
     country: '',
     emergencyContact: '',
     emergencyPhone: '',
-    educationLevel: '',
-    whyJoin: '',
-    experience: '',
-    goals: ''
+    paymentMethod: 'card'
   });
 
   const handleInputChange = (e) => {
@@ -41,8 +36,8 @@ const OnlineEnrollmentPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Navigate to payment page with form data
-    navigate(`/services/education/payment?program=${programId}`, { 
-      state: { enrollmentData: formData } 
+    navigate(`/services/education/membership-payment`, { 
+      state: { enrollmentData: formData, type: 'online-membership' } 
     });
   };
 
@@ -58,9 +53,9 @@ const OnlineEnrollmentPage = () => {
               <Monitor size={20} className="text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-black">Online Learning Enrollment</h1>
+              <h1 className="text-2xl font-bold text-black">Online Membership Enrollment</h1>
               <p className="text-sm text-gray-600">
-                Program: <span className="font-semibold text-[#2A2D7C]">{program.name}</span> • {program.duration}
+                Program: <span className="font-semibold text-[#2A2D7C]">{membershipProgram.name}</span> • {membershipProgram.duration}
               </p>
             </div>
           </div>
@@ -78,10 +73,10 @@ const OnlineEnrollmentPage = () => {
                 {/* Card Header */}
                 <div className="px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white">
                   <div className="flex items-center justify-between">
-                    <h2 className="text-lg font-bold text-black">Student Information</h2>
+                    <h2 className="text-lg font-bold text-black">Member Information</h2>
                     <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">Required Fields *</span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">Complete the form to proceed with enrollment</p>
+                  <p className="text-sm text-gray-600 mt-1">Complete the form to proceed with membership enrollment</p>
                 </div>
                 
                 <form onSubmit={handleSubmit} className="p-6">
@@ -232,79 +227,6 @@ const OnlineEnrollmentPage = () => {
                     </div>
                   </div>
 
-                  {/* Education & Goals Card */}
-                  <div className="mb-6 bg-gray-50 rounded-lg p-4 border border-gray-100">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 bg-[#2A2D7C] rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs font-bold">4</span>
-                      </div>
-                      <h3 className="text-sm font-bold text-black">Education & Goals</h3>
-                    </div>
-                    <div className="space-y-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
-                          Education Level *
-                        </label>
-                        <select
-                          name="educationLevel"
-                          value={formData.educationLevel}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all bg-white text-sm"
-                        >
-                          <option value="">Select Level</option>
-                          <option value="primary">Primary School</option>
-                          <option value="jhs">Junior High School (JHS)</option>
-                          <option value="shs">Senior High School (SHS)</option>
-                          <option value="tertiary">Tertiary/University</option>
-                          <option value="graduate">Graduate</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
-                          Why do you want to join this program? *
-                        </label>
-                        <textarea
-                          name="whyJoin"
-                          value={formData.whyJoin}
-                          onChange={handleInputChange}
-                          rows="3"
-                          placeholder="Tell us about your goals and what you hope to achieve..."
-                          required
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all resize-none text-sm bg-white"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
-                          Previous Experience (if any)
-                        </label>
-                        <textarea
-                          name="experience"
-                          value={formData.experience}
-                          onChange={handleInputChange}
-                          rows="3"
-                          placeholder="Any previous coding, electronics, or STEM experience..."
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all resize-none text-sm bg-white"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
-                          What do you want to achieve after this program?
-                        </label>
-                        <textarea
-                          name="goals"
-                          value={formData.goals}
-                          onChange={handleInputChange}
-                          rows="3"
-                          placeholder="Your career goals, projects you want to build, skills you want to develop..."
-                          className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2A2D7C] focus:border-transparent outline-none transition-all resize-none text-sm bg-white"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-
                   {/* Submit Buttons */}
                   <div className="flex gap-3 pt-4 border-t border-gray-100">
                     <button
@@ -325,11 +247,11 @@ const OnlineEnrollmentPage = () => {
               </div>
             </div>
 
-            {/* Right Sidebar - Program Details Card */}
+            {/* Right Sidebar - Membership Details Card */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 sticky top-6">
                 <div className="p-6">
-                  <h2 className="text-lg font-bold text-black mb-4">Program Details</h2>
+                  <h2 className="text-lg font-bold text-black mb-4">Membership Details</h2>
                   
                   <div className="space-y-4 mb-6">
                     <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
@@ -337,8 +259,8 @@ const OnlineEnrollmentPage = () => {
                         <Monitor size={16} className="text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-black mb-1">Online Learning</p>
-                        <p className="text-sm text-gray-600">Learn from anywhere at your own pace</p>
+                        <p className="text-sm font-semibold text-black mb-1">Full Lab Access</p>
+                        <p className="text-sm text-gray-600">24/7 access to all facilities</p>
                       </div>
                     </div>
 
@@ -347,8 +269,8 @@ const OnlineEnrollmentPage = () => {
                         <Calendar size={16} className="text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-black mb-1">Duration</p>
-                        <p className="text-sm text-gray-600">{program.duration}</p>
+                        <p className="text-sm font-semibold text-black mb-1">Billing Cycle</p>
+                        <p className="text-sm text-gray-600">{membershipProgram.duration}</p>
                       </div>
                     </div>
 
@@ -357,26 +279,38 @@ const OnlineEnrollmentPage = () => {
                         <Clock size={16} className="text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-black mb-1">Flexible Schedule</p>
-                        <p className="text-sm text-gray-600">Access when it works for you</p>
+                        <p className="text-sm font-semibold text-black mb-1">Flexible Commitment</p>
+                        <p className="text-sm text-gray-600">Cancel anytime, no lock-in</p>
                       </div>
                     </div>
                   </div>
 
+                  {/* Price Box */}
                   <div className="bg-[#F0F4FF] border border-[#2A2D7C]/20 rounded-lg p-4 mb-4">
-                    <p className="text-sm text-[#2A2D7C] font-semibold mb-2">What's Next?</p>
-                    <p className="text-sm text-[#2A2D7C]">
-                      After completing this form, you'll proceed to payment to activate your membership.
-                    </p>
+                    <p className="text-sm text-gray-600 mb-1">Monthly Fee</p>
+                    <p className="text-3xl font-bold text-[#2A2D7C]">GHS {membershipProgram.price}</p>
+                    <p className="text-xs text-gray-600 mt-1">Billed monthly</p>
                   </div>
 
                   <div className="bg-[#F0F4FF] border border-[#2A2D7C]/20 rounded-lg p-4">
-                    <p className="text-sm text-[#2A2D7C] font-semibold mb-2">💡 Online Learning Benefits:</p>
-                    <div className="space-y-1">
-                      <p className="text-sm text-[#2A2D7C]">✓ 24/7 course access</p>
-                      <p className="text-sm text-[#2A2D7C]">✓ Self-paced learning</p>
-                      <p className="text-sm text-[#2A2D7C]">✓ Virtual mentorship</p>
-                      <p className="text-sm text-[#2A2D7C]">✓ Digital certificate</p>
+                    <p className="text-sm text-[#2A2D7C] font-semibold mb-3">💡 Membership Benefits:</p>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle size={16} className="text-[#2A2D7C]" />
+                        <p className="text-sm text-[#2A2D7C]">24/7 lab access</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle size={16} className="text-[#2A2D7C]" />
+                        <p className="text-sm text-[#2A2D7C]">Expert mentorship</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle size={16} className="text-[#2A2D7C]" />
+                        <p className="text-sm text-[#2A2D7C]">Tools & equipment</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle size={16} className="text-[#2A2D7C]" />
+                        <p className="text-sm text-[#2A2D7C]">Community projects</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -389,4 +323,4 @@ const OnlineEnrollmentPage = () => {
   );
 };
 
-export default OnlineEnrollmentPage;
+export default OnlineMembershipEnrollmentPage;

@@ -47,27 +47,32 @@ const HowWeTeach = () => {
             return (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 hover:border-gray-300 group"
+                className="group relative bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:border-[#39366F]/20 overflow-hidden"
               >
-                {/* Icon */}
-                <div className="mb-4">
-                  <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: `${method.color}15`, border: `2px solid ${method.color}30` }}
-                  >
-                    <IconComponent size={24} style={{ color: method.color }} />
+                {/* Gradient background on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#39366F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="mb-4">
+                    <div
+                      className="w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{ backgroundColor: `${method.color}15`, border: `2px solid ${method.color}30` }}
+                    >
+                      <IconComponent size={24} style={{ color: method.color }} />
+                    </div>
                   </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-black mb-2 group-hover:text-[#39366F] transition-colors duration-300">
+                    {method.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    {method.description}
+                  </p>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-lg font-bold text-black mb-2 group-hover:text-[#39366F] transition-colors">
-                  {method.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {method.description}
-                </p>
               </div>
             );
           })}

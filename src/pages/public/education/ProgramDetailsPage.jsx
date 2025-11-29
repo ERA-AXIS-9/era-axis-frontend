@@ -478,19 +478,88 @@ const ProgramDetailsPage = () => {
         </section>
       )}
 
+      {/* Real-World Projects - Only for Courses */}
+      {!isMembership && currentData.realWorldProjects && (
+        <section 
+          ref={projectsSectionRef}
+          className="relative py-20 bg-gray-100"
+          style={{
+            backgroundImage: `url(${currentData.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+          {/* Semi-transparent overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+          
+          {/* Content */}
+          <div className="relative z-10 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Real-World Projects</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {currentData.realWorldProjects.map((project, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 
+                              shadow-2xl hover:border-[#5B9BD5] hover:shadow-lg hover:shadow-[#5B9BD5]/20 
+                              transition-all duration-300 transform hover:-translate-y-1 hover:bg-white/20
+                              cursor-pointer"
+                  >
+                    <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                    <p className="text-white/90 text-base mb-5 leading-relaxed">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies && project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex} 
+                          className="inline-block px-3 py-1 bg-[#5B9BD5]/30 border border-[#5B9BD5]/60 text-[#92c5fd] text-xs font-semibold rounded-full hover:bg-[#5B9BD5]/50 transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Technologies You'll Master - Only for Courses */}
       {!isMembership && currentData.technologies && (
-        <section className="py-8 sm:py-12 bg-gray-900">
+        <section className="py-16 sm:py-20 bg-[#F8F9FF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12">Technologies You'll Master</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <h2 className="text-3xl font-bold text-center text-[#2A2D7C] mb-12">
+              Technologies You'll Master
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {currentData.technologies.map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
-                  <div key={index} className="bg-gray-800 border border-gray-700 rounded-lg p-5 sm:p-6 hover:border-[#39366F] hover:shadow-lg transition-all">
-                    <IconComponent size={28} className="text-[#39366F] mb-3" />
-                    <h3 className="text-lg font-bold text-white mb-2">{tech.title}</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">{tech.description}</p>
+                  <div 
+                    key={index}
+                    className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-[#2A2D7C]/20 overflow-hidden relative"
+                  >
+                    {/* Gradient background on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#2A2D7C]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    <div className="relative z-10">
+                      <div className="flex items-start space-x-4 mb-4">
+                        <div className="flex-shrink-0 bg-gradient-to-br from-[#F0F4FF] to-[#E8ECFF] p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                          <IconComponent className="w-8 h-8 text-[#2A2D7C]" />
+                        </div>
+                        <h3 className="text-lg font-bold text-[#2A2D7C] group-hover:text-[#1a1d4d] transition-colors duration-300 pt-1">
+                          {tech.title}
+                        </h3>
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                        {tech.description}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
@@ -498,66 +567,6 @@ const ProgramDetailsPage = () => {
           </div>
         </section>
       )}
-
-      {/* Real-World Projects - Only for Courses */}
-      {!isMembership && currentData.realWorldProjects && (
-        <section 
-          ref={projectsSectionRef}
-          className="relative overflow-hidden min-h-[600px] flex items-center"
-          style={{
-            background: '#1a1a2e',
-            padding: '4rem 0'
-          }}
-        >
-          {/* Parallax Background */}
-          <div 
-            className="absolute inset-0 w-full h-full"
-            style={{
-              backgroundImage: `url(${currentData.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundAttachment: 'fixed',
-              transform: `translateY(${scrollY * 0.2}px)`,
-              willChange: 'transform',
-              zIndex: 1,
-              opacity: 0.9
-            }}
-          />
-          
-          {/* Lighter overlay */}
-          <div className="absolute inset-0 bg-black/20 z-2" />
-          
-          {/* Content */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Real-World Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {currentData.realWorldProjects.map((project, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 
-                            shadow-2xl hover:border-[#5B9BD5] hover:shadow-lg hover:shadow-[#5B9BD5]/20 
-                            transition-all duration-300 transform hover:-translate-y-1 hover:bg-white/20
-                            cursor-pointer"
-                >
-                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                  <p className="text-white/90 text-base mb-5 leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies && project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex} 
-                        className="inline-block px-3 py-1 bg-[#5B9BD5]/30 border border-[#5B9BD5]/60 text-[#92c5fd] text-xs font-semibold rounded-full hover:bg-[#5B9BD5]/50 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
 
       {/* Membership Benefits at a Glance - Only for Membership */}
       {isMembership && (
@@ -619,60 +628,6 @@ const ProgramDetailsPage = () => {
               <div key={index} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200 p-6 sm:p-8 hover:shadow-lg transition-all">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
                 <p className="text-gray-700 text-sm sm:text-base leading-relaxed">{project.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-8 sm:py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-12">Member Testimonials</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {membershipData.testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-lg border border-gray-200 p-6 sm:p-8 hover:shadow-lg transition-all">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">★</span>
-                  ))}
-                </div>
-                <p className="text-gray-700 text-sm sm:text-base italic mb-4 leading-relaxed">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-gray-600 text-xs sm:text-sm">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-8 sm:py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-12">Frequently Asked Questions</h2>
-          
-          <div className="space-y-4">
-            {membershipData.faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left hover:bg-gray-100 transition-colors"
-                >
-                  <span className="font-semibold text-gray-900 text-sm sm:text-base">{faq.question}</span>
-                  <ChevronDown
-                    size={20}
-                    className={`text-gray-500 transition-transform flex-shrink-0 ${
-                      openFaq === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                {openFaq === index && (
-                  <div className="px-4 sm:px-5 pb-4 text-gray-600 text-sm sm:text-base border-t border-gray-200">
-                    {faq.answer}
-                  </div>
-                )}
               </div>
             ))}
           </div>
