@@ -1,5 +1,7 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const projects = [
   {
@@ -23,12 +25,21 @@ const projects = [
 ];
 
 const FeaturedFabricationProjects = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+
   return (
     <section className="py-8 sm:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex justify-between items-end mb-6">
+        <motion.div 
+          className="flex justify-between items-end mb-6"
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+        >
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
               Featured Fabrication Projects
@@ -41,13 +52,30 @@ const FeaturedFabricationProjects = () => {
             View All Projects
             <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.12
+              }
+            }
+          }}
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
               className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
             >
               {/* Project Image */}
@@ -75,9 +103,9 @@ const FeaturedFabricationProjects = () => {
                   {project.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Mobile View All Button */}
         <div className="sm:hidden flex justify-center">

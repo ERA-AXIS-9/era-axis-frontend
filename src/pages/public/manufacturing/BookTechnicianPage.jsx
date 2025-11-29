@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, Clock, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Breadcrumb from '../../../components/pages/manufacturing/Breadcrumb';
 
 const BookTechnicianPage = () => {
@@ -34,27 +35,65 @@ const BookTechnicianPage = () => {
       <Breadcrumb />
       
       {/* Hero Section */}
-      <section className="pt-8 pb-6 bg-white border-b border-gray-200">
+      <motion.section 
+        className="pt-8 pb-6 bg-white border-b border-gray-200"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
+          <motion.div 
+            className="max-w-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3">
               Book a Technician
             </h1>
             <p className="text-gray-600 text-lg">
               Schedule a Maintenance Services. Fast, reliable, and tailored to your needs.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Booking Form Section */}
-      <section className="py-12">
+      <motion.section 
+        className="py-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.2
+            }
+          }
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 }
+            }}
+          >
             
             {/* Left Column - Booking Form */}
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 sm:p-8">
+            <motion.div 
+              className="lg:col-span-2"
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 }
+              }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div 
+                className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 sm:p-8"
+                whileHover={{ shadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              >
                 <h2 className="text-xl font-bold text-black mb-6">Booking Form</h2>
                 
                 <form onSubmit={handleSubmit}>
@@ -189,12 +228,22 @@ const BookTechnicianPage = () => {
                     </button>
                   </div>
                 </form>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Right Column - Need urgent help? */}
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 sticky top-6">
+            <motion.div 
+              className="lg:col-span-1"
+              variants={{
+                hidden: { opacity: 0, x: 30 },
+                visible: { opacity: 1, x: 0 }
+              }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div 
+                className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 sticky top-6"
+                whileHover={{ shadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              >
                 <h2 className="text-xl font-bold text-black mb-6">Need urgent help?</h2>
                 
                 {/* Contact Info */}
@@ -242,11 +291,11 @@ const BookTechnicianPage = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

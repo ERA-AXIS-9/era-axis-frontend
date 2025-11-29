@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TrendingUp, Users, Award } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const testimonials = [
   {
@@ -87,32 +89,51 @@ const TestimonialsImpact = () => {
   };
 
   const visibleTestimonials = getVisibleTestimonials();
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+
   return (
     <section className="py-8 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="mb-8">
+        <motion.div 
+          className="mb-8"
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
             Testimonials
           </h2>
-        </div>
+        </motion.div>
 
         {/* Impact Metrics Section Removed - Moved to separate component */}
         
         {/* Testimonials Carousel */}
-        <div className="relative mb-8">
+        <motion.div 
+          className="relative mb-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+        >
           {/* Testimonials Carousel */}
           <div className="overflow-hidden">
-            <div 
+            <motion.div 
               className="flex transition-transform duration-500 ease-in-out gap-6"
               style={{
                 transform: `translateX(-${currentIndex * 33.333}%)`,
               }}
             >
               {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index} 
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6 }}
                   className="group relative bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden flex-shrink-0 w-full lg:w-1/3 md:w-1/2"
                 >
                   {/* Subtle glow effect */}
@@ -153,11 +174,11 @@ const TestimonialsImpact = () => {
                   
                   {/* Bottom accent line */}
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#39366F] to-[#5B9BD5] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

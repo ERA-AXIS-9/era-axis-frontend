@@ -233,7 +233,7 @@ const courseData = {
   'junior-stem-basic': {
     title: 'Junior STEM Basic',
     tagline: 'Perfect for Beginners',
-    price: 400,
+    price: 150,
     priceType: 'one-time',
     duration: '3 months',
     image: juniorStemImage,

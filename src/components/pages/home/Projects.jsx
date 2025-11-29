@@ -1,7 +1,11 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const Projects = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+  
   const projects = [
     {
       name: 'EcoWatch',
@@ -27,15 +31,39 @@ const Projects = () => {
     <section className="py-9 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title Only */}
-        <div className="mb-8">
+        <motion.div 
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+          className="mb-8"
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight">Featured Projects</h2>
-        </div>
+        </motion.div>
         
         {/* Project Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-4">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+        >
           {projects.map((project, index) => (
-            <div 
-              key={index} 
+            <motion.div 
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.6 }}
               className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden max-w-sm mx-auto w-full"
             >
               {/* Project Image */}
@@ -76,9 +104,9 @@ const Projects = () => {
               
               {/* Consistent bottom accent */}
               <div className="h-1 bg-[#39366F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
         {/* See All Projects Button - At Bottom */}
         <div className="flex justify-end">

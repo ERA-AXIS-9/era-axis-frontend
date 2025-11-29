@@ -1,5 +1,7 @@
 import React from 'react';
 import { Check, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const plans = [
   {
@@ -51,25 +53,51 @@ const plans = [
 ];
 
 const ServicePlans = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+
   return (
     <section className="py-10 bg-gradient-to-b from-[#39366F] to-[#2a2850]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-8">
+        <motion.div 
+          className="text-center mb-8"
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Service Plans
           </h2>
           <p className="text-gray-400 text-lg">
             Choose the plan that fits your needs
           </p>
-        </div>
+        </motion.div>
 
         {/* Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+        >
           {plans.map((plan, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
               className={`relative rounded-2xl p-8 transition-all duration-500 cursor-pointer group ${
                 plan.popular 
                   ? 'bg-gradient-to-br from-[#5B9BD5]/20 to-[#39366F]/20 ring-2 ring-[#5B9BD5] shadow-2xl transform scale-105 hover:scale-110 backdrop-blur-sm' 
@@ -137,9 +165,9 @@ const ServicePlans = () => {
                 {plan.cta}
                 <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
               </a>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Footer Note */}
         <div className="text-center mt-8">

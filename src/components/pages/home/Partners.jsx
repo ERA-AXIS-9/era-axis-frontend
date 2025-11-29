@@ -1,6 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const Partners = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
   const partners = [
     { 
       name: 'UNICEF Startup Labs', 
@@ -40,7 +43,16 @@ const Partners = () => {
   return (
     <section className="py-9 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-6">Partners & Recognition</h2>
+        <motion.h2 
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-6"
+        >
+          Partners & Recognition
+        </motion.h2>
         
         {/* Slideshow Container */}
         <div className="relative overflow-hidden">

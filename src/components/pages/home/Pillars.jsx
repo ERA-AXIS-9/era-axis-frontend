@@ -1,7 +1,11 @@
 import React from 'react';
 import { Monitor, Cpu, Code, Computer, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const Pillars = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+  
   const pillars = [
     {
       title: 'Education',
@@ -36,14 +40,40 @@ const Pillars = () => {
   return (
     <section className="py-9 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 tracking-tight">Our Pillars</h2>
+        <motion.h2 
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 tracking-tight"
+        >
+          Our Pillars
+        </motion.h2>
         
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <motion.div 
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+        >
           {pillars.map((pillar, index) => {
             const IconComponent = pillar.icon;
             return (
-              <div 
-                key={index} 
+              <motion.div 
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5 }}
                 className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 hover:border-gray-300 hover:from-gray-50 hover:to-gray-100"
               >
                 {/* Icon */}
@@ -81,10 +111,10 @@ const Pillars = () => {
                     className="group-hover/btn:translate-x-0.5 transition-transform duration-300"
                   />
                 </a>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

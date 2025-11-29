@@ -22,7 +22,7 @@ const professionalCourses = [
     title: 'Junior STEM Basic',
     description: 'Perfect for beginners. Learn fundamental STEM concepts through hands-on projects and interactive workshops.',
     image: '/images/Educationpage/junior%20sterm%20basic.png',
-    price: 400,
+    price: 150,
     link: '/services/education/program-details?program=junior-stem-basic',
     id: 'junior-stem-basic'
   },

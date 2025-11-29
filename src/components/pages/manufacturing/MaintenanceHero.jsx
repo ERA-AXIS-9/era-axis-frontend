@@ -1,14 +1,34 @@
 import React from 'react';
 import { Settings, ChevronRight, Wrench } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const MaintenanceHero = () => {
   return (
     <section className="relative pt-8 sm:pt-10 pb-8 sm:pb-10 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+        >
           
           {/* Left Content */}
-          <div className="max-w-2xl">
+          <motion.div 
+            className="max-w-2xl"
+            variants={{
+              hidden: { opacity: 0, x: -30 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.6 }}
+          >
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6 leading-tight">
               Keeping Innovation Running Smoothly
@@ -29,10 +49,17 @@ const MaintenanceHero = () => {
                 <ChevronRight size={18} />
               </a>
             </div>
-          </div>
+          </motion.div>
           
           {/* Right - Image */}
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            variants={{
+              hidden: { opacity: 0, x: 30 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="relative bg-gradient-to-br from-[#39366F]/10 to-[#5B9BD5]/10 rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src="/images/Manufacturing/Maintaenance.png" 
@@ -41,8 +68,8 @@ const MaintenanceHero = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#39366F]/20 to-transparent"></div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

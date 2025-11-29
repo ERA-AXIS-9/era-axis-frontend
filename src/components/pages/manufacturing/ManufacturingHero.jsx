@@ -1,5 +1,6 @@
 import React from 'react';
 import { Factory, ChevronRight, Shield, Award, Leaf } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ManufacturingHero = () => {
   return (
@@ -17,19 +18,39 @@ const ManufacturingHero = () => {
           <div className="relative px-6 md:px-10 lg:px-14 py-12 md:py-16 lg:py-20 min-h-[400px] md:min-h-[480px] lg:min-h-[560px] flex items-center">
             
             {/* Left Content */}
-            <div className="max-w-3xl">
+            <motion.div 
+              className="max-w-3xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 leading-tight">
+              <motion.h1 
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
                 From Building to Maintaining
-              </h1>
+              </motion.h1>
 
               {/* Subtitle */}
-              <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 leading-relaxed">
+              <motion.p 
+                className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 Our manufacturing unit transforms e-waste into sustainable solutions for companies, households, and communities across Africa.
-              </p>
+              </motion.p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 md:gap-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
                 <a 
                   href="#core-services"
                   className="group bg-[#39366F] hover:bg-[#2a2850] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 inline-flex items-center justify-center gap-3 transform hover:-translate-y-1 w-full sm:w-auto"
@@ -45,8 +66,8 @@ const ManufacturingHero = () => {
                   Get a Quote
                   <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform" />
                 </a>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
         <div className="bg-gradient-to-r from-[#39366F]/10 via-[#5B9BD5]/5 to-[#39366F]/10 border-t border-b border-[#39366F]/20">
