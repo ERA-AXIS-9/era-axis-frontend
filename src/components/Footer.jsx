@@ -68,13 +68,13 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-white mb-3">Contact Us</h4>
             <div className="space-y-1.5 mb-3">
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Address:</span> ERA AXIS HQ – Essikado, Ghana
+                <span className="font-semibold text-white">Location:</span> Accra, Ghana
               </p>
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Email:</span> <a href="mailto:support@eraaxis.com" className="hover:text-[#39366F] transition-colors">support@eraaxis.com</a>
+                <span className="font-semibold text-white">Email:</span> <a href="mailto:labs@era-axis.com" className="hover:text-[#39366F] transition-colors">labs@era-axis.com</a>
               </p>
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Phone:</span> <a href="tel:+233509582497" className="hover:text-[#39366F] transition-colors">+233 50 958 2497</a>
+                <span className="font-semibold text-white">Phone:</span> <a href="tel:+233000000000" className="hover:text-[#39366F] transition-colors">+233 000 000 000</a>
               </p>
             </div>
             

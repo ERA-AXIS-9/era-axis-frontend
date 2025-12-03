@@ -7,93 +7,33 @@ import Breadcrumb from '../../../components/pages/open-labs/Breadcrumb';
 const projects = [
   {
     id: 1,
-    title: 'Smart Recycling Bins',
-    category: 'Hardware',
-    client: 'Green Communities Initiative',
-    description: 'IoT-enabled waste sorting system with real-time monitoring and automated sorting capabilities.',
-    image: '/images/manufacturing.png',
-    tags: ['IoT', 'Environmental', 'Smart City'],
-    results: '50+ bins deployed, 40% better sorting'
+    title: 'AgrizPlanter',
+    category: 'Agriculture',
+    client: 'Local Farmers',
+    description: 'An automated rice planting device designed to eliminate the stress of manual transplanting, increase planting speed and accuracy, and improve farmers\' efficiency and productivity.',
+    image: '/images/agrizplanter/agrizplanter.jpg',
+    tags: ['Agriculture', 'IoT', 'Automation'],
+    results: 'In Progress'
   },
   {
     id: 2,
-    title: 'AgriZplanter',
-    category: 'Hardware',
-    client: 'Local Farmers Cooperative',
-    description: 'Smart planting tool with soil monitoring and automated watering for small-scale farmers.',
-    image: '/images/manufacturing.png',
-    tags: ['Agriculture', 'IoT', 'Automation'],
-    results: '200+ farmers using, 30% yield increase'
+    title: 'EcoWatch',
+    category: 'Environment',
+    client: 'Environmental Protection',
+    description: 'A real-time air quality monitoring system that tracks pollution levels across multiple locations and provides actionable insights for communities.',
+    image: '/images/Homepage/ECOWatch1.png',
+    tags: ['Environment', 'Software', 'Data Analytics'],
+    results: 'Active'
   },
   {
     id: 3,
-    title: 'EcoWatch Dashboard',
-    category: 'Software',
-    client: 'Environmental Protection Agency',
-    description: 'Real-time air quality monitoring platform with predictive analytics and alert system.',
-    image: '/images/manufacturing.png',
-    tags: ['Software', 'Environment', 'Data Analytics'],
-    results: '15 cities monitored, 100K+ users'
-  },
-  {
-    id: 4,
-    title: 'Community Water Filter',
-    category: 'Hardware',
-    client: 'Clean Water Foundation',
-    description: 'Low-cost water filtration system using locally-sourced materials for rural communities.',
-    image: '/images/manufacturing.png',
-    tags: ['Water', 'Community', 'Engineering'],
-    results: '100+ units installed, 5000+ beneficiaries'
-  },
-  {
-    id: 5,
-    title: 'Solar Lamp Kit',
-    category: 'Hardware',
-    client: 'Rural Electrification Project',
-    description: 'Portable solar-powered lighting system with phone charging capabilities.',
-    image: '/images/manufacturing.png',
-    tags: ['Solar', 'Energy', 'Rural Development'],
-    results: '1000+ kits distributed, 95% satisfaction'
-  },
-  {
-    id: 6,
-    title: 'School Lab Tools',
-    category: 'Hardware',
-    client: 'Education Ministry',
-    description: 'Custom science laboratory equipment built from recycled e-waste components.',
-    image: '/images/manufacturing.png',
-    tags: ['Education', 'E-waste', 'Innovation'],
-    results: '50 schools equipped, 10K+ students served'
-  },
-  {
-    id: 7,
-    title: 'Health Monitoring Device',
-    category: 'Hardware',
-    client: 'Community Health Centers',
-    description: 'Affordable wearable health tracker built with 3D printing and open-source components.',
-    image: '/images/manufacturing.png',
-    tags: ['Healthcare', 'IoT', '3D Printing'],
-    results: '500+ devices distributed, 24/7 monitoring'
-  },
-  {
-    id: 8,
-    title: 'Smart Traffic System',
-    category: 'Software',
-    client: 'City Transportation Authority',
-    description: 'AI-powered traffic management system with real-time optimization and accident prevention.',
-    image: '/images/manufacturing.png',
-    tags: ['AI', 'Transportation', 'Smart City'],
-    results: '30% traffic reduction, 50+ intersections'
-  },
-  {
-    id: 9,
-    title: 'Renewable Energy Trainer',
-    category: 'Hardware',
-    client: 'Technical Schools Network',
-    description: 'Educational kit for teaching renewable energy concepts with hands-on experiments.',
-    image: '/images/manufacturing.png',
-    tags: ['Education', 'Renewable Energy', 'Training'],
-    results: '100 schools adopted, 5K+ students trained'
+    title: 'Smart Dustbin',
+    category: 'Sustainability',
+    client: 'Waste Management',
+    description: 'Developed a smart dustbin prototype that uses ultrasonic sensors to measure fill level and wirelessly communicate status, optimising waste collection routes and efficiency.',
+    image: '/images/Manufacturing/Smart Dustbin .png',
+    tags: ['IoT', 'Sensors', 'Waste Management'],
+    results: 'Active'
   }
 ];
 

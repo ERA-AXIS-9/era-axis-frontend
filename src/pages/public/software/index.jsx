@@ -5,7 +5,6 @@ import OurServices from '../../../components/pages/software/OurServices';
 import Projects from '../../../components/pages/home/Projects';
 import WhyChooseUs from '../../../components/pages/software/WhyChooseUs';
 import SoftwareCTA from '../../../components/pages/software/SoftwareCTA';
-import PartnerTestimonials from '../../../components/pages/software/PartnerTestimonials';
 
 const SoftwarePage = () => {
   return (
@@ -16,7 +15,6 @@ const SoftwarePage = () => {
       <Projects />
       <WhyChooseUs />
       <SoftwareCTA />
-      <PartnerTestimonials />
     </div>
   );
 };

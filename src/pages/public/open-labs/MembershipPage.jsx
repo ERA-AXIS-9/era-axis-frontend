@@ -5,7 +5,7 @@ import Breadcrumb from '../../../components/pages/open-labs/Breadcrumb';
 const plans = [
   {
     title: 'Student Plan',
-    price: '$5',
+    price: 'GHS 100',
     period: '/month',
     description: 'Perfect for students learning and exploring.',
     features: [
@@ -19,7 +19,7 @@ const plans = [
   },
   {
     title: 'Startup Plan',
-    price: '$25',
+    price: 'GHS 400',
     period: '/month',
     description: 'Ideal for entrepreneurs and small teams.',
     features: [
@@ -34,7 +34,7 @@ const plans = [
   },
   {
     title: 'Organization Plan',
-    price: '$65',
+    price: 'GHS 1,300',
     period: '/month',
     description: 'Comprehensive access for teams and companies.',
     features: [
@@ -201,26 +201,6 @@ const MembershipPage = () => {
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-8">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#39366F] to-[#5B9BD5] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                K
-              </div>
-              <div>
-                <p className="text-gray-700 text-base leading-relaxed mb-3 italic">
-                  "As a student, the $5/month plan gave me access to tools I could never afford on my own. I used the lab to build my final year project!"
-                </p>
-                <p className="font-semibold text-black">Kofi Mensah</p>
-                <p className="text-sm text-gray-500">Engineering Student</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

@@ -8,6 +8,7 @@ import WhoCanUse from '../../../components/pages/open-labs/WhoCanUse';
 import FacilitiesPreview from '../../../components/pages/open-labs/FacilitiesPreview';
 import MembershipPlans from '../../../components/pages/open-labs/MembershipPlans';
 import ProjectShowcase from '../../../components/pages/open-labs/ProjectShowcase';
+import OpenLabsTestimonials from '../../../components/pages/open-labs/OpenLabsTestimonials';
 import OpenLabsCTA from '../../../components/pages/open-labs/OpenLabsCTA';
 
 const FacilitiesPage = React.lazy(() => import('./facilities.jsx'));
@@ -25,6 +26,7 @@ const OpenLabsMain = () => (
     <FacilitiesPreview />
     <MembershipPlans />
     <ProjectShowcase />
+    <OpenLabsTestimonials />
     <OpenLabsCTA />
   </div>
 );

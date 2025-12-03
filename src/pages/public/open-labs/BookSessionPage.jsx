@@ -323,40 +323,6 @@ const BookSessionPage = () => {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-gray-200 rounded-xl p-8">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#39366F] to-[#5B9BD5] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                A
-              </div>
-              <div>
-                <p className="text-gray-700 text-base leading-relaxed mb-3 italic">
-                  "Booking was quick and seamless. I got confirmation the same day, and the team helped me every step of the way."
-                </p>
-                <p className="font-semibold text-black">Ama Osei</p>
-                <p className="text-sm text-gray-500">Startup Founder</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final Note */}
-      <section className="py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-600 mb-6">
-            Your innovation starts here.
-          </p>
-          <a
-            href="/services/open-labs"
-            className="text-[#39366F] hover:text-[#2a2850] font-semibold hover:underline"
-          >
-            Learn more about our labs →
-          </a>
-        </div>
-      </section>
     </div>
   );
 };

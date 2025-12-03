@@ -29,10 +29,12 @@ const AboutTheLabs = () => {
 
           {/* Right Content - Image */}
           <div className="relative">
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-gradient-to-br from-gray-100 to-gray-200">
-              <div className="w-full h-full flex items-center justify-center text-gray-400">
-                <span className="text-sm">Lab Space Image</span>
-              </div>
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+              <img 
+                src="/images/OpenLabs/openlabs.png" 
+                alt="Open Labs Space" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

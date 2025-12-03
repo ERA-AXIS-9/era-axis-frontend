@@ -14,11 +14,11 @@ const accessInfo = [
   },
   {
     icon: Users,
-    title: 'Membership Required',
+    title: 'Membership Plans',
     details: [
-      'Student: $5/month',
-      'Startup: $25/month',
-      'Organization: $65/month'
+      'Student: GHS 100/month',
+      'Startup: GHS 400/month',
+      'Organization: GHS 1,300/month'
     ],
     color: '#5B9BD5'
   },

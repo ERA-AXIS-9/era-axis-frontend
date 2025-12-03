@@ -26,15 +26,7 @@ const projects = [
     status: 'Active',
     image: '/images/Homepage/PXL_20240913_102510357.MP.jpg',
     link: '/services/open-labs/projects'
-  },
-  {
-    title: 'Smart Health Wearables',
-    category: 'Health',
-    description: 'Affordable health tracking devices that monitor vital signs and provide actionable health insights for communities.',
-    status: 'In Progress',
-    image: '/images/workingspace.png',
-    link: '/services/open-labs/projects'
-  },
+  }
 ];
 
 const ProjectShowcase = () => (

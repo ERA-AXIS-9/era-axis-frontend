@@ -4,29 +4,22 @@ import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const testimonials = [
   {
-    quote: "I joined to learn, and now I'm creating. The environment at ERA pushes you to turn raw materials into functional products.",
-    author: "Botsyo Enyonam Kelly",
-    role: "Student",
-    avatar: "B",
-    image: "/images/Testimonies/testimonials1.png"
+    quote: "Open Labs is the heartbeat of innovation here. It's where diverse ideas collide to create sustainable, scalable prototypes.",
+    author: "Silas Asare",
+    role: "Executive (Open Labs)",
+    avatar: "S",
+    image: "/images/Testimonies/Testimonials2.png"
   },
   {
-    quote: "Leading projects here proves that high-quality, local manufacturing is possible. We are building African hardware for the world.",
-    author: "Pearl Dadzie",
-    role: "Managing Lead",
-    avatar: "P",
-    image: "/images/Testimonies/Testiminials6.png"
-  },
-  {
-    quote: "The manufacturing hub gives us the precision tools we need. We aren't just assembling; we are engineering solutions from scratch.",
-    author: "Yankey Kevin Frank",
-    role: "Manufacturing Staff",
-    avatar: "Y",
-    image: "/images/Testimonies/Testinomials7.png"
+    quote: "Access to these facilities changes everything. It allows us to test, fail fast, and refine our ideas until they work.",
+    author: "Asante Ruth",
+    role: "Staff (Open Labs)",
+    avatar: "A",
+    image: "/images/Testimonies/Tedtimoniaals8.png"
   }
 ];
 
-const TestimonialsImpact = () => {
+const OpenLabsTestimonials = () => {
   const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
 
   return (
@@ -125,4 +118,4 @@ const TestimonialsImpact = () => {
   );
 };
 
-export default TestimonialsImpact;
+export default OpenLabsTestimonials;
