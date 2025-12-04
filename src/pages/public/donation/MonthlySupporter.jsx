@@ -10,15 +10,15 @@ const MonthlySupporter = () => {
   const frequencyOptions = ['Monthly', 'Quarterly', 'Annually'];
   
   const amountOptions = [
-    { amount: '$10', description: 'Support 1 learner' },
-    { amount: '$25', description: 'Support 3 learners' },
-    { amount: '$50', description: 'Fund a community project' }
+    { amount: 'GHS 50', description: 'Support 1 learner' },
+    { amount: 'GHS 125', description: 'Support 3 learners' },
+    { amount: 'GHS 250', description: 'Fund a community project' }
   ];
 
   const impactStats = [
     '"Every month, you unlock innovation opportunities for someone new."',
     'Open Labs sustained monthly: 6+',
-    'Average learners reached per $25: 3',
+    'Average learners reached per GHS 125: 3',
     'Recurring supporters community size: 1,200+'
   ];
 

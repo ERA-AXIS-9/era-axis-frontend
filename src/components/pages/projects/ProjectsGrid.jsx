@@ -20,14 +20,6 @@ const ProjectsGrid = () => {
       link: '/services/software/iot'
     },
     {
-      title: 'Household Solutions',
-      category: 'Software',
-      description: 'Smart software for every home - budgeting, management, and family coordination.',
-      status: 'Active',
-      image: '/images/Homepage/WhatsApp Image 2025-07-10 at 5.30.30 PM.jpeg',
-      link: '/services/software/household'
-    },
-    {
       title: 'EcoWatch',
       category: 'Environment',
       description: 'A real-time air quality monitoring system that tracks pollution levels across multiple locations and provides actionable insights for communities.',
@@ -52,13 +44,93 @@ const ProjectsGrid = () => {
       link: '/projects/era-technologies'
     },
     {
-      title: 'EduConnect Platform',
-      category: 'Education',
-      description: 'Digital learning platform connecting students with mentors and resources.',
-      status: 'Completed',
-      image: '/images/Homepage/PXL_20250612_144423482.MP.jpg',
+      title: 'BagaBoard',
+      category: 'Manufacturing',
+      description: 'Developed a fire-resistant, eco-friendly electrical extension board casing made from sugarcane bagasse to replace unsafe plastic alternatives.',
+      status: 'Active',
+      image: '/images/Manufacturing/bagaboard.png',
       link: '#'
-    }
+    },
+    {
+      title: 'Automated School Alarm System',
+      category: 'Manufacturing',
+      description: 'Designed a programmable bell and notification system that automates school time management and eliminates manual bell ringing.',
+      status: 'Active',
+      image: '/images/Manufacturing/Automated School Alarm System .png',
+      link: '#'
+    },
+    {
+      title: 'Audio Amplifier',
+      category: 'Manufacturing',
+      description: 'Built a high-fidelity audio amplification system delivering clear, powerful sound output for classroom, auditorium, and public-use applications.',
+      status: 'Active',
+      image: '/images/Manufacturing/Audio Amplifier .png',
+      link: '#'
+    },
+    {
+      title: 'Home Automation with 8 Functions',
+      category: 'IoT',
+      description: 'Developed a smart home control system enabling users to remotely manage lighting, security, appliances, and environmental functions from a single interface.',
+      status: 'Active',
+      image: '/images/Manufacturing/Home Automation with 8 Functions .png',
+      link: '#'
+    },
+    {
+      title: 'Automated Water Pump System with SMS Integration',
+      category: 'IoT',
+      description: 'Engineered a smart pumping solution that automatically controls water levels and sends real-time status alerts and notifications via SMS.',
+      status: 'Active',
+      image: '/images/Manufacturing/Automated Water Pump System with SMS Integration.png',
+      link: '#'
+    },
+    {
+      title: 'Student Hands-On Project',
+      category: 'Education',
+      description: 'Implemented practical engineering workshops that equip students with real-world technical skills through project-based learning and device fabrication.',
+      status: 'Active',
+      image: '/images/Manufacturing/Student Hands-On Project.png',
+      link: '#'
+    },
+    {
+      title: 'Wooden Extension Board',
+      category: 'Manufacturing',
+      description: 'Designed and fabricated custom wooden extension boards featuring integrated surge protectors and aesthetically pleasing finishes for consumer and professional use.',
+      status: 'Active',
+      image: '/images/Manufacturing/Wooden Extension Board .png',
+      link: '#'
+    },
+    {
+      title: 'Smart Dustbin',
+      category: 'IoT',
+      description: 'Developed a smart dustbin prototype that uses ultrasonic sensors to measure fill level and wirelessly communicate status, optimising waste collection routes and efficiency.',
+      status: 'Active',
+      image: '/images/Manufacturing/Smart Dustbin .png',
+      link: '#'
+    },
+    {
+      title: 'Fingerprint Gate',
+      category: 'Security',
+      description: 'Developed and implemented a biometric access control system using a fingerprint scanner integrated into a motorised gate mechanism for enhanced security and automated entry.',
+      status: 'Active',
+      image: '/images/Manufacturing/Fingerprint Gate .png',
+      link: '#'
+    },
+    {
+      title: 'PureGuide',
+      category: 'Healthcare',
+      description: 'Developed a smart, wall-mounted sterilisation device utilising UV-C light to safely and automatically sanitise mobile phones.',
+      status: 'Active',
+      image: '/images/Manufacturing/PureGuide .png',
+      link: '#'
+    },
+    {
+      title: 'CoopTech',
+      category: 'Agriculture',
+      description: 'Designed an automated climate control system utilising sensors, ventilation fans, and misters to precisely regulate temperature, humidity, and air quality for optimal poultry health and productivity.',
+      status: 'Active',
+      image: '/images/Manufacturing/CoopTech.png',
+      link: '#'
+    },
   ];
 
   return (

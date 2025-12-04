@@ -96,29 +96,27 @@ const WaysToSupport = () => {
 
                   {/* Buttons */}
                   <div className="flex gap-2">
-                    <a 
-                      href={
-                        option.title === 'Donate Funds' ? '/donate/payment' :
-                        option.title === 'Donate E-Waste' ? '/donate/ewaste' :
-                        option.title === 'Monthly Supporter' ? '/donate/monthly-supporter' :
-                        '#'
-                      }
-                      className="flex-1 bg-[#39366F] hover:bg-[#2a2850] text-white px-3 py-2 rounded-lg font-semibold text-sm transition-colors duration-200 text-center"
+                    <button 
+                      onClick={() => {
+                        if (option.title === 'Donate Funds') navigate('/donate/payment');
+                        else if (option.title === 'Donate E-Waste') navigate('/donate/ewaste');
+                        else if (option.title === 'Monthly Supporter') navigate('/donate/monthly-supporter');
+                      }}
+                      className="flex-1 bg-[#39366F] hover:bg-[#2a2850] text-white px-3 py-2 rounded-lg font-semibold text-sm transition-colors duration-200 text-center cursor-pointer"
                     >
                       {option.buttonText}
-                    </a>
+                    </button>
                     
-                    <a 
-                      href={
-                        option.title === 'Donate Funds' ? '/donate' :
-                        option.title === 'Donate E-Waste' ? '/donate/ewaste' :
-                        option.title === 'Monthly Supporter' ? '/donate/monthly-supporter' :
-                        '#'
-                      }
-                      className="flex-1 border border-gray-300 hover:border-[#39366F] text-gray-700 hover:text-[#39366F] px-3 py-2 rounded-lg font-medium text-sm transition-all duration-200 text-center"
+                    <button 
+                      onClick={() => {
+                        if (option.title === 'Donate Funds') navigate('/donate/payment');
+                        else if (option.title === 'Donate E-Waste') navigate('/donate/ewaste');
+                        else if (option.title === 'Monthly Supporter') navigate('/donate/monthly-supporter');
+                      }}
+                      className="flex-1 border border-gray-300 hover:border-[#39366F] text-gray-700 hover:text-[#39366F] px-3 py-2 rounded-lg font-medium text-sm transition-all duration-200 text-center cursor-pointer"
                     >
                       {option.secondButton}
-                    </a>
+                    </button>
                   </div>
                 </div>
               </motion.div>

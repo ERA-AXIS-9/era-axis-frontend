@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FinalCTA = () => {
+  const navigate = useNavigate();
+  
   return (
     <motion.section 
       className="py-12 sm:py-16 bg-white"
@@ -54,20 +57,20 @@ const FinalCTA = () => {
               }}
               transition={{ duration: 0.6 }}
             >
-              <a 
-                href="/donate"
-                className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+              <button 
+                onClick={() => navigate('/donate/payment')}
+                className="bg-white text-[#39366F] hover:bg-gray-100 px-8 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2 cursor-pointer"
               >
                 Donate Now
                 <ChevronRight size={18} />
-              </a>
-              <a 
-                href="/donate/ewaste"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#39366F] px-8 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+              </button>
+              <button 
+                onClick={() => navigate('/donate/ewaste')}
+                className="border-2 border-white text-white hover:bg-white hover:text-[#39366F] px-8 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2 cursor-pointer"
               >
                 Give E-Waste
                 <ChevronRight size={18} />
-              </a>
+              </button>
             </motion.div>
           </motion.div>
         </motion.div>

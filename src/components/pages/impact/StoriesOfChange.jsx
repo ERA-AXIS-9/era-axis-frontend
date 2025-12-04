@@ -43,23 +43,20 @@ const StoriesOfChange = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
           {stories.map((story, index) => (
-            <div key={index} className="bg-white group cursor-pointer" onClick={() => setSelectedVideo(story.videoUrl)}>
+            <div key={index} className="bg-white group">
               
               {/* Video Thumbnail */}
-              <div className="relative rounded-lg h-40 sm:h-48 mb-4 overflow-hidden group-hover:shadow-lg transition-all duration-300">
+              <div className="relative rounded-lg h-40 sm:h-48 mb-4 overflow-hidden bg-gray-100 flex items-center justify-center">
                 <img 
                   src={story.thumbnail}
                   alt={story.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover opacity-40"
                 />
                 
-                {/* Video Overlay */}
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300"></div>
-                
-                {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300 shadow-lg">
-                    <Play className="text-[#39366F] ml-1" size={24} />
+                {/* Coming Soon Overlay */}
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-white text-lg font-bold">Coming Soon</div>
                   </div>
                 </div>
 
@@ -78,7 +75,7 @@ const StoriesOfChange = () => {
                   <span className="text-xs text-gray-500 font-medium">{story.speaker}</span>
                 </div>
 
-                <h3 className="text-lg font-bold text-black mb-3 group-hover:text-[#39366F] transition-colors">
+                <h3 className="text-lg font-bold text-black mb-3">
                   {story.title}
                 </h3>
                 
@@ -90,12 +87,9 @@ const StoriesOfChange = () => {
           ))}
         </div>
 
-        {/* Watch More Stories Button */}
+        {/* Coming Soon Message */}
         <div className="text-left">
-          <button className="bg-[#39366F] hover:bg-[#2a2850] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md flex items-center gap-2">
-            <Play size={16} />
-            Watch More Stories
-          </button>
+          <p className="text-gray-600 font-medium">Videos coming soon...</p>
         </div>
 
       </div>

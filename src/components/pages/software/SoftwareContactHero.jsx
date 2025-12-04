@@ -120,11 +120,11 @@ const SoftwareContactHero = () => {
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#39366F]/20 focus:border-[#39366F] transition-all duration-300 text-sm hover:border-gray-400 appearance-none bg-white"
                 >
                   <option value="">Budget Range</option>
-                  <option value="under-5k">Under $5,000</option>
-                  <option value="5k-10k">$5,000 - $10,000</option>
-                  <option value="10k-25k">$10,000 - $25,000</option>
-                  <option value="25k-50k">$25,000 - $50,000</option>
-                  <option value="50k-plus">$50,000+</option>
+                  <option value="under-25k">Under GHS 25,000</option>
+                  <option value="25k-50k">GHS 25,000 - GHS 50,000</option>
+                  <option value="50k-125k">GHS 50,000 - GHS 125,000</option>
+                  <option value="125k-250k">GHS 125,000 - GHS 250,000</option>
+                  <option value="250k-plus">GHS 250,000+</option>
                 </select>
 
                 <input
@@ -211,7 +211,7 @@ const SoftwareContactHero = () => {
             {/* Social Media */}
             <div className="bg-white border border-gray-200 px-5 py-6 rounded-xl shadow-sm">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Connect With Us</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a href="#" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
                   <Facebook className="text-[#39366F] group-hover:text-[#2a2850]" size={18} />
                   <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">Facebook</span>

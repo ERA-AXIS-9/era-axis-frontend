@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 
 const CustomFabricationHero = () => {
   return (
-    <section className="relative min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden bg-gradient-to-br from-[#39366F] to-[#2a2850]">
+    <section className="relative min-h-[500px] sm:min-h-[550px] lg:min-h-[650px] flex items-center overflow-hidden bg-gradient-to-br from-[#39366F] to-[#2a2850]">
       {/* Background Image - Right Side */}
-      <div className="absolute right-0 top-0 bottom-0 w-full sm:w-1/2 lg:w-2/5 opacity-100">
+      <div className="absolute right-0 top-0 bottom-0 w-full sm:w-1/2 lg:w-1/2 opacity-100">
         <img 
-          src="/images/manufacturing.png" 
+          src="/images/Manufacturing/Gemini_Generated_Image_uaw5dpuaw5dpuaw5.png" 
           alt="ERA AXIS Custom Fabrication Workshop"
           className="w-full h-full object-cover"
         />
@@ -26,10 +26,10 @@ const CustomFabricationHero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="max-w-2xl">
+        <div className="max-w-xl">
           {/* Main Heading */}
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -39,7 +39,7 @@ const CustomFabricationHero = () => {
 
           {/* Subtitle */}
           <motion.p 
-            className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8 leading-relaxed drop-shadow-md max-w-2xl"
+            className="text-sm sm:text-base lg:text-lg text-white mb-4 sm:mb-6 leading-relaxed drop-shadow-md max-w-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

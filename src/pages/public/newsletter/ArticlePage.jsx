@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ChevronLeft, Mail, Twitter, Linkedin, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ArrowRight } from 'lucide-react';
 import { articlesData } from '../../../data/articlesData';
 
 const ArticlePage = () => {
@@ -24,23 +24,6 @@ const ArticlePage = () => {
     }
   };
 
-  const handleShare = (platform) => {
-    const url = window.location.href;
-    const text = article ? article.title : '';
-    
-    switch(platform) {
-      case 'twitter':
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
-        break;
-      case 'linkedin':
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
-        break;
-      case 'email':
-        window.open(`mailto:?subject=${encodeURIComponent(text)}&body=${encodeURIComponent(url)}`, '_blank');
-        break;
-    }
-  };
-
   if (!article) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -59,28 +42,15 @@ const ArticlePage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Top back link and share */}
+      {/* Top back link */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <div className="flex items-center justify-between">
-          <button
-            onClick={() => navigate('/newsletter')}
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-[#39366F]"
-          >
-            <ChevronLeft size={18} />
-            <span className="text-sm font-medium">Back to News & Insights</span>
-          </button>
-          <div className="hidden sm:flex items-center gap-2 text-gray-600">
-            <button onClick={() => handleShare('linkedin')} className="p-2 hover:text-[#39366F]" title="Share on LinkedIn">
-              <Linkedin size={18} />
-            </button>
-            <button onClick={() => handleShare('twitter')} className="p-2 hover:text-[#39366F]" title="Share on X">
-              <Twitter size={18} />
-            </button>
-            <button onClick={() => handleShare('email')} className="p-2 hover:text-[#39366F]" title="Share via Email">
-              <Mail size={18} />
-            </button>
-          </div>
-        </div>
+        <button
+          onClick={() => navigate('/newsletter')}
+          className="inline-flex items-center gap-2 text-gray-600 hover:text-[#39366F]"
+        >
+          <ChevronLeft size={18} />
+          <span className="text-sm font-medium">Back to News & Insights</span>
+        </button>
       </div>
 
       {/* Header + Grid */}

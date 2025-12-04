@@ -48,7 +48,7 @@ const PayPalPayment = () => {
                       <label className="block text-xs text-gray-600 mb-1">Amount</label>
                       <input
                         type="text"
-                        value="$25.00"
+                        value="GHS 125.00"
                         readOnly
                         className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg bg-gray-50 text-gray-700"
                       />

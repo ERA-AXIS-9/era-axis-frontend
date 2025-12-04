@@ -141,6 +141,7 @@ function App() {
           <Route path="/services/manufacturing/subscription-confirmation" element={<SubscriptionConfirmationPage />} />
           <Route path="/services/manufacturing/quote-confirmation" element={<QuoteConfirmationPage />} />
           <Route path="/services/projectShowcase" element={<ProjectsShowcasePage />} />
+          <Route path="/services/manufacturing/projects" element={<ProjectsShowcasePage />} />
           <Route path="/services/manufacturing/contact" element={<ManufacturingContactPage />} />
           <Route path="/services/software" element={<SoftwarePage />} />
           <Route path="/services/software/custom" element={<CustomSoftwarePage />} />

@@ -181,13 +181,13 @@ const ContactHero = () => {
             {/* Social Media */}
             <div className="bg-white border border-gray-200 px-5 py-6 rounded-xl shadow-sm">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Connect With Us</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3">
                 <a href="https://www.linkedin.com/company/era-axis" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
                   <i className="fa-brands fa-linkedin text-[#39366F] group-hover:text-[#2a2850]"></i>
                   <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">LinkedIn</span>
                 </a>
                 <a href="https://x.com/ERRAAXIS?t=EphVMATn3dQAMr4lE3su1Q&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">
-                  <i className="fa-brands fa-x-twitter text-[#39366F] group-hover:text-[#2a2850]"></i>
+                  <i className="fa-brands fa-x text-[#39366F] group-hover:text-[#2a2850]"></i>
                   <span className="text-sm font-medium text-gray-700 group-hover:text-[#39366F]">X</span>
                 </a>
                 <a href="https://www.instagram.com/era_axis?igsh=OTNsems5YWJjeDZh" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-[#39366F] hover:bg-[#39366F]/5 transition-all duration-300 group">

@@ -89,13 +89,6 @@ const projects = [
     image: '/images/Manufacturing/CoopTech.png',
     link: '/services/manufacturing/projects'
   },
-  {
-    title: 'EcoWatch',
-    description: 'Developed a portable monitoring device utilising specialised sensors to accurately measure carbon emissions released into the atmosphere, automatically recording and storing the environmental data for analysis.',
-    category: 'IoT',
-    image: '/images/Manufacturing/EcoWatch.png',
-    link: '/services/manufacturing/projects'
-  }
 ];
 
 const ProjectsShowcase = () => {

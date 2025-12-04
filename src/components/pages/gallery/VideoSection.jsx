@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 const VideoSection = () => {
   const videos = [
@@ -7,22 +7,22 @@ const VideoSection = () => {
       id: 1,
       title: "Founder's Talk on Tech Inclusion",
       description: "Keynote on equitable access to technology.",
-      thumbnail: "/images/manufacturing.png",
-      videoUrl: "#"
+      duration: "15:30",
+      thumbnail: "/images/Educationpage/education.png"
     },
     {
       id: 2,
       title: "Lab Tour in 2 Minutes",
       description: "A quick walkthrough of our open labs.",
-      thumbnail: "/images/software.png",
-      videoUrl: "#"
+      duration: "2:00",
+      thumbnail: "/images/Educationpage/education.png"
     },
     {
       id: 3,
       title: "Building with Communities",
       description: "3 quick stories from the field.",
-      thumbnail: "/images/workingspace.png",
-      videoUrl: "#"
+      duration: "5:45",
+      thumbnail: "/images/Educationpage/education.png"
     }
   ];
 
@@ -31,55 +31,57 @@ const VideoSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
+        <div className="text-left mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
             Watch: Talks & Tours
           </h2>
-          
-          <button className="text-[#39366F] hover:text-[#2a2850] font-medium text-sm transition-colors w-fit">
-            View All Videos
-          </button>
         </div>
 
-        {/* Video Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
           {videos.map((video) => (
-            <div 
-              key={video.id} 
-              className="group cursor-pointer relative rounded-xl overflow-hidden"
-              onClick={() => console.log('Play video:', video.title)}
-            >
+            <div key={video.id} className="bg-white group">
+              
               {/* Video Thumbnail */}
-              <div className="relative aspect-video bg-gray-100">
-                <img
+              <div className="relative rounded-lg h-40 sm:h-48 mb-4 overflow-hidden bg-gray-100 flex items-center justify-center">
+                <img 
                   src={video.thumbnail}
                   alt={video.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover opacity-40"
                 />
                 
-                {/* Play Button - Always Visible */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-white flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg">
-                    <Play className="text-[#39366F] fill-[#39366F]" size={28} />
+                {/* Coming Soon Overlay */}
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-white text-lg font-bold">Coming Soon</div>
                   </div>
                 </div>
 
-                {/* Title Overlay on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-bold text-base leading-tight mb-1">
-                      {video.title}
-                    </h3>
-                    <p className="text-white/80 text-xs">
-                      {video.description}
-                    </p>
-                  </div>
+                {/* Video Duration */}
+                <div className="absolute bottom-3 right-3 bg-black/70 text-white px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+                  <Clock size={12} />
+                  {video.duration}
                 </div>
+              </div>
+
+              {/* Video Content */}
+              <div>
+                <h3 className="text-lg font-bold text-black mb-3">
+                  {video.title}
+                </h3>
+                
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {video.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
-        
+
+        {/* Coming Soon Message */}
+        <div className="text-left">
+          <p className="text-gray-600 font-medium">Videos coming soon...</p>
+        </div>
+
       </div>
     </section>
   );

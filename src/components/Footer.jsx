@@ -68,32 +68,32 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-white mb-3">Contact Us</h4>
             <div className="space-y-1.5 mb-3">
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Location:</span> Accra, Ghana
+                <span className="font-semibold text-white">Our Location:</span> ERA AXIS HQ – Essikado, Ghana
               </p>
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Email:</span> <a href="mailto:labs@era-axis.com" className="hover:text-[#39366F] transition-colors">labs@era-axis.com</a>
+                <span className="font-semibold text-white">Email Address:</span> <a href="mailto:support@eraaxis.com" className="hover:text-[#39366F] transition-colors">support@eraaxis.com</a>
               </p>
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Phone:</span> <a href="tel:+233000000000" className="hover:text-[#39366F] transition-colors">+233 000 000 000</a>
+                <span className="font-semibold text-white">Phone Number:</span> <a href="tel:+233509582497" className="hover:text-[#39366F] transition-colors">+233 50 958 2497</a>
               </p>
             </div>
             
             {/* Social Media */}
             <div className="flex items-center space-x-3 mb-4">
-              <a href="https://www.linkedin.com/company/era-axis" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="LinkedIn">
-                <i className="fa-brands fa-linkedin text-white"></i>
+              <a href="https://www.linkedin.com/company/era-axis" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white transition-colors group" aria-label="LinkedIn">
+                <i className="fa-brands fa-linkedin text-white group-hover:text-[#39366F] transition-colors"></i>
               </a>
-              <a href="https://x.com/ERRAAXIS?t=EphVMATn3dQAMr4lE3su1Q&s=09" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="X (formerly Twitter)">
-                <i className="fa-brands fa-x-twitter text-white"></i>
+              <a href="https://x.com/ERRAAXIS?t=EphVMATn3dQAMr4lE3su1Q&s=09" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white transition-colors group" aria-label="X (formerly Twitter)">
+                <i className="fa-brands fa-x text-white group-hover:text-[#39366F] transition-colors"></i>
               </a>
-              <a href="https://www.instagram.com/era_axis?igsh=OTNsems5YWJjeDZh" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="Instagram">
-                <i className="fa-brands fa-square-instagram text-white"></i>
+              <a href="https://www.instagram.com/era_axis?igsh=OTNsems5YWJjeDZh" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white transition-colors group" aria-label="Instagram">
+                <i className="fa-brands fa-square-instagram text-white group-hover:text-[#39366F] transition-colors"></i>
               </a>
-              <a href="https://www.tiktok.com/@eraaxis?_t=ZM-8ztLE4T5YDs&_r=1" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="TikTok">
-                <i className="fa-brands fa-tiktok text-white"></i>
+              <a href="https://www.tiktok.com/@eraaxis?_t=ZM-8ztLE4T5YDs&_r=1" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white transition-colors group" aria-label="TikTok">
+                <i className="fa-brands fa-tiktok text-white group-hover:text-[#39366F] transition-colors"></i>
               </a>
-              <a href="https://wa.me/233509582497" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white hover:text-[#39366F] transition-colors" aria-label="WhatsApp">
-                <i className="fa-brands fa-square-whatsapp text-white"></i>
+              <a href="https://wa.me/233509582497" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#39366F] rounded flex items-center justify-center hover:bg-white transition-colors group" aria-label="WhatsApp">
+                <i className="fa-brands fa-square-whatsapp text-white group-hover:text-[#39366F] transition-colors"></i>
               </a>
             </div>
             

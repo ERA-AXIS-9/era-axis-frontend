@@ -270,7 +270,7 @@ const PaymentPage = () => {
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-600">Amount:</span>
-                    <span className="font-medium">$25</span>
+                    <span className="font-medium">GHS 125</span>
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-600">First Charge Date:</span>
@@ -278,12 +278,12 @@ const PaymentPage = () => {
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-600">Processing Fee:</span>
-                    <span className="font-medium">$0.00</span>
+                    <span className="font-medium">GHS 0.00</span>
                   </div>
                   <hr className="border-gray-200" />
                   <div className="flex justify-between text-xs font-semibold">
                     <span>Total:</span>
-                    <span>$25.00</span>
+                    <span>GHS 125.00</span>
                   </div>
                 </div>
 

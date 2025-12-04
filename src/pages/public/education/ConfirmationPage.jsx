@@ -9,7 +9,7 @@ const ConfirmationPage = () => {
   const enrollmentData = {
     program: 'Maker: Hardware & Repair',
     startDate: 'TBD — We\'ll schedule a cohort start date',
-    amount: '$450.00',
+    amount: 'GHS 2,250.00',
     transactionId: 'TXN-XXXX-XXXX'
   };
 

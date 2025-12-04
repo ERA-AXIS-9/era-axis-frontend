@@ -5,22 +5,22 @@ import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const projects = [
   {
-    title: 'Smart Recycling Bins',
-    description: 'IoT-enabled waste sorting for communities.',
-    category: 'Community Project',
-    image: '/images/manufacturing.png'
+    title: 'BagaBoard',
+    description: 'Developed a fire-resistant, eco-friendly electrical extension board casing made from sugarcane bagasse to replace unsafe plastic alternatives.',
+    category: 'Household',
+    image: '/images/Manufacturing/bagaboard.png'
   },
   {
-    title: 'School Lab Tools',
-    description: 'Custom-built science equipment from e-waste.',
+    title: 'Automated School Alarm System',
+    description: 'Designed a programmable bell and notification system that automates school time management and eliminates manual bell ringing.',
     category: 'Education',
-    image: '/images/workingspace.png'
+    image: '/images/Manufacturing/Automated School Alarm System .png'
   },
   {
-    title: 'RecycleBin',
-    description: 'Automated waste segregation system.',
-    category: 'Innovation',
-    image: '/images/software.png'
+    title: 'Audio Amplifier',
+    description: 'Built a high-fidelity audio amplification system delivering clear, powerful sound output for classroom, auditorium, and public-use applications.',
+    category: 'Education',
+    image: '/images/Manufacturing/Audio Amplifier .png'
   }
 ];
 
