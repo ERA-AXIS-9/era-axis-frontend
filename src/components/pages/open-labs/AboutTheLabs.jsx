@@ -31,7 +31,7 @@ const AboutTheLabs = () => {
           <div className="relative">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-200">
               <img 
-                src="/images/OpenLabs/openlabs.png" 
+                src="/images/OpenLabs/openlabs2.png" 
                 alt="Open Labs Space" 
                 className="w-full h-full object-cover"
               />

@@ -123,7 +123,12 @@ const courseData = {
     tagline: 'Master Electronics, Fabrication & Repair',
     price: 400,
     priceType: 'one-time',
-    duration: '6 months',
+    duration: '3 months',
+    nextCohort: 'Date to be Decided',
+    certificate: true,
+    inPerson: true,
+    liveOnline: true,
+    expertSupport: true,
     image: makerHardwareImage,
     description: 'Master electronics, fabrication, and repair skills. Build devices from e-waste and access professional tools. This comprehensive course teaches you hands-on skills in electronics, 3D printing, laser cutting, and device repair.',
     benefits: [
@@ -179,7 +184,12 @@ const courseData = {
     tagline: 'Learn to Code from Scratch',
     price: 400,
     priceType: 'one-time',
-    duration: '4 months',
+    duration: '3 months',
+    nextCohort: 'Date to be Decided',
+    certificate: true,
+    inPerson: true,
+    liveOnline: true,
+    expertSupport: true,
     image: coderSoftwareImage,
     description: 'Learn to code from scratch and build practical applications. From mobile apps to smart home systems. This course covers programming fundamentals, web development, and application building with hands-on projects.',
     benefits: [
@@ -236,6 +246,10 @@ const courseData = {
     price: 150,
     priceType: 'one-time',
     duration: '3 months',
+    nextCohort: 'Date to be Decided',
+    certificate: true,
+    inPerson: true,
+    expertSupport: true,
     image: juniorStemImage,
     description: 'Perfect for beginners. Learn fundamental STEM concepts through hands-on projects and interactive workshops. This course introduces you to electronics, coding, and fabrication in an accessible way.',
     benefits: [
@@ -384,14 +398,44 @@ const ProgramDetailsPage = () => {
                   </div>
                 </>
               )}
+              {!isMembership && currentData.nextCohort && (
+                <div className="flex items-center gap-2">
+                  <Calendar size={16} className="flex-shrink-0" />
+                  <span className="text-xs sm:text-sm whitespace-nowrap">Next Cohort: {currentData.nextCohort}</span>
+                </div>
+              )}
+              {!isMembership && currentData.certificate && (
+                <div className="flex items-center gap-2">
+                  <Award size={16} className="flex-shrink-0" />
+                  <span className="text-xs sm:text-sm whitespace-nowrap">Certificate</span>
+                </div>
+              )}
+              {!isMembership && currentData.inPerson && (
+                <div className="flex items-center gap-2">
+                  <Users size={16} className="flex-shrink-0" />
+                  <span className="text-xs sm:text-sm whitespace-nowrap">In-Person</span>
+                </div>
+              )}
+              {!isMembership && currentData.liveOnline && (
+                <div className="flex items-center gap-2">
+                  <Globe size={16} className="flex-shrink-0" />
+                  <span className="text-xs sm:text-sm whitespace-nowrap">Live Online</span>
+                </div>
+              )}
+              {!isMembership && currentData.expertSupport && (
+                <div className="flex items-center gap-2">
+                  <Users size={16} className="flex-shrink-0" />
+                  <span className="text-xs sm:text-sm whitespace-nowrap">Expert Support</span>
+                </div>
+              )}
             </div>
 
             {/* CTA Row with Badge and Button */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               {/* Price Badge */}
               <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 sm:px-4 py-2 sm:py-2.5 rounded shadow-lg">
-                <span className="text-xs sm:text-sm font-medium whitespace-nowrap">
-                  <strong>GHS {currentData.price}</strong> / {currentData.priceType}
+                <span className="text-sm sm:text-lg font-bold whitespace-nowrap">
+                  GHS {currentData.price}
                 </span>
               </span>
               
