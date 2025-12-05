@@ -5,8 +5,8 @@ import Breadcrumb from '../../../components/pages/education/Breadcrumb';
 
 const programs = {
   'junior-stem': { name: 'Junior STEM Basics', duration: '3 months' },
-  'maker-hardware': { name: 'Maker: Hardware & Repair', duration: '6 months' },
-  'coder-software': { name: 'Coder: Software Foundations', duration: '4 months' }
+  'maker-hardware': { name: 'Maker: Hardware & Repair', duration: '3 months' },
+  'coder-software': { name: 'Coder: Software Foundations', duration: '3 months' }
 };
 
 const OnlineEnrollmentPage = () => {

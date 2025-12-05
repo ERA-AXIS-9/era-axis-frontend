@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -75,6 +76,11 @@ import ArticlePage from './pages/public/newsletter/ArticlePage';
 
 function App() {
   const location = useLocation();
+  
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   
   // Check if current route is a service page or projects page
   const isSoftwarePage = location.pathname.startsWith('/services/software');

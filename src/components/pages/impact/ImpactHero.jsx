@@ -98,10 +98,10 @@ const ImpactHero = () => {
               }}
               transition={{ duration: 0.6 }}
             >
-              <button className="bg-gradient-to-r from-[#39366F] to-[#5a5789] hover:shadow-lg text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-md flex items-center justify-center gap-2 group">
+              <a href="https://www.youtube.com/@eraaxis.e" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#39366F] to-[#5a5789] hover:shadow-lg text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-md flex items-center justify-center gap-2 group">
                 <Play size={20} className="group-hover:scale-110 transition-transform" />
                 Watch Stories
-              </button>
+              </a>
               
               <button className="border-2 border-[#39366F] text-[#39366F] hover:bg-[#39366F]/5 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2">
                 View Report

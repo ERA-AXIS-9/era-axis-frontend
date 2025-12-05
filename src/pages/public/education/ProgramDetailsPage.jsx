@@ -312,6 +312,11 @@ const ProgramDetailsPage = () => {
   const programId = searchParams.get('program') || 'junior-stem';
   const isMembership = programId === 'junior-stem';
   const currentData = isMembership ? membershipData : courseData[programId];
+  
+  // Check if program has both online and in-person options
+  const hasOnlineOption = currentData?.liveOnline === true;
+  const hasInPersonOption = currentData?.inPerson === true;
+  const hasBothOptions = hasOnlineOption && hasInPersonOption;
 
   // Enhanced parallax scroll effect with requestAnimationFrame
   useEffect(() => {
@@ -440,7 +445,20 @@ const ProgramDetailsPage = () => {
               </span>
               
               <button
-                onClick={() => navigate(isMembership ? '/services/education/online-enrollment' : `/services/education/in-person-enrollment?program=${programId}`)}
+                onClick={() => {
+                  if (isMembership) {
+                    navigate('/services/education/membership-enrollment');
+                  } else if (hasBothOptions) {
+                    // If both options available, show learning mode selection
+                    navigate(`/services/education/learning-mode?program=${programId}`);
+                  } else if (hasInPersonOption) {
+                    // If only in-person, go directly to in-person enrollment
+                    navigate(`/services/education/in-person-enrollment?program=${programId}`);
+                  } else if (hasOnlineOption) {
+                    // If only online, go directly to online enrollment
+                    navigate(`/services/education/online-enrollment?program=${programId}`);
+                  }
+                }}
                 className="bg-white text-[#39366F] hover:bg-gray-100 px-6 sm:px-8 py-3 rounded font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 text-sm sm:text-base shadow-lg"
               >
                 <span className="whitespace-nowrap">{isMembership ? 'Join Now' : 'Enroll Now'}</span>
@@ -687,7 +705,7 @@ const ProgramDetailsPage = () => {
               Start your innovation journey today with unlimited access to tools, mentorship, and a community of creators.
             </p>
             <button
-              onClick={() => navigate('/services/education/online-enrollment')}
+              onClick={() => navigate('/services/education/membership-enrollment')}
               className="bg-white hover:bg-gray-100 text-[#39366F] px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 text-base sm:text-lg shadow-lg"
             >
               <span>Join Now - GHS {membershipData.price}/Month</span>
