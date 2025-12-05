@@ -4,6 +4,14 @@ import { motion } from 'framer-motion';
 
 const ImpactHero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  
+  // Helper function to extract YouTube video ID and generate thumbnail URL
+  const getYouTubeThumbnail = (videoUrl) => {
+    const videoId = videoUrl.split('watch?v=')[1];
+    return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  };
+  
+  const heroVideoUrl = "https://www.youtube.com/watch?v=44vEnuK51po";
 
   return (
     <section className="relative pt-20 sm:pt-28 lg:pt-32 pb-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 overflow-hidden">
@@ -122,8 +130,9 @@ const ImpactHero = () => {
               {/* Video Thumbnail */}
               <div className="relative bg-black rounded-2xl overflow-hidden aspect-video">
                 <img 
-                  src="/images/Educationpage/education.png"
+                  src={getYouTubeThumbnail(heroVideoUrl)}
                   alt="ERA AXIS Impact Video"
+                  onError={(e) => {e.target.src = '/images/Educationpage/education.png'}}
                   className="w-full h-full object-cover"
                 />
                 
@@ -156,7 +165,7 @@ const ImpactHero = () => {
               <X size={24} />
             </button>
             <iframe 
-              src="https://drive.google.com/file/d/1Rbc_L8zSC1dI-6k2tCaDF7Uubyl_PBOc/preview"
+              src="https://www.youtube.com/embed/44vEnuK51po"
               title="ERA AXIS Impact Video"
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

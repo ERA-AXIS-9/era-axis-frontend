@@ -2,30 +2,34 @@ import React, { useState } from 'react';
 import { Play, Clock, User, X } from 'lucide-react';
 
 const StoriesOfChange = () => {
+  // Helper function to extract YouTube video ID and generate thumbnail URL
+  const getYouTubeThumbnail = (embedUrl) => {
+    const videoId = embedUrl.split('/embed/')[1];
+    // Use hqdefault as it's more reliable than maxresdefault
+    return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  };
+
   const stories = [
     {
-      title: "Out-of-school Youth Innovator",
-      description: "From discarded devices to working prototype that helps local clinics charge patients.",
-      duration: "3:45",
-      speaker: "Kwame Asante",
-      thumbnail: "/images/Educationpage/education.png",
-      videoUrl: "https://drive.google.com/file/d/1Rbc_L8zSC1dI-6k2tCaDF7Uubyl_PBOc/preview"
+      title: "Emmanuel's Impact Story",
+      description: "A student's journey of innovation and learning through ERA AXIS programs.",
+      duration: "0:57",
+      speaker: "Emmanuel",
+      videoUrl: "https://www.youtube.com/embed/jn8SxxAIS4k"
     },
     {
-      title: "Farmers Dashboard Project", 
-      description: "A low-cost dashboard built by learners to track rainfall and yield for smallholders.",
-      duration: "4:12",
-      speaker: "Ama Osei",
-      thumbnail: "/images/Educationpage/education.png",
-      videoUrl: "https://drive.google.com/file/d/1Rbc_L8zSC1dI-6k2tCaDF7Uubyl_PBOc/preview"
+      title: "CoopTech - Revolutionizing Poultry Farming with SmartPoultry", 
+      description: "CoopTech - Revolutionizing Poultry Farming with SmartPoultry",
+      duration: "2:09",
+      speaker: "",
+      videoUrl: "https://www.youtube.com/embed/PLsJrfDc7tI"
     },
     {
-      title: "E-waste Turned into STEM Kits",
-      description: "Old laptops and phones become electronics kits powering practical lessons.",
-      duration: "2:58",
-      speaker: "Joseph Mensah",
-      thumbnail: "/images/Educationpage/education.png",
-      videoUrl: "https://drive.google.com/file/d/1Rbc_L8zSC1dI-6k2tCaDF7Uubyl_PBOc/preview"
+      title: "Pearl's Impact Story",
+      description: "A student's journey of innovation and learning through ERA AXIS programs.",
+      duration: "0:46",
+      speaker: "Pearl",
+      videoUrl: "https://www.youtube.com/embed/ieEmJTB8k1U"
     }
   ];
 
@@ -43,20 +47,21 @@ const StoriesOfChange = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
           {stories.map((story, index) => (
-            <div key={index} className="bg-white group">
+            <div key={index} className="bg-white group cursor-pointer" onClick={() => setSelectedVideo(story.videoUrl)}>
               
               {/* Video Thumbnail */}
-              <div className="relative rounded-lg h-40 sm:h-48 mb-4 overflow-hidden bg-gray-100 flex items-center justify-center">
+              <div className="relative rounded-lg h-40 sm:h-48 mb-4 overflow-hidden bg-gray-100 flex items-center justify-center group-hover:opacity-80 transition-opacity">
                 <img 
-                  src={story.thumbnail}
+                  src={getYouTubeThumbnail(story.videoUrl)}
                   alt={story.title}
-                  className="w-full h-full object-cover opacity-40"
+                  onError={(e) => {e.target.src = '/images/Educationpage/education.png'}}
+                  className="w-full h-full object-cover"
                 />
                 
-                {/* Coming Soon Overlay */}
-                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-white text-lg font-bold">Coming Soon</div>
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 flex items-center justify-center transition-all duration-300">
+                  <div className="w-16 h-16 bg-white/90 group-hover:bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="text-[#39366F] ml-1" size={28} fill="currentColor" />
                   </div>
                 </div>
 
@@ -87,10 +92,6 @@ const StoriesOfChange = () => {
           ))}
         </div>
 
-        {/* Coming Soon Message */}
-        <div className="text-left">
-          <p className="text-gray-600 font-medium">Videos coming soon...</p>
-        </div>
 
       </div>
 
