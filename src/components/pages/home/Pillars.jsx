@@ -12,28 +12,28 @@ const Pillars = () => {
       description: 'Programs, certifications, and workshops for all ages.',
       icon: Monitor,
       color: '#39366F',
-      link: '/education'
+      link: '/services/education'
     },
     {
       title: 'Manufacturing',
       description: 'Circular and e-waste upcycling for social good.',
       icon: Cpu,
       color: '#5B9BD5',
-      link: '/manufacturing'
+      link: '/services/manufacturing'
     },
     {
       title: 'Software',
       description: 'Open-source tools that power local innovation.',
       icon: Code,
       color: '#2a2850',
-      link: '/software'
+      link: '/services/software'
     },
     {
       title: 'Open Labs',
       description: 'Community makerspaces and research hubs.',
       icon: Computer,
       color: '#4a8bc2',
-      link: '/open-labs'
+      link: '/services/open-labs'
     }
   ];
 
