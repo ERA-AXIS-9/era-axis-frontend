@@ -3,22 +3,22 @@ import React from 'react';
 const PartnersSay = () => {
   const testimonials = [
     {
-      quote: "ERA AXIS turned a pilot idea into a fully deployed solution that's helping 50+ schools.",
-      author: "Jane Doe",
-      role: "Education Director",
-      image: "/images/workingspace.png"
+      quote: "I joined to learn, and now I'm creating. The environment at ERA pushes you to turn raw materials into functional products.",
+      author: "Botsyo Enyonam Kelly",
+      role: "Student",
+      image: "/images/Testimonies/testimonials1.png"
     },
     {
-      quote: "Working with ERA AXIS helped us track community health data in real-time—it's been transformative.",
-      author: "Dr. Michael Chen",
-      role: "Health Program Lead",
-      image: "/images/manufacturing.png"
+      quote: "Open Labs is the heartbeat of innovation here. It's where diverse ideas collide to create sustainable, scalable prototypes.",
+      author: "Silas Asare",
+      role: "Executive (Open Labs)",
+      image: "/images/Testimonies/Testimonials2.png"
     },
     {
-      quote: "The team delivered a dashboard that our farmers can actually use—simple, effective, and impactful.",
-      author: "Sarah Johnson",
-      role: "AgriTech Coordinator",
-      image: "/images/software.png"
+      quote: "I applied the electronics module to build a low-cost soil moisture sensor. Now, vegetable farmers in my community use it to reduce water waste.",
+      author: "Yeddu Joel Nii Gyeshie",
+      role: "Smart Farming / AgriTech",
+      image: "/images/Testimonies/Testimonials3.png"
     }
   ];
 
@@ -29,7 +29,7 @@ const PartnersSay = () => {
         {/* Section Header */}
         <div className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-black">
-            What Our Partners Say
+            What People Say
           </h2>
         </div>
 

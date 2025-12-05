@@ -2,13 +2,13 @@ import React from 'react';
 
 const equipment = [
   {
-    name: '3D Printer',
+    name: '3D Printers',
     category: 'Prototyping Tools',
     description: 'Advanced 3D printing technology for rapid prototyping and custom part fabrication. Perfect for bringing your designs to life with precision and speed.',
     image: '/images/OpenLabs/openlabs1.png'
   },
   {
-    name: 'Electronics Workbench',
+    name: 'Fully equipped electronics workstations',
     category: 'Electronics Stations',
     description: 'Fully equipped electronics workstation with soldering, testing, and assembly capabilities. Perfect for circuit design, prototyping, and device assembly projects.',
     image: '/images/OpenLabs/openlabs.png'

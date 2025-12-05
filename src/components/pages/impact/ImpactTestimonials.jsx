@@ -1,42 +1,55 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const ImpactTestimonials = () => {
+  const titleAnimation = useScrollAnimation({ type: 'slideUp', delay: 0 });
+  
   const testimonials = [
     {
-      quote: "ERA AXIS equips learners to solve real problems in their communities.",
-      author: "Innovator, Partner School",
-      role: "",
-      type: "partner"
+      quote: "ERA AXIS moved me from theory to practice. I'm not just learning STEM concepts; I'm building real tools for my community.",
+      author: "Asiedu",
+      role: "Student",
+      type: "student",
+      avatar: "A",
+      image: "/images/Testimonies/Testimonials.png"
     },
     {
-      quote: "We saw measurable impact within months of partnering.",
-      author: "Program Director, NGO",
-      role: "",
-      type: "partner"
+      quote: "I joined to learn, and now I'm creating. The environment at ERA pushes you to turn raw materials into functional products.",
+      author: "Botsyo Enyonam Kelly",
+      role: "Student",
+      type: "student",
+      image: "/images/Testimonies/testimonials1.png"
     },
     {
-      quote: "Our civic lab built and deployed two open-source tools with ERA AXIS.",
-      author: "Civic Lab Partner",
-      role: "",
-      type: "partner"
+      quote: "Open Labs is the heartbeat of innovation here. It's where diverse ideas collide to create sustainable, scalable prototypes.",
+      author: "Silas Asare",
+      role: "Executive (Open Labs)",
+      type: "executive",
+      image: "/images/Testimonies/Testimonials2.png"
     }
   ];
 
   return (
-    <section className="py-6 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-9 bg-gray-50 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2 
+          ref={titleAnimation.ref}
+          initial={titleAnimation.initial}
+          animate={titleAnimation.animate}
+          variants={titleAnimation.variants}
+          transition={titleAnimation.transition}
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight mb-6"
+        >
+          Testimonials
+        </motion.h2>
         
-        <div className="text-left mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4">
-            Testimonials
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {/* Static Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="group relative bg-gradient-to-br from-white to-gray-50 p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+              className="group relative bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
             >
               {/* Subtle glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#39366F]/5 to-[#5B9BD5]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
@@ -53,16 +66,13 @@ const ImpactTestimonials = () => {
                 
                 {/* Author Info */}
                 <div className="flex items-center space-x-4">
-                  {/* Modern Avatar with Image */}
+                  {/* Avatar - Image only */}
                   <div className="relative">
-                    <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:scale-110 transition-transform duration-300 border-2 border-white">
-                      <img 
-                        src="/images/workingspace.png"
-                        alt={testimonial.author}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
+                    <img 
+                      src={testimonial.image || `https://via.placeholder.com/48?text=${testimonial.avatar}`}
+                      alt={testimonial.author}
+                      className="w-12 h-12 rounded-full object-cover shadow-lg group-hover:scale-110 transition-transform duration-300"
+                    />
                     {/* Pulse ring */}
                     <div className="absolute inset-0 rounded-full bg-[#39366F] opacity-0 group-hover:opacity-20 group-hover:scale-150 transition-all duration-500"></div>
                   </div>
@@ -72,11 +82,9 @@ const ImpactTestimonials = () => {
                     <div className="text-base font-bold text-black group-hover:text-[#39366F] transition-colors duration-300">
                       {testimonial.author}
                     </div>
-                    {testimonial.role && (
-                      <div className="text-sm font-semibold text-gray-600 tracking-wide">
-                        {testimonial.role}
-                      </div>
-                    )}
+                    <div className="text-sm font-semibold text-gray-600 tracking-wide">
+                      {testimonial.role}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -86,8 +94,8 @@ const ImpactTestimonials = () => {
             </div>
           ))}
         </div>
-
       </div>
+
     </section>
   );
 };
