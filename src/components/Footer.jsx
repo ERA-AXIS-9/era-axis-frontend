@@ -53,6 +53,7 @@ const Footer = () => {
               <li><a href="/donate" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Donate</a></li>
               <li><a href="/partner" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Partner</a></li>
               <li><a href="/contact" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Join Us</a></li>
+              <li><a href="https://store.eraaxis.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-300 hover:text-[#39366F] transition-colors">Store</a></li>
             </ul>
             
             <h4 className="text-sm font-semibold text-white mb-3">Resources</h4>

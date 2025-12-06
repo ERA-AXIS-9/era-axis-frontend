@@ -109,6 +109,14 @@ const Navbar = () => {
               Enroll
             </a>
             <a 
+              href="https://store.eraaxis.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-[#39366F] text-[#39366F] px-5 py-2 rounded-lg text-base font-medium hover:bg-[#39366F] hover:text-white transition-all ml-3"
+            >
+              Store
+            </a>
+            <a 
               href="/donate"
               className="bg-[#39366F] border-2 border-[#39366F] text-white px-5 py-2 rounded-lg text-base font-medium hover:bg-[#2a2850] hover:border-[#2a2850] transition-all ml-3"
             >
@@ -207,6 +215,14 @@ const Navbar = () => {
                   className="text-center border-2 border-[#39366F] text-[#39366F] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#39366F] hover:text-white transition-all"
                 >
                   Enroll
+                </a>
+                <a 
+                  href="https://store.eraaxis.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center border-2 border-[#39366F] text-[#39366F] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#39366F] hover:text-white transition-all"
+                >
+                  Store
                 </a>
                 <a 
                   href="/donate"
