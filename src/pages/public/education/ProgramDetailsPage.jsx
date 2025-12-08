@@ -696,24 +696,6 @@ const ProgramDetailsPage = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-[#39366F]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">Ready to Join ERA AXIS?</h2>
-            <p className="text-white/90 text-sm sm:text-base mb-8 max-w-2xl mx-auto">
-              Start your innovation journey today with unlimited access to tools, mentorship, and a community of creators.
-            </p>
-            <button
-              onClick={() => navigate('/services/education/membership-enrollment')}
-              className="bg-white hover:bg-gray-100 text-[#39366F] px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 text-base sm:text-lg shadow-lg"
-            >
-              <span>Join Now - GHS {membershipData.price}/Month</span>
-              <ChevronRight size={20} />
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
