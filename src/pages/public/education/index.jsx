@@ -5,6 +5,7 @@ import ProgramOptions from '../../../components/pages/education/ProgramOptions';
 import StudentSuccess from '../../../components/pages/education/StudentSuccess';
 import HowEnrollmentWorks from '../../../components/pages/education/HowEnrollmentWorks';
 import WhoBenefits from '../../../components/pages/education/WhoBenefits';
+import StorePromoBanner from '../../../components/pages/common/StorePromoBanner';
 import ProgramsEnrollment from '../../../components/pages/education/ProgramsEnrollment';
 import ReadyToStart from '../../../components/pages/education/ReadyToStart';
 
@@ -16,6 +17,11 @@ const EducationPage = () => {
       <ProgramOptions />
       <HowEnrollmentWorks />
       <WhoBenefits />
+      <StorePromoBanner 
+        headline="Need to Book a Lab and Stock Up?"
+        bodyText="Combine lab access, specialized tools, and learning kits in one easy checkout at our official store."
+        ctaText="View Lab Tools & Kits →"
+      />
       <ProgramsEnrollment />
       <StudentSuccess />
       <ReadyToStart />
