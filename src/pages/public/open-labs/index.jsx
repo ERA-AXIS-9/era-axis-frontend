@@ -7,6 +7,7 @@ import AboutTheLabs from '../../../components/pages/open-labs/AboutTheLabs';
 import WhoCanUse from '../../../components/pages/open-labs/WhoCanUse';
 import FacilitiesPreview from '../../../components/pages/open-labs/FacilitiesPreview';
 import MembershipPlans from '../../../components/pages/open-labs/MembershipPlans';
+import StorePromoBanner from '../../../components/pages/common/StorePromoBanner';
 import ProjectShowcase from '../../../components/pages/open-labs/ProjectShowcase';
 import OpenLabsTestimonials from '../../../components/pages/open-labs/OpenLabsTestimonials';
 import OpenLabsCTA from '../../../components/pages/open-labs/OpenLabsCTA';
@@ -25,6 +26,11 @@ const OpenLabsMain = () => (
     <WhoCanUse />
     <FacilitiesPreview />
     <MembershipPlans />
+    <StorePromoBanner 
+      headline="Enhance Your Lab Experience"
+      bodyText="Access our curated collection of tools, components, and equipment designed for makers and innovators. Everything you need to bring your projects to life."
+      ctaText="Explore Lab Equipment →"
+    />
     <ProjectShowcase />
     <OpenLabsTestimonials />
     <OpenLabsCTA />

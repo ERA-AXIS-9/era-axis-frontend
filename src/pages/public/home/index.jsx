@@ -8,6 +8,7 @@ import Testimonials from '../../../components/pages/home/Testimonials';
 import Partners from '../../../components/pages/home/Partners';
 import NewsInsights from '../../../components/pages/home/NewsInsights';
 import Gallery from '../../../components/pages/home/Gallery';
+import StorePromoBanner from '../../../components/pages/common/StorePromoBanner';
 import Newsletter from '../../../components/pages/home/Newsletter';
 
 const HomePage = () => {
@@ -22,6 +23,11 @@ const HomePage = () => {
       <Partners />
       <NewsInsights />
       <Gallery />
+      <StorePromoBanner 
+        headline="Explore Our Official Store"
+        bodyText="Discover the tools, components, and materials that power innovation at ERA AXIS. From project supplies to lab equipment, everything you need to create is here."
+        ctaText="Visit the Store →"
+      />
       <Newsletter />
     </div>
   );

@@ -6,6 +6,7 @@ import CoreServices from '../../../components/pages/manufacturing/CoreServices';
 import SustainableApproach from '../../../components/pages/manufacturing/SustainableApproach';
 import WhyChooseUs from '../../../components/pages/manufacturing/WhyChooseUs';
 import FeaturedProjects from '../../../components/pages/manufacturing/FeaturedProjects';
+import StorePromoBanner from '../../../components/pages/common/StorePromoBanner';
 import TestimonialsImpact from '../../../components/pages/manufacturing/TestimonialsImpact';
 import ReadyToBuild from '../../../components/pages/manufacturing/ReadyToBuild';
 
@@ -19,6 +20,11 @@ const ManufacturingPage = () => {
       <SustainableApproach />
       <WhyChooseUs />
       <FeaturedProjects />
+      <StorePromoBanner 
+        headline="Ready to Build Your Next Project?"
+        bodyText="Stock up on premium manufacturing tools, materials, and equipment from our official store. Everything you need for custom fabrication and product development."
+        ctaText="Shop Manufacturing Tools →"
+      />
       <TestimonialsImpact />
       <ReadyToBuild />
     </div>
